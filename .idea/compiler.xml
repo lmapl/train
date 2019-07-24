@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="train" />
+        <module name="mybatis-base-mapper-plugin" />
         <module name="train-common" />
         <module name="train-dao" />
         <module name="train-domain" />
@@ -15,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="mybatis-base-mapper-plugin" target="1.5" />
       <module name="train" target="1.8" />
       <module name="train-common" target="1.8" />
       <module name="train-dao" target="1.8" />
