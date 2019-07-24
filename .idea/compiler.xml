@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="train" />
+        <module name="train-common" />
+        <module name="train-dao" />
+        <module name="train-domain" />
+        <module name="train-service" />
+        <module name="train-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="train" target="1.8" />
+      <module name="train-common" target="1.8" />
+      <module name="train-dao" target="1.8" />
+      <module name="train-domain" target="1.8" />
+      <module name="train-service" target="1.8" />
+      <module name="train-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

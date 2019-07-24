@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/train.iml" filepath="$PROJECT_DIR$/train.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-common/train-common.iml" filepath="$PROJECT_DIR$/train-common/train-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-dao/train-dao.iml" filepath="$PROJECT_DIR$/train-dao/train-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-domain/train-domain.iml" filepath="$PROJECT_DIR$/train-domain/train-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-service/train-service.iml" filepath="$PROJECT_DIR$/train-service/train-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-web/train-web.iml" filepath="$PROJECT_DIR$/train-web/train-web.iml" />
+    </modules>
+  </component>
+</project>
