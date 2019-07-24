@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis-base-mapper-plugin" />
         <module name="train-common" />
         <module name="train-dao" />
         <module name="train-domain" />
