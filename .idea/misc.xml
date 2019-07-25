@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/train-web/pom.xml" />
         <option value="$PROJECT_DIR$/train-common/pom.xml" />
         <option value="$PROJECT_DIR$/train-domain/pom.xml" />
+        <option value="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/pom.xml" />
       </list>
     </option>
   </component>
