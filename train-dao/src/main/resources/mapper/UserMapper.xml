@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.train.dao.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.train.domain.entity.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="deviceUuid" property="deviceuuid" jdbcType="VARCHAR" />
+    <result column="userType" property="usertype" jdbcType="INTEGER" />
+    <result column="registerType" property="registertype" jdbcType="INTEGER" />
+    <result column="registerCertificate" property="registercertificate" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="valid" property="valid" jdbcType="INTEGER" />
+    <result column="forbid" property="forbid" jdbcType="INTEGER" />
+    <result column="createTime" property="createtime" jdbcType="DATE" />
+    <result column="createBy" property="createby" jdbcType="VARCHAR" />
+    <result column="updateTime" property="updatetime" jdbcType="DATE" />
+    <result column="updateBy" property="updateby" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, deviceUuid, userType, registerType, registerCertificate, password, valid, forbid, 
+    createTime, createBy, updateTime, updateBy
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.train.dao.example.UserExample" >
+    delete from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.train.domain.entity.User" >
+    insert into user (id, deviceUuid, userType, 
+      registerType, registerCertificate, password, 
+      valid, forbid, createTime, 
+      createBy, updateTime, updateBy
+      )
+    values (#{id,jdbcType=INTEGER}, #{deviceuuid,jdbcType=VARCHAR}, #{usertype,jdbcType=INTEGER}, 
+      #{registertype,jdbcType=INTEGER}, #{registercertificate,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER}, #{forbid,jdbcType=INTEGER}, #{createtime,jdbcType=DATE}, 
+      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.train.domain.entity.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="deviceuuid != null" >
+        deviceUuid,
+      </if>
+      <if test="usertype != null" >
+        userType,
+      </if>
+      <if test="registertype != null" >
+        registerType,
+      </if>
+      <if test="registercertificate != null" >
+        registerCertificate,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="valid != null" >
+        valid,
+      </if>
+      <if test="forbid != null" >
+        forbid,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="createby != null" >
+        createBy,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+      <if test="updateby != null" >
+        updateBy,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="deviceuuid != null" >
+        #{deviceuuid,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=INTEGER},
+      </if>
+      <if test="registertype != null" >
+        #{registertype,jdbcType=INTEGER},
+      </if>
+      <if test="registercertificate != null" >
+        #{registercertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=INTEGER},
+      </if>
+      <if test="forbid != null" >
+        #{forbid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.train.dao.example.UserExample" resultType="java.lang.Integer" >
+    select count(*) from user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.deviceuuid != null" >
+        deviceUuid = #{record.deviceuuid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usertype != null" >
+        userType = #{record.usertype,jdbcType=INTEGER},
+      </if>
+      <if test="record.registertype != null" >
+        registerType = #{record.registertype,jdbcType=INTEGER},
+      </if>
+      <if test="record.registercertificate != null" >
+        registerCertificate = #{record.registercertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.valid != null" >
+        valid = #{record.valid,jdbcType=INTEGER},
+      </if>
+      <if test="record.forbid != null" >
+        forbid = #{record.forbid,jdbcType=INTEGER},
+      </if>
+      <if test="record.createtime != null" >
+        createTime = #{record.createtime,jdbcType=DATE},
+      </if>
+      <if test="record.createby != null" >
+        createBy = #{record.createby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatetime != null" >
+        updateTime = #{record.updatetime,jdbcType=DATE},
+      </if>
+      <if test="record.updateby != null" >
+        updateBy = #{record.updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user
+    set id = #{record.id,jdbcType=INTEGER},
+      deviceUuid = #{record.deviceuuid,jdbcType=VARCHAR},
+      userType = #{record.usertype,jdbcType=INTEGER},
+      registerType = #{record.registertype,jdbcType=INTEGER},
+      registerCertificate = #{record.registercertificate,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      valid = #{record.valid,jdbcType=INTEGER},
+      forbid = #{record.forbid,jdbcType=INTEGER},
+      createTime = #{record.createtime,jdbcType=DATE},
+      createBy = #{record.createby,jdbcType=VARCHAR},
+      updateTime = #{record.updatetime,jdbcType=DATE},
+      updateBy = #{record.updateby,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.train.domain.entity.User" >
+    update user
+    <set >
+      <if test="deviceuuid != null" >
+        deviceUuid = #{deviceuuid,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        userType = #{usertype,jdbcType=INTEGER},
+      </if>
+      <if test="registertype != null" >
+        registerType = #{registertype,jdbcType=INTEGER},
+      </if>
+      <if test="registercertificate != null" >
+        registerCertificate = #{registercertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        valid = #{valid,jdbcType=INTEGER},
+      </if>
+      <if test="forbid != null" >
+        forbid = #{forbid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="createby != null" >
+        createBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="updateby != null" >
+        updateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.train.domain.entity.User" >
+    update user
+    set deviceUuid = #{deviceuuid,jdbcType=VARCHAR},
+      userType = #{usertype,jdbcType=INTEGER},
+      registerType = #{registertype,jdbcType=INTEGER},
+      registerCertificate = #{registercertificate,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      valid = #{valid,jdbcType=INTEGER},
+      forbid = #{forbid,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=DATE},
+      createBy = #{createby,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=DATE},
+      updateBy = #{updateby,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

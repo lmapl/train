@@ -42,6 +42,11 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.train</groupId>
+            <artifactId>train-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

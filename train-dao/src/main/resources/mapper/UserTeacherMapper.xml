@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.train.dao.mapper.UserTeacherMapper" >
+  <resultMap id="BaseResultMap" type="com.train.domain.entity.UserTeacher" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="nickName" property="nickname" jdbcType="VARCHAR" />
+    <result column="portrait" property="portrait" jdbcType="VARCHAR" />
+    <result column="subjectId" property="subjectid" jdbcType="INTEGER" />
+    <result column="teachingAge" property="teachingage" jdbcType="INTEGER" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="freeVideo" property="freevideo" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="DATE" />
+    <result column="createBy" property="createby" jdbcType="VARCHAR" />
+    <result column="updateTime" property="updatetime" jdbcType="DATE" />
+    <result column="updateBy" property="updateby" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, nickName, portrait, subjectId, teachingAge, position, introduction, freeVideo, 
+    createTime, createBy, updateTime, updateBy
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserTeacherExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_teacher
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.train.dao.example.UserTeacherExample" >
+    delete from user_teacher
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.train.domain.entity.UserTeacher" >
+    insert into user_teacher (id, nickName, portrait, 
+      subjectId, teachingAge, position, 
+      introduction, freeVideo, createTime, 
+      createBy, updateTime, updateBy
+      )
+    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
+      #{subjectid,jdbcType=INTEGER}, #{teachingage,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, 
+      #{introduction,jdbcType=VARCHAR}, #{freevideo,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.train.domain.entity.UserTeacher" >
+    insert into user_teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="nickname != null" >
+        nickName,
+      </if>
+      <if test="portrait != null" >
+        portrait,
+      </if>
+      <if test="subjectid != null" >
+        subjectId,
+      </if>
+      <if test="teachingage != null" >
+        teachingAge,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="freevideo != null" >
+        freeVideo,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="createby != null" >
+        createBy,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+      <if test="updateby != null" >
+        updateBy,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null" >
+        #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectid != null" >
+        #{subjectid,jdbcType=INTEGER},
+      </if>
+      <if test="teachingage != null" >
+        #{teachingage,jdbcType=INTEGER},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="freevideo != null" >
+        #{freevideo,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.train.dao.example.UserTeacherExample" resultType="java.lang.Integer" >
+    select count(*) from user_teacher
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_teacher
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.nickname != null" >
+        nickName = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.portrait != null" >
+        portrait = #{record.portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectid != null" >
+        subjectId = #{record.subjectid,jdbcType=INTEGER},
+      </if>
+      <if test="record.teachingage != null" >
+        teachingAge = #{record.teachingage,jdbcType=INTEGER},
+      </if>
+      <if test="record.position != null" >
+        position = #{record.position,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduction != null" >
+        introduction = #{record.introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.freevideo != null" >
+        freeVideo = #{record.freevideo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        createTime = #{record.createtime,jdbcType=DATE},
+      </if>
+      <if test="record.createby != null" >
+        createBy = #{record.createby,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatetime != null" >
+        updateTime = #{record.updatetime,jdbcType=DATE},
+      </if>
+      <if test="record.updateby != null" >
+        updateBy = #{record.updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_teacher
+    set id = #{record.id,jdbcType=INTEGER},
+      nickName = #{record.nickname,jdbcType=VARCHAR},
+      portrait = #{record.portrait,jdbcType=VARCHAR},
+      subjectId = #{record.subjectid,jdbcType=INTEGER},
+      teachingAge = #{record.teachingage,jdbcType=INTEGER},
+      position = #{record.position,jdbcType=VARCHAR},
+      introduction = #{record.introduction,jdbcType=VARCHAR},
+      freeVideo = #{record.freevideo,jdbcType=VARCHAR},
+      createTime = #{record.createtime,jdbcType=DATE},
+      createBy = #{record.createby,jdbcType=VARCHAR},
+      updateTime = #{record.updatetime,jdbcType=DATE},
+      updateBy = #{record.updateby,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.train.mybatis.mapper.UserTeacher" >
+    update user_teacher
+    <set >
+      <if test="nickname != null" >
+        nickName = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="portrait != null" >
+        portrait = #{portrait,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectid != null" >
+        subjectId = #{subjectid,jdbcType=INTEGER},
+      </if>
+      <if test="teachingage != null" >
+        teachingAge = #{teachingage,jdbcType=INTEGER},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="freevideo != null" >
+        freeVideo = #{freevideo,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="createby != null" >
+        createBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+      <if test="updateby != null" >
+        updateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.train.mybatis.mapper.UserTeacher" >
+    update user_teacher
+    set nickName = #{nickname,jdbcType=VARCHAR},
+      portrait = #{portrait,jdbcType=VARCHAR},
+      subjectId = #{subjectid,jdbcType=INTEGER},
+      teachingAge = #{teachingage,jdbcType=INTEGER},
+      position = #{position,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      freeVideo = #{freevideo,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      createBy = #{createby,jdbcType=VARCHAR},
+      updateTime = #{updatetime,jdbcType=DATE},
+      updateBy = #{updateby,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -38,7 +38,11 @@
         </javaClientGenerator>
 
 
-        <table tableName="t_demo"></table>
+        <!--<table tableName="t_demo"></table>-->
+        <table tableName="user"></table>
+        <table tableName="user_company"></table>
+        <table tableName="user_stu_parent"></table>
+        <table tableName="user_teacher"></table>
 
     </context>
 </generatorConfiguration>

@@ -4,24 +4,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-  <!--  <bean id="redisUtil" class="com.biyao.gba.common.redis.RedisUtil">
-        &lt;!&ndash; 应用ID &ndash;&gt;
-        <constructor-arg index="0" value="${redis.appId}"/>
-        &lt;!&ndash; 集群ID &ndash;&gt;
-        <constructor-arg index="1" value="${redis.clusterId}"/>
-        &lt;!&ndash; 哨兵host 多个用;号隔开 &ndash;&gt;
-        <constructor-arg index="2" value="${redis.sentinel}"/>
-        &lt;!&ndash; 主节点名 &ndash;&gt;
-        <constructor-arg index="3" value="${redis.masterName}"/>
-        &lt;!&ndash; 单个应用中的连接池取连接时最大等待时间，单位：ms &ndash;&gt;
-        <constructor-arg index="4" value="${redis.maxWaitMillis}"/>
-        &lt;!&ndash; 单个应用中的连接池最大连接数 &ndash;&gt;
-        <constructor-arg index="5" value="${redis.maxTotal}"/>
-        &lt;!&ndash; 单个应用中的连接池最小空闲数 &ndash;&gt;
-        <constructor-arg index="6" value="${redis.minIdle}"/>
-        &lt;!&ndash; 单个应用中的连接池最大空闲数 &ndash;&gt;
-        <constructor-arg index="7" value="${redis.maxIdle}"/>
-        &lt;!&ndash; 设置redis connect request response timeout 单位:ms &ndash;&gt;
-        <constructor-arg index="8" value="${redis.timeout}"/>
-    </bean>-->
+  <bean id="redisService" class="com.train.service.common.impl.RedisServiceImpl">
+    <!-- 哨兵host 多个用;号隔开 -->
+    <constructor-arg index="0" value="${redis.sentinel}"/>
+    <!-- 主节点名 -->
+    <constructor-arg index="1" value="${redis.masterName}"/>
+    <!-- 单个应用中的连接池取连接时最大等待时间，单位：ms -->
+    <constructor-arg index="2" value="${redis.maxWaitMillis}"/>
+    <!-- 单个应用中的连接池最大连接数 -->
+    <constructor-arg index="3" value="${redis.maxTotal}"/>
+    <!-- 单个应用中的连接池最小空闲数 -->
+    <constructor-arg index="4" value="${redis.minIdle}"/>
+    <!-- 单个应用中的连接池最大空闲数 -->
+    <constructor-arg index="5" value="${redis.maxIdle}"/>
+    <!-- 设置redis connect request response timeout 单位:ms -->
+    <constructor-arg index="6" value="${redis.timeout}"/>
+  </bean>
 </beans>
