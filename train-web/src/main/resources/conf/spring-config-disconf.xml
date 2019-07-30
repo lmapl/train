@@ -16,6 +16,8 @@
             <list>
                 <value>classpath:/prop/jdbc.properties</value>
                 <value>classpath:/prop/redis.properties</value>
+                <value>classpath:/prop/common.properties</value>
+               <!-- <value>classpath:/prop/redis.properties</value>-->
             </list>
         </property>
     </bean>

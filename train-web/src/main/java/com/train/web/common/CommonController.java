@@ -1,9 +1,17 @@
 package com.train.web.common;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.train.Exception.InvalidParamException;
+import com.train.service.common.MobileService;
+import com.train.service.common.TokenService;
+import com.train.web.bean.Result;
+import com.train.web.dao.MobileVerifyCodeRequest;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by ma peiliang
@@ -14,11 +22,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CommonController {
 
-    @RequestMapping(value ="/getToken",method = RequestMethod.POST)
+    @Resource
+    private TokenService tokenService;
+
+    @Resource
+    private MobileService mobileService;
+
+    @RequestMapping(value ="/getToken")
     @ResponseBody
-    public String testMode(String uuid){
-        System.out.println(System.currentTimeMillis());
-        //demoService.fo();
-        return "aaa";
+    public Result<String> testMode(String type ,String uuid){
+        Result<String> result = new Result<>();
+        if(StringUtils.isEmpty(uuid) || StringUtils.isEmpty(type)){
+            throw new InvalidParamException("参数为空");
+        }
+        result.setData(tokenService.getServerToken(type,uuid));
+        return result;
     }
+
+    @RequestMapping(value ="/mobileVerifyCode",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Void>  mobileVerifyCode(@RequestBody MobileVerifyCodeRequest request){
+        Result<Void> result = new Result<>();
+        if(StringUtils.isEmpty(request.getMobile()) || StringUtils.isEmpty(request.getToken()) || StringUtils.isEmpty(request.getUuid())){
+            throw new InvalidParamException("参数为空");
+        }
+        mobileService.getMobileVerifyCode(request.getMobile(),request.getUuid(),request.getToken());
+        return result;
+    }
+
+
 }

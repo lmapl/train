@@ -1,10 +1,8 @@
 package com.train.utils;
-
-import com.google.gson.Gson;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
-import java.io.ByteArrayOutputStream;
+import java.nio.charset.Charset;
 import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
@@ -13,126 +11,206 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * 非对称加密算法RSA算法组件
+ * 非对称算法一般是用来传送对称加密算法的密钥来使用的，相对于DH算法，RSA算法只需要一方构造密钥，不需要
+ * 大费周章的构造各自本地的密钥对了。DH算法只能算法非对称算法的底层实现。而RSA算法算法实现起来较为简单
+ *
+ * @author kongqz
+ */
 public class RSAUtils {
-
-	public static final String KEY_ALGORITHM = "RSA";
-	private static final int MAX_ENCRYPT_BLOCK = 117;
-	private static final int MAX_DECRYPT_BLOCK = 128;
-	public static final String ENCODING = "utf-8";
-
-	/**
-	 * 使用公钥进行加密
-	 * 
-	 * @param encodeStr
-	 *            待加密的内容
-	 * @param publicKey
-	 *            公钥
-	 * @return
-	 * @throws Exception
-	 */
-	public static String encryptByPublicKey(String encodeStr, String publicKey) throws Exception {
-		byte[] data = encodeStr.getBytes();
-		byte[] keyBytes = Base64.decodeBase64(publicKey.getBytes(ENCODING));
-		X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
-		KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
-		Key publicK = keyFactory.generatePublic(x509KeySpec);
-		Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
-		cipher.init(Cipher.ENCRYPT_MODE, publicK);
-		int inputLen = data.length;
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		int offSet = 0;
-		byte[] cache;
-		int i = 0;
-		while (inputLen - offSet > 0) {
-			if (inputLen - offSet > MAX_ENCRYPT_BLOCK) {
-				cache = cipher.doFinal(data, offSet, MAX_ENCRYPT_BLOCK);
-			} else {
-				cache = cipher.doFinal(data, offSet, inputLen - offSet);
-			}
-			out.write(cache, 0, cache.length);
-			i++;
-			offSet = i * MAX_ENCRYPT_BLOCK;
-		}
-		byte[] encryptedData = out.toByteArray();
-		out.close();
-		return new String(Base64.encodeBase64(encryptedData), "UTF-8");
-	}
-
-	/**
-	 * 使用私钥进行解密
-	 * 
-	 * @param data
-	 *            待解密的内容
-	 * @param privateKey
-	 *            私钥
-	 * @return
-	 * @throws Exception
-	 */
-	public static String decryptByPrivateKey(String data, String privateKey) throws Exception {
-		byte[] encryptedData = Base64.decodeBase64(data);
-		byte[] keyBytes = Base64.decodeBase64(privateKey.getBytes(ENCODING));
-		PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
-		KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
-		Key privateK = keyFactory.generatePrivate(pkcs8KeySpec);
-		Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
-		cipher.init(Cipher.DECRYPT_MODE, privateK);
-		int inputLen = encryptedData.length;
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		int offSet = 0;
-		byte[] cache;
-		int i = 0;
-		while (inputLen - offSet > 0) {
-			if (inputLen - offSet > MAX_DECRYPT_BLOCK) {
-				cache = cipher.doFinal(encryptedData, offSet, MAX_DECRYPT_BLOCK);
-			} else {
-				cache = cipher.doFinal(encryptedData, offSet, inputLen - offSet);
-			}
-			out.write(cache, 0, cache.length);
-			i++;
-			offSet = i * MAX_DECRYPT_BLOCK;
-		}
-		byte[] decryptedData = out.toByteArray();
-		out.close();
-		return new String(decryptedData, "UTF-8");
-	}
-
-	public static void genKeyPair() throws NoSuchAlgorithmException {
-		// KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象
-		KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
-		// 初始化密钥对生成器，密钥大小为96-1024位
-		keyPairGen.initialize(1024,new SecureRandom());
-		// 生成一个密钥对，保存在keyPair中
-		KeyPair keyPair = keyPairGen.generateKeyPair();
-		RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();   // 得到私钥
-		RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();  // 得到公钥
-		String publicKeyString = new String(Base64.encodeBase64(publicKey.getEncoded()));
-		// 得到私钥字符串
-		String privateKeyString = new String(Base64.encodeBase64((privateKey.getEncoded())));
-		// 将公钥和私钥保存到Map
-		System.out.println("publicKeyString==="+publicKeyString);
-		System.out.println("privateKeyString==="+privateKeyString);
-	}
-
-	public static void main(String[] args) throws Exception{
-
-		RSAUtils.genKeyPair();
+    //非对称密钥算法
+    public static final String KEY_ALGORITHM = "RSA";
 
 
-		String publicKeyString= "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmxa0X0DMW/QFNxqeKIVgVGDfrpCUnOdwH54oK6u2Ay5DdBA/iAa/6XxxOgxdITff8J0k9Pmqk7ZhJC0gCbRW2RWa5ixnjDrJOdlfJ6PBd6Oeuke1FU/YQ4ytd8edUNr+m9yp5Q9EPCn56ZFNUZ7+wRTQLCca7Qv74eHq5v1mKiQIDAQAB";
-		String privateKeyString="MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKbFrRfQMxb9AU3Gp4ohWBUYN+ukJSc53Afnigrq7YDLkN0ED+IBr/pfHE6DF0hN9/wnST0+aqTtmEkLSAJtFbZFZrmLGeMOsk52V8no8F3o566R7UVT9hDjK13x51Q2v6b3KnlD0Q8KfnpkU1Rnv7BFNAsJxrtC/vh4erm/WYqJAgMBAAECgYBIE37vn8e007vQhV67UBXlaAYjDVoRTexObj824LmsxE3jd3H114zaxGhTdkyFr0zR6Zi5o1Qr25PJXdrNUZ/j5vMqXuu27hYOEbQu8gbrJgBuwq0v2qOgt7kKCLJ9TUyySDulW2Z5Zr6ML8tS9lVmi1FMb9tod0KqIQHmAAHLkQJBAOdlccCMHm0973anYucjapfkk1hjzepvMUhBMHDM+5NbFQMocOi7YOglFWMm04hC3UuJ3nKZlVInc46hvGzJIrsCQQC4gS2Y+BPcqhfaCImoac7dpsO0yIfdCmd5a86M9NZhbnrXyoX10kia9NOKIEt+/eH46C3PLcvJeqEdp50HlZ2LAkAGCoj4vO/CbF6HG4GihTMwOgB6y0hB+ZswxrrsBv3+b99RkMm52cKC7Qzs5MObCBvc8AGFvmq+lVcX/zL7KBknAkEAkCDA+NzZzyfEKBtBRaEZ6wYJnWCE2YP2HuC7YlskWMoQBh/7k3LoKrwTv7PIpfQ3oNPmbRBOQB6eW2cDANi8TwJBAIPKUBBFJNoTUPW1g4VmshBQv0oGLEydQw+zn3mKpE/He82gRsy5giwj8ydPiBrwXXw2NReLdGCJ9e6UcZX6Ku0=";
+    /**
+     * 密钥长度，DH算法的默认密钥长度是1024
+     * 密钥长度必须是64的倍数，在512到65536位之间
+     */
+    private static final int KEY_SIZE = 1024;
+    //公钥
+    private static final String PUBLIC_KEY = "RSAPublicKey";
+
+    //私钥
+    private static final String PRIVATE_KEY = "RSAPrivateKey";
+
+    /**
+     * 初始化密钥对
+     *
+     * @return Map 甲方密钥的Map
+     */
+    public static Map<String, Object> initKey() throws Exception {
+        //实例化密钥生成器
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(KEY_ALGORITHM);
+        //初始化密钥生成器
+        keyPairGenerator.initialize(KEY_SIZE);
+        //生成密钥对
+        KeyPair keyPair = keyPairGenerator.generateKeyPair();
+        //甲方公钥
+        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
+        //甲方私钥
+        RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();
+        //将密钥存储在map中
+        Map<String, Object> keyMap = new HashMap<String, Object>();
+        keyMap.put(PUBLIC_KEY, publicKey);
+        keyMap.put(PRIVATE_KEY, privateKey);
+        return keyMap;
+
+    }
+
+    /**
+     * 公钥加密
+     *
+     * @param encodeStr 待加密数据
+     * @param encodeStr  密钥
+     * @return byte[] 加密数据
+     */
+    public static String encryptByPublicKey(String encodeStr, String publicKey)  {
+        try{
+            byte[] data = encodeStr.getBytes();
+            byte[] keyBytes = Base64.decodeBase64(publicKey.getBytes());
+            byte[] code2 = RSAUtils.encryptByPublicKey(data, keyBytes);
+            return Base64.encodeBase64String(code2);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
 
 
-		Map<String,String> object = new HashMap<>();
-		object.put("userId", "1");
-		object.put("city", "北京");
-		object.put("locatedCity", "北京");
-		object.put("latitude", "135.1");
-		object.put("longitude", "35.6");
-		object.put("clientVersion", "1.0.0");
-		object.put("token", "1sadasd");
-		String ss = new Gson().toJson(object);
-		ss = encryptByPublicKey(object.toString(), publicKeyString);
-		System.out.println(ss);
-		System.out.println(decryptByPrivateKey(ss,privateKeyString));
-	}
+    /**
+     * 公钥加密
+     *
+     * @param data 待加密数据
+     * @param key  密钥
+     * @return byte[] 加密数据
+     */
+    public static byte[] encryptByPublicKey(byte[] data, byte[] key) throws Exception {
+
+        //实例化密钥工厂
+        KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
+        //初始化公钥
+        //密钥材料转换
+        X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(key);
+        //产生公钥
+        PublicKey pubKey = keyFactory.generatePublic(x509KeySpec);
+
+        //数据加密
+        Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
+        cipher.init(Cipher.ENCRYPT_MODE, pubKey);
+        return cipher.doFinal(data);
+    }
+
+    /**
+     * 私钥解密
+     *
+     * @param encodeStr 待解密数据
+     * @param privateKey  密钥
+     * @return byte[] 解密数据
+     */
+    public static String decryptByPrivateKey(String encodeStr, String privateKey) {
+        try{
+            byte[] decode2 = RSAUtils.decryptByPrivateKey(Base64.decodeBase64(encodeStr), Base64.decodeBase64(privateKey));
+
+            return new String(decode2, Charset.forName("utf8"));
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 私钥解密
+     *
+     * @param data 待解密数据
+     * @param key  密钥
+     * @return byte[] 解密数据
+     */
+    public static byte[] decryptByPrivateKey(byte[] data, byte[] key) throws Exception {
+        //取得私钥
+        PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(key);
+        KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
+        //生成私钥
+        PrivateKey privateKey = keyFactory.generatePrivate(pkcs8KeySpec);
+
+        //数据解密
+        Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        return cipher.doFinal(data);
+    }
+
+
+    /**
+     * 取得私钥
+     *
+     * @param keyMap 密钥map
+     * @return byte[] 私钥
+     */
+    public static byte[] getPrivateKey(Map<String, Object> keyMap) {
+        Key key = (Key) keyMap.get(PRIVATE_KEY);
+        return key.getEncoded();
+    }
+
+    /**
+     * 取得公钥
+     *
+     * @param keyMap 密钥map
+     * @return byte[] 公钥
+     */
+    public static byte[] getPublicKey(Map<String, Object> keyMap) throws Exception {
+        Key key = (Key) keyMap.get(PUBLIC_KEY);
+        return key.getEncoded();
+    }
+
+    /**
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        //初始化密钥
+        //生成密钥对
+       /* Map<String, Object> keyMap = com.train.utils.RSAUtils.initKey();
+        //公钥
+        byte[] publicKey = com.train.utils.RSAUtils.getPublicKey(keyMap);
+
+        //私钥
+        byte[] privateKey = com.train.utils.RSAUtils.getPrivateKey(keyMap);
+        System.out.println("公钥" + Base64.encodeBase64String(publicKey));
+        System.out.println("私钥" + Base64.encodeBase64String(privateKey));
+
+        String str = "原文：AAAAxxxCC11100000}";
+
+
+        //乙方使用公钥对数据进行加密
+        byte[] code2 = com.train.utils.RSAUtils.encryptByPublicKey(str.getBytes(), publicKey);
+        System.out.println("加密后的数据：" + Base64.encodeBase64String(code2));
+
+
+        //甲方使用私钥对数据进行解密
+        byte[] decode2 = com.train.utils.RSAUtils.decryptByPrivateKey(code2, privateKey);
+
+        System.out.println("甲方解密后的数据：" + new String(decode2));*/
+
+        //初始化密钥
+        //生成密钥对
+        // 公钥
+        String  publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfZxysy2HTsaUngIkZrew8FWm0SUrJ34WnCWjJnRC1ng5iqrvsx1aMWRc1gYtDUpSg4eY5a7oFfek8RN7+jFT5VhRqUHg5MMwpUQG+vmdeTLgxtM/1rk0G8I1iGDNitXd/hxl4JRAngHlWrIZ7l3ks7m/Cop/bP1E9hUDccCtdIQIDAQAB";
+        //私钥
+        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJ9nHKzLYdOxpSeAiRmt7DwVabRJSsnfhacJaMmdELWeDmKqu+zHVoxZFzWBi0NSlKDh5jlrugV96TxE3v6MVPlWFGpQeDkwzClRAb6+Z15MuDG0z/WuTQbwjWIYM2K1d3+HGXglECeAeVashnuXeSzub8Kin9s/UT2FQNxwK10hAgMBAAECgYAe10xtAkzDMLPLmMrt9QCn/1ycTTHzLRQm5WMo3wLEoPgXjwEdJtRQA0zCRXY0aF3pYsuwgG9VcK8XwhuDFJO7+zYrcgQ2s2Ka1mLKBKgV25vOAd/c1X1rAGoPR8nPT3klBYUiferdqwclWACCqH6SP6ErQPHQDVHsOtPgWnjyoQJBAOl6Pwr/DcK0HzQj+DRm2kczwerT4ImRZENYeHdiTQLLIRLtnTdEj3YoUMDUs1oEm8JC1ASGppRkdIyahK9UabsCQQCux5Tl3SHoqCVjfvVjrkEUgSx8BC8zYqGW+iCqzwDWMn8bS4MA6EVjNrBV2kS/SbXfYySFSNURm6xy6fP4iSjTAkEAkkNi+yCNHkx4v9FIzIsicziZYuMY5xWOGiJyVVffpsBaF+GDe/wXY44eCK83LE12xlvXNn6kHJJR8UNbm/rlwQJADLPOm4Idw8XsqbWBahQxAKd+ryiysX5alhlppGBVBDw5RqePRtKasGI6IJMzad+WizyuW812RshUmSltpMN7JwJAU6Z6q2O/Rr5t5S0FwFUPtxql9sRyvlgmEAxTqDhGrmiXVqKaFG7t3Qr36fCI5Dvrsi5B1BG28yB6QIgcx3dkYA==";
+        Long time = System.currentTimeMillis();
+        String token = "0WMVVmWU";
+        String mobile="189";
+        int num=174;
+        String str = time + "|"+token+"|"+mobile+"|"+num;
+        //乙方使用公钥对数据进行加密
+        String code2 = RSAUtils.encryptByPublicKey(str,publicKey);
+        System.out.println("加密后的数据：" + code2);
+        //甲方使用私钥对数据进行解密
+        String decode2 = RSAUtils.decryptByPrivateKey(code2, privateKey);
+        System.out.println("甲方解密后的数据：" + decode2);
+
+        //
+
+    }
 }

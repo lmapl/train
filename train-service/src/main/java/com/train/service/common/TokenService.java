@@ -10,6 +10,21 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TokenService {
 
-    String  getServerToken(String uuid);
+    /**
+     * 获取服务器token
+     * @param type
+     * @param uuid
+     * @return
+     */
+    String  getServerToken(String type ,String uuid);
+
+    /**
+     * 校验token
+     * @param type
+     * @param uuid
+     * @param encrypt
+     * @return
+     */
+    boolean verifyToken(String type ,String uuid,String encrypt,String mobile);
 
 }
