@@ -1,8 +1,6 @@
 package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
-import com.train.Exception.InvalidParamException;
-import com.train.Exception.RateLimitException;
 import com.train.redis.RedisKey;
 import com.train.service.Constant;
 import com.train.service.ConstantRedis;
@@ -10,14 +8,11 @@ import com.train.service.common.MobileService;
 import com.train.service.common.RedisService;
 import com.train.service.common.TokenService;
 import com.train.utils.DateUtil;
-import com.train.utils.RSAUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.security.SecureRandom;
 import java.util.Date;
 
 /**
@@ -67,5 +62,16 @@ public class MobileServiceImpl implements MobileService {
         redisService.setEx(mobileCodeKey.getKey(),code,expire);
 
         // TODO: 2019/7/29 调用短信发送平台，完成发送
+    }
+
+    @Override
+    public boolean verifyCode(String mobile, String code) {
+        RedisKey mobileCodeKey = ConstantRedis.MOBILE_CODE(mobile);
+        String val = redisService.get(mobileCodeKey.getKey());
+        if(val != null && val.equals(code)){
+            redisService.del(mobileCodeKey.getKey());
+            return true;
+        }
+        return false;
     }
 }

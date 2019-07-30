@@ -8,4 +8,6 @@ package com.train.service.common;
 public interface MobileService {
 
     void getMobileVerifyCode(String uuid,String mobile, String token);
+
+    boolean verifyCode(String mobile, String code);
 }

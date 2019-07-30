@@ -4,6 +4,7 @@ import com.train.Exception.InvalidParamException;
 import com.train.redis.RedisKey;
 import com.train.service.ConstantRedis;
 import com.train.service.common.RedisService;
+import com.train.service.common.RsaService;
 import com.train.service.common.TokenService;
 import com.train.utils.RSAUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -21,12 +22,8 @@ import javax.annotation.Resource;
 @Service
 public class TokenServiceImpl implements TokenService {
 
-
-    @Value("${server.rsa.privatekey}")
-    private String serverRsaPrivateKey;
-
-    @Value("${client.rsa.publickey}")
-    private String clientRsaPublicKey;
+    @Resource
+    private RsaService rsaService;
 
     @Value("${common.alphabet}")
     String alphabet;
@@ -41,7 +38,7 @@ public class TokenServiceImpl implements TokenService {
      */
     @Override
     public String getServerToken(String type ,String uuid) {
-        uuid = RSAUtils.decryptByPrivateKey(uuid,serverRsaPrivateKey);
+        uuid = rsaService.decryptByPrivateKey(uuid);
         if(StringUtils.isEmpty(uuid)){
             throw new InvalidParamException("参数错误");
         }
@@ -51,17 +48,17 @@ public class TokenServiceImpl implements TokenService {
             val = RandomStringUtils.random(8,alphabet);
             redisService.setEx(redisKey.getKey(),val,redisKey.getExpireSeconds());
         }
-        return RSAUtils.encryptByPublicKey(val, clientRsaPublicKey);
+        return rsaService.encryptByPublicKey(val);
     }
 
     @Override
     public boolean verifyToken(String type ,String uuid,String encryptToken,String mobile) {
-        uuid = RSAUtils.decryptByPrivateKey(uuid,serverRsaPrivateKey);
+        uuid = rsaService.decryptByPrivateKey(uuid);
         if(StringUtils.isEmpty(uuid)){
             return false;
         }
 
-        String token = RSAUtils.decryptByPrivateKey(encryptToken,serverRsaPrivateKey);
+        String token = rsaService.decryptByPrivateKey(encryptToken);
         if(StringUtils.isEmpty(token)){
             return false;
         }
