@@ -8,8 +8,10 @@ import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.exceptions.JedisException;
 import redis.clients.jedis.params.SetParams;
 
-import javax.annotation.Resource;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by ma peiliang
@@ -110,7 +112,7 @@ public class RedisServiceImpl implements RedisService {
 
     @Override
     public Long setnx(String key, String value, int expireTime) {
-        String result = null;
+        String result;
         try {
             SetParams params = new SetParams();
             params.ex(expireTime);
@@ -143,6 +145,24 @@ public class RedisServiceImpl implements RedisService {
     public Long del(String key) {
         try {
             return jedis.del(key);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Long incrBy(String key, long value) {
+        try {
+            return jedis.incrBy(key,value);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Long expire(String key, int expireSeconds) {
+        try {
+            return jedis.expire(key, expireSeconds);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

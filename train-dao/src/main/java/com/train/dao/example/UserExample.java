@@ -698,6 +698,126 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andEducateLevelIsNull() {
+            addCriterion("educate_level is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelIsNotNull() {
+            addCriterion("educate_level is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelEqualTo(Integer value) {
+            addCriterion("educate_level =", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelNotEqualTo(Integer value) {
+            addCriterion("educate_level <>", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelGreaterThan(Integer value) {
+            addCriterion("educate_level >", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelGreaterThanOrEqualTo(Integer value) {
+            addCriterion("educate_level >=", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelLessThan(Integer value) {
+            addCriterion("educate_level <", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelLessThanOrEqualTo(Integer value) {
+            addCriterion("educate_level <=", value, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelIn(List<Integer> values) {
+            addCriterion("educate_level in", values, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelNotIn(List<Integer> values) {
+            addCriterion("educate_level not in", values, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelBetween(Integer value1, Integer value2) {
+            addCriterion("educate_level between", value1, value2, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEducateLevelNotBetween(Integer value1, Integer value2) {
+            addCriterion("educate_level not between", value1, value2, "educateLevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeIsNull() {
+            addCriterion("grade is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeIsNotNull() {
+            addCriterion("grade is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeEqualTo(Integer value) {
+            addCriterion("grade =", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeNotEqualTo(Integer value) {
+            addCriterion("grade <>", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeGreaterThan(Integer value) {
+            addCriterion("grade >", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("grade >=", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeLessThan(Integer value) {
+            addCriterion("grade <", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeLessThanOrEqualTo(Integer value) {
+            addCriterion("grade <=", value, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeIn(List<Integer> values) {
+            addCriterion("grade in", values, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeNotIn(List<Integer> values) {
+            addCriterion("grade not in", values, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeBetween(Integer value1, Integer value2) {
+            addCriterion("grade between", value1, value2, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andGradeNotBetween(Integer value1, Integer value2) {
+            addCriterion("grade not between", value1, value2, "grade");
+            return (Criteria) this;
+        }
+
         public Criteria andMergeParentIdsIsNull() {
             addCriterion("merge_parent_ids is null");
             return (Criteria) this;

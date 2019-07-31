@@ -10,6 +10,10 @@ public class ConstantRedis {
 
     private static final String PREFIX = "train:";
 
+    public static RedisKey REDIS_INCR_NUM(String day) {
+        return new RedisKey(PREFIX + "incr:number:" + day, Constant.DAY_SECONDS);
+    }
+
 
     public static RedisKey SERVER_TOKEN(String type, String uuid) {
         return new RedisKey(PREFIX + "token:" + type + ":" + uuid, 60);
@@ -25,6 +29,10 @@ public class ConstantRedis {
 
     public static RedisKey MOBILE_CODE_TIMES_LIMIT(String day) {
         return new RedisKey(PREFIX + "mobile:times:" + day, Constant.DAY_SECONDS);
+    }
+
+    public static RedisKey LOGIN_SESSION() {
+        return new RedisKey(PREFIX + "login:session" , -1);
     }
 
 }

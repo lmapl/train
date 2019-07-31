@@ -44,6 +44,16 @@ public class User {
     private Integer status;
 
     /**
+     * 
+     */
+    private Integer educateLevel;
+
+    /**
+     * 
+     */
+    private Integer grade;
+
+    /**
      * 合并账号后，新生成的用户保存之前的两个账号的id
      */
     private String mergeParentIds;
@@ -197,6 +207,38 @@ public class User {
     }
 
     /**
+     * 
+     * @return educate_level 
+     */
+    public Integer getEducateLevel() {
+        return educateLevel;
+    }
+
+    /**
+     * 
+     * @param educateLevel 
+     */
+    public void setEducateLevel(Integer educateLevel) {
+        this.educateLevel = educateLevel;
+    }
+
+    /**
+     * 
+     * @return grade 
+     */
+    public Integer getGrade() {
+        return grade;
+    }
+
+    /**
+     * 
+     * @param grade 
+     */
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
+
+    /**
      * 合并账号后，新生成的用户保存之前的两个账号的id
      * @return merge_parent_ids 合并账号后，新生成的用户保存之前的两个账号的id
      */
@@ -294,6 +336,8 @@ public class User {
         sb.append(", registerCertificate=").append(registerCertificate);
         sb.append(", password=").append(password);
         sb.append(", status=").append(status);
+        sb.append(", educateLevel=").append(educateLevel);
+        sb.append(", grade=").append(grade);
         sb.append(", mergeParentIds=").append(mergeParentIds);
         sb.append(", createTime=").append(createTime);
         sb.append(", createBy=").append(createBy);

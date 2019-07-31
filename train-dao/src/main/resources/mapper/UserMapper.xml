@@ -10,6 +10,8 @@
     <result column="register_certificate" property="registerCertificate" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="educate_level" property="educateLevel" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="INTEGER" />
     <result column="merge_parent_ids" property="mergeParentIds" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="DATE" />
     <result column="create_by" property="createBy" jdbcType="VARCHAR" />
@@ -76,7 +78,8 @@
   </sql>
   <sql id="Base_Column_List" >
     id, platform, device_uuid, user_type, register_type, register_certificate, password, 
-    status, merge_parent_ids, create_time, create_by, update_time, update_by
+    status, educate_level, grade, merge_parent_ids, create_time, create_by, update_time, 
+    update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserExample" >
     select
@@ -111,14 +114,16 @@
   <insert id="insert" parameterType="com.train.domain.entity.User" >
     insert into user (id, platform, device_uuid, 
       user_type, register_type, register_certificate, 
-      password, status, merge_parent_ids, 
-      create_time, create_by, update_time, 
-      update_by)
+      password, status, educate_level, 
+      grade, merge_parent_ids, create_time, 
+      create_by, update_time, update_by
+      )
     values (#{id,jdbcType=INTEGER}, #{platform,jdbcType=INTEGER}, #{deviceUuid,jdbcType=VARCHAR}, 
       #{userType,jdbcType=INTEGER}, #{registerType,jdbcType=INTEGER}, #{registerCertificate,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{mergeParentIds,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
-      #{updateBy,jdbcType=VARCHAR})
+      #{password,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{educateLevel,jdbcType=INTEGER}, 
+      #{grade,jdbcType=INTEGER}, #{mergeParentIds,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.User" >
     insert into user
@@ -146,6 +151,12 @@
       </if>
       <if test="status != null" >
         status,
+      </if>
+      <if test="educateLevel != null" >
+        educate_level,
+      </if>
+      <if test="grade != null" >
+        grade,
       </if>
       <if test="mergeParentIds != null" >
         merge_parent_ids,
@@ -187,6 +198,12 @@
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
+      </if>
+      <if test="educateLevel != null" >
+        #{educateLevel,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=INTEGER},
       </if>
       <if test="mergeParentIds != null" >
         #{mergeParentIds,jdbcType=VARCHAR},
@@ -238,6 +255,12 @@
       <if test="record.status != null" >
         status = #{record.status,jdbcType=INTEGER},
       </if>
+      <if test="record.educateLevel != null" >
+        educate_level = #{record.educateLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=INTEGER},
+      </if>
       <if test="record.mergeParentIds != null" >
         merge_parent_ids = #{record.mergeParentIds,jdbcType=VARCHAR},
       </if>
@@ -268,6 +291,8 @@
       register_certificate = #{record.registerCertificate,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
+      educate_level = #{record.educateLevel,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=INTEGER},
       merge_parent_ids = #{record.mergeParentIds,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=DATE},
       create_by = #{record.createBy,jdbcType=VARCHAR},
@@ -301,6 +326,12 @@
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
+      <if test="educateLevel != null" >
+        educate_level = #{educateLevel,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=INTEGER},
+      </if>
       <if test="mergeParentIds != null" >
         merge_parent_ids = #{mergeParentIds,jdbcType=VARCHAR},
       </if>
@@ -328,6 +359,8 @@
       register_certificate = #{registerCertificate,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
+      educate_level = #{educateLevel,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=INTEGER},
       merge_parent_ids = #{mergeParentIds,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=DATE},
       create_by = #{createBy,jdbcType=VARCHAR},

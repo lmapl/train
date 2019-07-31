@@ -2,11 +2,12 @@ package com.train.service.common.impl;
 
 import com.train.Exception.InvalidParamException;
 import com.train.redis.RedisKey;
+import com.train.service.Constant;
 import com.train.service.ConstantRedis;
 import com.train.service.common.RedisService;
 import com.train.service.common.RsaService;
 import com.train.service.common.TokenService;
-import com.train.utils.RSAUtils;
+import com.train.utils.DateUtil;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -52,24 +53,53 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
-    public boolean verifyToken(String type ,String uuid,String encryptToken,String mobile) {
-        uuid = rsaService.decryptByPrivateKey(uuid);
-        if(StringUtils.isEmpty(uuid)){
+    public boolean verifyNotLoginToken(Integer type ,String encryptAuth) {
+        String auth = rsaService.decryptByPrivateKey(encryptAuth);
+        if(StringUtils.isEmpty(auth)){
             return false;
         }
 
-        String token = rsaService.decryptByPrivateKey(encryptToken);
-        if(StringUtils.isEmpty(token)){
+        String[] arrs = auth.split("\\|");
+
+        //平台|uuid|服务器凭证|随机数|时间|随机数
+        if(arrs.length != 6){
             return false;
         }
-        String[] arrs = token.split("\\|");
-        if(!mobile.startsWith(arrs[2])){
+        String token = arrs[2];
+        String uuid = arrs[1];
+
+        if(StringUtils.isEmpty(token) || StringUtils.isEmpty(uuid)){
             return false;
         }
 
-        RedisKey redisKey = ConstantRedis.SERVER_TOKEN(type,uuid);
+        RedisKey redisKey = ConstantRedis.SERVER_TOKEN(type+"",uuid);
         String val = redisService.get(redisKey.getKey());
         redisService.del(redisKey.getKey());
         return arrs[1] != null && val != null && arrs[1].equals(val);
     }
+
+    @Override
+    public String getLoginToken(Integer userId,String registerCertificate, Integer platform, String uuid, String sessionId) {
+        //uuid|随机数|用户名|平台|时间|rediSsessionId|随机数
+        String  random1 = RandomStringUtils.random(6,alphabet);
+        String  random2 = RandomStringUtils.random(3,alphabet);
+        Long time = System.currentTimeMillis()+ Constant.DAY_SECONDS * 1000;
+        StringBuilder builder =  new StringBuilder();
+        builder.append(userId).append("|")
+                .append(uuid).append("|")
+                .append(random1).append("|")
+                .append(registerCertificate).append("|")
+                .append(platform).append("|")
+                .append(time).append("|")
+                .append(sessionId).append("|")
+                .append(random2);
+        String token = builder.toString();
+
+        // TODO: 2019/7/31 需要一个定时任务，随时清理无效（有效时间到了的）
+        RedisKey redisKey = ConstantRedis.LOGIN_SESSION();
+        redisService.hset(redisKey.getKey(),sessionId,token);
+        return rsaService.encryptByPublicKey(token);
+    }
+
+
 }

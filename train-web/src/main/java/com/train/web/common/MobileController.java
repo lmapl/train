@@ -3,11 +3,13 @@ package com.train.web.common;
 import com.train.Exception.InvalidParamException;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
+import com.train.domain.entity.User;
 import com.train.domain.enums.RegisterTypeEnum;
 import com.train.service.common.MobileService;
 import com.train.service.common.UserService;
 import com.train.web.bean.Result;
 import com.train.web.dao.LoginRequest;
+import com.train.web.dao.LoginResponse;
 import com.train.web.dao.MobileVerifyCodeRequest;
 import com.train.web.dao.RegisterRequest;
 import org.apache.commons.lang3.StringUtils;
@@ -68,8 +70,8 @@ public class MobileController {
 
     @RequestMapping(value ="/login",method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean>  login(@RequestBody LoginRequest request){
-        Result<Boolean> result = new Result<>();
+    public Result<LoginResponse>  login(@RequestBody LoginRequest request){
+        Result<LoginResponse> result = new Result<>();
         if(StringUtils.isEmpty(request.getUserName())
                 ||( StringUtils.isEmpty(request.getPassword())
                 && StringUtils.isEmpty(request.getMobileVerifyCode()))
@@ -80,11 +82,20 @@ public class MobileController {
         LoginInfo loginInfo = new LoginInfo();
         loginInfo.setType(RegisterTypeEnum.MOBILE.getKey());
         BeanUtils.copyProperties(request,loginInfo);
-        boolean verify =  userService.mobileLoginVerify(loginInfo);
+        User user =  userService.mobileLoginVerify(loginInfo);
+        if(user == null){
+            result.setSuccess(false);
+            return result;
+        }
+        String auth = userService.login(user);
 
-        RegisterInfo registerInfo = new RegisterInfo();
-        BeanUtils.copyProperties(request,registerInfo);
-        result.setData(false);
+        LoginResponse response = new LoginResponse();
+        response.setAutograph(auth);
+        response.setEducateLevel(user.getEducateLevel());
+        response.setUserType(user.getUserType());
+        response.setGrade(user.getGrade());
+        BeanUtils.copyProperties(request,response);
+        result.setData(response);
         return result;
     }
 

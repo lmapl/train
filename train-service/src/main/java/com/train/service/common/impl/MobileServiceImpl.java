@@ -1,6 +1,7 @@
 package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
+import com.train.domain.enums.TokenTypeEnum;
 import com.train.redis.RedisKey;
 import com.train.service.Constant;
 import com.train.service.ConstantRedis;
@@ -35,7 +36,7 @@ public class MobileServiceImpl implements MobileService {
     @Override
     public void getMobileVerifyCode(String mobile,String uuid, String token) {
 
-        boolean verify = tokenService.verifyToken("1",uuid,token,mobile);
+        boolean verify = tokenService.verifyNotLoginToken(TokenTypeEnum.MOBILE_CODE.getKey(),token);
         if(!verify){
             throw new AuthException("token鉴权失败");
         }

@@ -18,10 +18,17 @@ public interface TokenService {
     /**
      * 校验token
      * @param type
-     * @param uuid
-     * @param encrypt
+     * @param encryptAuth
      * @return
      */
-    boolean verifyToken(String type ,String uuid,String encrypt,String mobile);
+    boolean verifyNotLoginToken(Integer type ,String encryptAuth);
+
+    /**
+     * 获取登录成功后的保持登录的token
+     * userId|uuid|随机数|用户名|平台|有效时间|rediSsessionId|随机数
+     * @return
+     */
+    String getLoginToken(Integer userId,String registerCertificate ,Integer platform,String uuid,String sessionId);
+
 
 }
