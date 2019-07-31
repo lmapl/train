@@ -4,6 +4,7 @@ import com.train.Exception.AuthException;
 import com.train.dao.UserDao;
 import com.train.domain.bean.RegisterInfo;
 import com.train.domain.entity.User;
+import com.train.domain.enums.UserStatusEnum;
 import com.train.domain.enums.UserTypeEnum;
 import com.train.service.common.MobileService;
 import com.train.service.common.RsaService;
@@ -52,11 +53,13 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = new User();
+        user.setPlatform(platform);
         user.setDeviceUuid(uuid);
         user.setRegisterCertificate(userName);
         user.setRegisterType(type);
         user.setPassword(password);
         user.setUserType(UserTypeEnum.PENDING.getKey());
+        user.setStatus(UserStatusEnum.VALID.getKey());
         return userDao.insert(user) == 1;
     }
 }

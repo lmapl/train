@@ -4,6 +4,7 @@ import com.train.dao.example.UserCompanyExample;
 import com.train.dao.example.UserExample;
 import com.train.dao.mapper.UserMapper;
 import com.train.domain.entity.User;
+import com.train.domain.enums.UserStatusEnum;
 import com.train.utils.Constant;
 import org.springframework.stereotype.Repository;
 
@@ -42,7 +43,7 @@ public class UserDaoImpl implements UserDao {
         }
         UserExample example = new UserExample();
         example.createCriteria().andRegisterCertificateEqualTo(userName)
-                .andStatusEqualTo(1);
+                .andStatusEqualTo(UserStatusEnum.VALID.getKey());
         return userMapper.selectByExample(example);
     }
 }
