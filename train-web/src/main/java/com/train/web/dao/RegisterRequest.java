@@ -1,5 +1,7 @@
 package com.train.web.dao;
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 /**
@@ -63,5 +65,16 @@ public class RegisterRequest implements Serializable{
 
     public void setMobileVerifyCode(String mobileVerifyCode) {
         this.mobileVerifyCode = mobileVerifyCode;
+    }
+
+    public static void main(String[] args){
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setMobileVerifyCode("xxxx");
+        registerRequest.setPassword("bbbb");
+        registerRequest.setPlatform(1);
+        registerRequest.setType(1);
+        registerRequest.setUserName("aaa");
+        registerRequest.setUuid("ddd");
+        System.out.println(new Gson().toJson(registerRequest));
     }
 }

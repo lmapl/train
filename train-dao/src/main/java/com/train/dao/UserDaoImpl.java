@@ -27,10 +27,10 @@ public class UserDaoImpl implements UserDao {
     public int insert(User record) {
 
         Date date = new Date();
-        record.setCreateby(Constant.SYSTEM_NAME);
-        record.setCreatetime(date);
-        record.setUpdateby(Constant.SYSTEM_NAME);
-        record.setUpdatetime(date);
+        record.setCreateBy(Constant.SYSTEM_NAME);
+        record.setCreateTime(date);
+        record.setUpdateBy(Constant.SYSTEM_NAME);
+        record.setUpdateTime(date);
         userMapper.insert(record);
         return 0;
     }
@@ -41,8 +41,8 @@ public class UserDaoImpl implements UserDao {
             return new ArrayList<>();
         }
         UserExample example = new UserExample();
-        example.createCriteria().andRegistercertificateEqualTo(userName)
-                .andValidEqualTo(1);
+        example.createCriteria().andRegisterCertificateEqualTo(userName)
+                .andStatusEqualTo(1);
         return userMapper.selectByExample(example);
     }
 }

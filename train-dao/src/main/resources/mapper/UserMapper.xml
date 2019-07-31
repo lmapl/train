@@ -3,17 +3,17 @@
 <mapper namespace="com.train.dao.mapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.train.domain.entity.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="deviceUuid" property="deviceuuid" jdbcType="VARCHAR" />
-    <result column="userType" property="usertype" jdbcType="INTEGER" />
-    <result column="registerType" property="registertype" jdbcType="INTEGER" />
-    <result column="registerCertificate" property="registercertificate" jdbcType="VARCHAR" />
+    <result column="platform" property="platform" jdbcType="INTEGER" />
+    <result column="device_uuid" property="deviceUuid" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="INTEGER" />
+    <result column="register_type" property="registerType" jdbcType="INTEGER" />
+    <result column="register_certificate" property="registerCertificate" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="valid" property="valid" jdbcType="INTEGER" />
-    <result column="forbid" property="forbid" jdbcType="INTEGER" />
-    <result column="createTime" property="createtime" jdbcType="DATE" />
-    <result column="createBy" property="createby" jdbcType="VARCHAR" />
-    <result column="updateTime" property="updatetime" jdbcType="DATE" />
-    <result column="updateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, deviceUuid, userType, registerType, registerCertificate, password, valid, forbid, 
-    createTime, createBy, updateTime, updateBy
+    id, platform, device_uuid, user_type, register_type, register_certificate, password, 
+    status, create_time, create_by, update_time, update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserExample" >
     select
@@ -108,15 +108,15 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.User" >
-    insert into user (id, deviceUuid, userType, 
-      registerType, registerCertificate, password, 
-      valid, forbid, createTime, 
-      createBy, updateTime, updateBy
+    insert into user (id, platform, device_uuid, 
+      user_type, register_type, register_certificate, 
+      password, status, create_time, 
+      create_by, update_time, update_by
       )
-    values (#{id,jdbcType=INTEGER}, #{deviceuuid,jdbcType=VARCHAR}, #{usertype,jdbcType=INTEGER}, 
-      #{registertype,jdbcType=INTEGER}, #{registercertificate,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{valid,jdbcType=INTEGER}, #{forbid,jdbcType=INTEGER}, #{createtime,jdbcType=DATE}, 
-      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{platform,jdbcType=INTEGER}, #{deviceUuid,jdbcType=VARCHAR}, 
+      #{userType,jdbcType=INTEGER}, #{registerType,jdbcType=INTEGER}, #{registerCertificate,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=DATE}, 
+      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.User" >
@@ -125,76 +125,76 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="deviceuuid != null" >
-        deviceUuid,
+      <if test="platform != null" >
+        platform,
       </if>
-      <if test="usertype != null" >
-        userType,
+      <if test="deviceUuid != null" >
+        device_uuid,
       </if>
-      <if test="registertype != null" >
-        registerType,
+      <if test="userType != null" >
+        user_type,
       </if>
-      <if test="registercertificate != null" >
-        registerCertificate,
+      <if test="registerType != null" >
+        register_type,
+      </if>
+      <if test="registerCertificate != null" >
+        register_certificate,
       </if>
       <if test="password != null" >
         password,
       </if>
-      <if test="valid != null" >
-        valid,
+      <if test="status != null" >
+        status,
       </if>
-      <if test="forbid != null" >
-        forbid,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createBy != null" >
+        create_by,
       </if>
-      <if test="createby != null" >
-        createBy,
+      <if test="updateTime != null" >
+        update_time,
       </if>
-      <if test="updatetime != null" >
-        updateTime,
-      </if>
-      <if test="updateby != null" >
-        updateBy,
+      <if test="updateBy != null" >
+        update_by,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="deviceuuid != null" >
-        #{deviceuuid,jdbcType=VARCHAR},
+      <if test="platform != null" >
+        #{platform,jdbcType=INTEGER},
       </if>
-      <if test="usertype != null" >
-        #{usertype,jdbcType=INTEGER},
+      <if test="deviceUuid != null" >
+        #{deviceUuid,jdbcType=VARCHAR},
       </if>
-      <if test="registertype != null" >
-        #{registertype,jdbcType=INTEGER},
+      <if test="userType != null" >
+        #{userType,jdbcType=INTEGER},
       </if>
-      <if test="registercertificate != null" >
-        #{registercertificate,jdbcType=VARCHAR},
+      <if test="registerType != null" >
+        #{registerType,jdbcType=INTEGER},
+      </if>
+      <if test="registerCertificate != null" >
+        #{registerCertificate,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="valid != null" >
-        #{valid,jdbcType=INTEGER},
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
       </if>
-      <if test="forbid != null" >
-        #{forbid,jdbcType=INTEGER},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=DATE},
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="createby != null" >
-        #{createby,jdbcType=VARCHAR},
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=DATE},
-      </if>
-      <if test="updateby != null" >
-        #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -210,38 +210,38 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.deviceuuid != null" >
-        deviceUuid = #{record.deviceuuid,jdbcType=VARCHAR},
+      <if test="record.platform != null" >
+        platform = #{record.platform,jdbcType=INTEGER},
       </if>
-      <if test="record.usertype != null" >
-        userType = #{record.usertype,jdbcType=INTEGER},
+      <if test="record.deviceUuid != null" >
+        device_uuid = #{record.deviceUuid,jdbcType=VARCHAR},
       </if>
-      <if test="record.registertype != null" >
-        registerType = #{record.registertype,jdbcType=INTEGER},
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=INTEGER},
       </if>
-      <if test="record.registercertificate != null" >
-        registerCertificate = #{record.registercertificate,jdbcType=VARCHAR},
+      <if test="record.registerType != null" >
+        register_type = #{record.registerType,jdbcType=INTEGER},
+      </if>
+      <if test="record.registerCertificate != null" >
+        register_certificate = #{record.registerCertificate,jdbcType=VARCHAR},
       </if>
       <if test="record.password != null" >
         password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.valid != null" >
-        valid = #{record.valid,jdbcType=INTEGER},
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
       </if>
-      <if test="record.forbid != null" >
-        forbid = #{record.forbid,jdbcType=INTEGER},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=DATE},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=DATE},
+      <if test="record.createBy != null" >
+        create_by = #{record.createBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.createby != null" >
-        createBy = #{record.createby,jdbcType=VARCHAR},
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=DATE},
       </if>
-      <if test="record.updatetime != null" >
-        updateTime = #{record.updatetime,jdbcType=DATE},
-      </if>
-      <if test="record.updateby != null" >
-        updateBy = #{record.updateby,jdbcType=VARCHAR},
+      <if test="record.updateBy != null" >
+        update_by = #{record.updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -251,17 +251,17 @@
   <update id="updateByExample" parameterType="map" >
     update user
     set id = #{record.id,jdbcType=INTEGER},
-      deviceUuid = #{record.deviceuuid,jdbcType=VARCHAR},
-      userType = #{record.usertype,jdbcType=INTEGER},
-      registerType = #{record.registertype,jdbcType=INTEGER},
-      registerCertificate = #{record.registercertificate,jdbcType=VARCHAR},
+      platform = #{record.platform,jdbcType=INTEGER},
+      device_uuid = #{record.deviceUuid,jdbcType=VARCHAR},
+      user_type = #{record.userType,jdbcType=INTEGER},
+      register_type = #{record.registerType,jdbcType=INTEGER},
+      register_certificate = #{record.registerCertificate,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
-      valid = #{record.valid,jdbcType=INTEGER},
-      forbid = #{record.forbid,jdbcType=INTEGER},
-      createTime = #{record.createtime,jdbcType=DATE},
-      createBy = #{record.createby,jdbcType=VARCHAR},
-      updateTime = #{record.updatetime,jdbcType=DATE},
-      updateBy = #{record.updateby,jdbcType=VARCHAR}
+      status = #{record.status,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=DATE},
+      create_by = #{record.createBy,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=DATE},
+      update_by = #{record.updateBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -269,55 +269,55 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.train.domain.entity.User" >
     update user
     <set >
-      <if test="deviceuuid != null" >
-        deviceUuid = #{deviceuuid,jdbcType=VARCHAR},
+      <if test="platform != null" >
+        platform = #{platform,jdbcType=INTEGER},
       </if>
-      <if test="usertype != null" >
-        userType = #{usertype,jdbcType=INTEGER},
+      <if test="deviceUuid != null" >
+        device_uuid = #{deviceUuid,jdbcType=VARCHAR},
       </if>
-      <if test="registertype != null" >
-        registerType = #{registertype,jdbcType=INTEGER},
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=INTEGER},
       </if>
-      <if test="registercertificate != null" >
-        registerCertificate = #{registercertificate,jdbcType=VARCHAR},
+      <if test="registerType != null" >
+        register_type = #{registerType,jdbcType=INTEGER},
+      </if>
+      <if test="registerCertificate != null" >
+        register_certificate = #{registerCertificate,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="valid != null" >
-        valid = #{valid,jdbcType=INTEGER},
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="forbid != null" >
-        forbid = #{forbid,jdbcType=INTEGER},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=DATE},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="createby != null" >
-        createBy = #{createby,jdbcType=VARCHAR},
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updatetime != null" >
-        updateTime = #{updatetime,jdbcType=DATE},
-      </if>
-      <if test="updateby != null" >
-        updateBy = #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.train.domain.entity.User" >
     update user
-    set deviceUuid = #{deviceuuid,jdbcType=VARCHAR},
-      userType = #{usertype,jdbcType=INTEGER},
-      registerType = #{registertype,jdbcType=INTEGER},
-      registerCertificate = #{registercertificate,jdbcType=VARCHAR},
+    set platform = #{platform,jdbcType=INTEGER},
+      device_uuid = #{deviceUuid,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=INTEGER},
+      register_type = #{registerType,jdbcType=INTEGER},
+      register_certificate = #{registerCertificate,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      valid = #{valid,jdbcType=INTEGER},
-      forbid = #{forbid,jdbcType=INTEGER},
-      createTime = #{createtime,jdbcType=DATE},
-      createBy = #{createby,jdbcType=VARCHAR},
-      updateTime = #{updatetime,jdbcType=DATE},
-      updateBy = #{updateby,jdbcType=VARCHAR}
+      status = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=DATE},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
