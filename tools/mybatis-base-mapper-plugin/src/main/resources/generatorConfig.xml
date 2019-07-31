@@ -21,19 +21,19 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.train.mybatis.mapper"
-                            targetProject="D:\github_responsity\train\tools\mybatis-base-mapper-plugin\src\main\java">
+        <javaModelGenerator targetPackage="com.train.domain.entity"
+                            targetProject="D:\github_responsity\train\train-domain\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.train.mybatis.mapper"
-                         targetProject="D:\github_responsity\train\tools\mybatis-base-mapper-plugin\src\main\java">
+        <sqlMapGenerator targetPackage="com.train.dao.demo"
+                         targetProject="D:\github_responsity\train\train-dao\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.train.mybatis.mapper" targetProject="D:\github_responsity\train\tools\mybatis-base-mapper-plugin\src\main\java">
+                             targetPackage="com.train.dao.demo" targetProject="D:\github_responsity\train\train-dao\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
