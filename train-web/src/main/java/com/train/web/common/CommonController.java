@@ -46,39 +46,4 @@ public class CommonController {
         return result;
     }
 
-    @RequestMapping(value ="/mobileVerifyCode",method = RequestMethod.POST)
-    @ResponseBody
-    public Result<Boolean>  mobileVerifyCode(@RequestBody MobileVerifyCodeRequest request){
-        Result<Boolean> result = new Result<>();
-        if(StringUtils.isEmpty(request.getMobile()) || StringUtils.isEmpty(request.getToken()) || StringUtils.isEmpty(request.getUuid())){
-            throw new InvalidParamException("参数为空");
-        }
-        mobileService.getMobileVerifyCode(request.getMobile(),request.getUuid(),request.getToken());
-        result.setData(true);
-        return result;
-    }
-
-    @RequestMapping(value ="/register",method = RequestMethod.POST)
-    @ResponseBody
-    public Result<Boolean>  register(@RequestBody RegisterRequest request){
-        Result<Boolean> result = new Result<>();
-        if(StringUtils.isEmpty(request.getUserName())
-                || StringUtils.isEmpty(request.getPassword())
-                || StringUtils.isEmpty(request.getUuid())
-                || request.getPlatform() == null
-                || request.getType() == null){
-            throw new InvalidParamException("参数为空");
-        }
-
-        if(request.getType() == 1 && StringUtils.isEmpty(request.getMobileVerifyCode())){
-            throw new InvalidParamException("参数为空");
-        }
-
-        RegisterInfo registerInfo = new RegisterInfo();
-        BeanUtils.copyProperties(request,registerInfo);
-        result.setData(userService.register(registerInfo));
-        return result;
-    }
-
-
 }

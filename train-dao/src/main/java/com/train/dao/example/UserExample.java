@@ -698,6 +698,76 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andMergeParentIdsIsNull() {
+            addCriterion("merge_parent_ids is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsIsNotNull() {
+            addCriterion("merge_parent_ids is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsEqualTo(String value) {
+            addCriterion("merge_parent_ids =", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsNotEqualTo(String value) {
+            addCriterion("merge_parent_ids <>", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsGreaterThan(String value) {
+            addCriterion("merge_parent_ids >", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsGreaterThanOrEqualTo(String value) {
+            addCriterion("merge_parent_ids >=", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsLessThan(String value) {
+            addCriterion("merge_parent_ids <", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsLessThanOrEqualTo(String value) {
+            addCriterion("merge_parent_ids <=", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsLike(String value) {
+            addCriterion("merge_parent_ids like", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsNotLike(String value) {
+            addCriterion("merge_parent_ids not like", value, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsIn(List<String> values) {
+            addCriterion("merge_parent_ids in", values, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsNotIn(List<String> values) {
+            addCriterion("merge_parent_ids not in", values, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsBetween(String value1, String value2) {
+            addCriterion("merge_parent_ids between", value1, value2, "mergeParentIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andMergeParentIdsNotBetween(String value1, String value2) {
+            addCriterion("merge_parent_ids not between", value1, value2, "mergeParentIds");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateTimeIsNull() {
             addCriterion("create_time is null");
             return (Criteria) this;

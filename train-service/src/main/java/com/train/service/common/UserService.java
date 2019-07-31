@@ -1,5 +1,6 @@
 package com.train.service.common;
 
+import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo; /**
  * Created by ma peiliang
  * Create Date: 2019/7/29 11:47
@@ -8,4 +9,6 @@ import com.train.domain.bean.RegisterInfo; /**
 public interface UserService {
 
     boolean register(RegisterInfo registerInfo);
+
+    boolean mobileLoginVerify(LoginInfo loginInfo);
 }

@@ -2,6 +2,7 @@ package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
 import com.train.dao.UserDao;
+import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
 import com.train.domain.entity.User;
 import com.train.domain.enums.UserStatusEnum;
@@ -61,5 +62,17 @@ public class UserServiceImpl implements UserService {
         user.setUserType(UserTypeEnum.PENDING.getKey());
         user.setStatus(UserStatusEnum.VALID.getKey());
         return userDao.insert(user) == 1;
+    }
+
+    @Override
+    public boolean mobileLoginVerify(LoginInfo loginInfo) {
+        if(loginInfo == null
+                || loginInfo.getType() == null
+                || loginInfo.getAutograph() == null
+                || loginInfo.getUserName() == null
+                || (loginInfo.getMobileVerifyCode() == null && loginInfo.getPassword() == null)){
+            return false;
+        }
+        return false;
     }
 }

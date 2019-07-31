@@ -205,7 +205,7 @@ public class RSAUtils {
 
         String str = "18911439763";
 
-        //430318
+        //train:mobile:code:18911439763 430318
 
         //乙方使用公钥对数据进行加密
         String code2 = RSAUtils.encryptByPublicKey(str,publicKey);

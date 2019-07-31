@@ -44,6 +44,11 @@ public class User {
     private Integer status;
 
     /**
+     * 合并账号后，新生成的用户保存之前的两个账号的id
+     */
+    private String mergeParentIds;
+
+    /**
      * 创建时间
      */
     private Date createTime;
@@ -192,6 +197,22 @@ public class User {
     }
 
     /**
+     * 合并账号后，新生成的用户保存之前的两个账号的id
+     * @return merge_parent_ids 合并账号后，新生成的用户保存之前的两个账号的id
+     */
+    public String getMergeParentIds() {
+        return mergeParentIds;
+    }
+
+    /**
+     * 合并账号后，新生成的用户保存之前的两个账号的id
+     * @param mergeParentIds 合并账号后，新生成的用户保存之前的两个账号的id
+     */
+    public void setMergeParentIds(String mergeParentIds) {
+        this.mergeParentIds = mergeParentIds == null ? null : mergeParentIds.trim();
+    }
+
+    /**
      * 创建时间
      * @return create_time 创建时间
      */
@@ -273,6 +294,7 @@ public class User {
         sb.append(", registerCertificate=").append(registerCertificate);
         sb.append(", password=").append(password);
         sb.append(", status=").append(status);
+        sb.append(", mergeParentIds=").append(mergeParentIds);
         sb.append(", createTime=").append(createTime);
         sb.append(", createBy=").append(createBy);
         sb.append(", updateTime=").append(updateTime);
