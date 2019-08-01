@@ -46,4 +46,14 @@ public class UserDaoImpl implements UserDao {
                 .andStatusEqualTo(UserStatusEnum.VALID.getKey());
         return userMapper.selectByExample(example);
     }
+
+    @Override
+    public User getUserById(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKey(User user) {
+        return userMapper.updateByPrimaryKey(user);
+    }
 }

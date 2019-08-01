@@ -9,7 +9,7 @@ import com.train.service.common.MobileService;
 import com.train.service.common.UserService;
 import com.train.web.bean.Result;
 import com.train.web.dao.*;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -104,6 +104,44 @@ public class UserController {
             throw new InvalidParamException("参数为空");
         }
         result.setData(userService.loginOut(request.getAutograph()));
+        return result;
+    }
+
+    @RequestMapping(value ="/bindMobile/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean>  bindMobile(@RequestBody BindRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph())
+                || StringUtils.isEmpty(request.getMobile())
+                || StringUtils.isEmpty(request.getMobileVerifyCode()) ){
+            throw new InvalidParamException("参数为空");
+        }
+        result.setData(userService.bindMobile(request.getAutograph(),request.getMobile(),request.getMobileVerifyCode()));
+        return result;
+    }
+
+    @RequestMapping(value ="/identityConfirm/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean>  identityConfirm(@RequestBody IdentityRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph())
+                || request.getType() == null  ){
+            throw new InvalidParamException("参数为空");
+        }
+        result.setData(userService.userTypeConfirm(request.getAutograph(),request.getType()));
+        return result;
+    }
+
+    @RequestMapping(value ="/labelConfirm/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean>  labelConfirm(@RequestBody LabelRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph())
+                || request.getEducateLevel() == null
+                || request.getGrade() != null){
+            throw new InvalidParamException("参数为空");
+        }
+        result.setData(userService.labelConfirm(request.getAutograph(),request.getEducateLevel(),request.getGrade()));
         return result;
     }
 

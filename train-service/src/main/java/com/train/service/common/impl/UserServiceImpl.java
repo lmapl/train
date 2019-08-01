@@ -2,14 +2,17 @@ package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
 import com.train.Exception.InternalServerException;
+import com.train.Exception.InvalidParamException;
 import com.train.dao.UserDao;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
+import com.train.domain.bean.UserSessionInfo;
 import com.train.domain.entity.User;
 import com.train.domain.enums.TokenTypeEnum;
 import com.train.domain.enums.UserStatusEnum;
 import com.train.domain.enums.UserTypeEnum;
 import com.train.redis.RedisKey;
+import com.train.service.Constant;
 import com.train.service.ConstantRedis;
 import com.train.service.common.*;
 import com.train.utils.DateUtil;
@@ -136,5 +139,69 @@ public class UserServiceImpl implements UserService {
             return false;
         }
         return tokenService.loginOut(autograph);
+    }
+
+    @Override
+    public Boolean bindMobile(String autograph, String mobile, String mobileCode) {
+        if(StringUtils.isEmpty(autograph)
+                || StringUtils.isEmpty(mobile)
+                || StringUtils.isEmpty(mobileCode) ){
+            return false;
+        }
+
+        //验证手机验证码
+        mobile =  rsaService.decryptByPrivateKey(mobile);
+        mobileCode =  rsaService.decryptByPrivateKey(mobileCode);
+        if(!mobileService.verifyCode(mobile,mobileCode)){
+            throw new AuthException("手机验证码鉴权不通过");
+        }
+
+        List<User> userList =  userDao.getValidUserByUserName(mobile);
+        if(CollectionUtils.isEmpty(userList)){
+            return null;
+        }
+
+        return null;
+    }
+
+    @Override
+    public Boolean userTypeConfirm(String autograph, Integer type) {
+        if(StringUtils.isEmpty(autograph) || type == null ){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(autograph);
+        if(session == null || session.getSessionId() == null){
+            return false;
+        }
+
+        Integer userId = session.getUserId();
+        User user = new User();
+        user.setId(userId);
+        user.setUserType(type);
+        user.setUpdateTime(new Date());
+        user.setUpdateBy(Constant.SYSTEM_DOMAIN);
+        return userDao.updateByPrimaryKey(user) == 1;
+    }
+
+    @Override
+    public Boolean labelConfirm(String autograph, Integer educateLevel,Integer grade) {
+        if(StringUtils.isEmpty(autograph) || educateLevel == null  || grade == null){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(autograph);
+        if(session == null){
+            return false;
+        }
+        Integer userId = session.getUserId();
+
+        User user = new User();
+        user.setId(userId);
+        user.setEducateLevel(educateLevel);
+        user.setGrade(grade);
+        user.setUpdateTime(new Date());
+        user.setUpdateBy(Constant.SYSTEM_DOMAIN);
+        return userDao.updateByPrimaryKey(user) == 1;
     }
 }

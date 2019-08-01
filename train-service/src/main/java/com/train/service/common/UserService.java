@@ -38,4 +38,27 @@ public interface UserService {
      * @return
      */
     Boolean loginOut(String autograph);
+
+    /**
+     * 绑定手机号码
+     * @param autograph
+     * @return
+     */
+    Boolean bindMobile(String autograph,String mobile,String mobileCode);
+
+    /**
+     * 确认用户身份
+     * @param autograph
+     * @param type
+     * @return
+     */
+    Boolean userTypeConfirm(String autograph, Integer type);
+
+    /**
+     * 确认用户年级标签
+     * @param autograph
+     * @param educateLevel
+     * @return
+     */
+    Boolean labelConfirm(String autograph, Integer educateLevel,Integer grade);
 }

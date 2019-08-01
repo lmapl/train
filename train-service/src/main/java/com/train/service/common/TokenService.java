@@ -1,5 +1,7 @@
 package com.train.service.common;
 
+import com.train.domain.bean.UserSessionInfo;
+
 /**
  * Created by ma peiliang
  * Create Date: 2019/7/29 11:47
@@ -35,7 +37,7 @@ public interface TokenService {
      * @param encryptAuth
      * @return
      */
-    String verifyLoginToken(String encryptAuth);
+    UserSessionInfo verifyLoginToken(String encryptAuth);
 
     /**
      * 退出登录

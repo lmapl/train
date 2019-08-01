@@ -1,6 +1,7 @@
 package com.train.service.common.impl;
 
 import com.train.Exception.InvalidParamException;
+import com.train.domain.bean.UserSessionInfo;
 import com.train.redis.RedisKey;
 import com.train.service.Constant;
 import com.train.service.ConstantRedis;
@@ -101,7 +102,7 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
-    public String verifyLoginToken(String encryptAuth) {
+    public UserSessionInfo verifyLoginToken(String encryptAuth) {
         //平台|uid|uuid|随机数|用户名|时间|rediSsessionId|随机数
         String auth = rsaService.decryptByPrivateKey(encryptAuth);
         if(StringUtils.isEmpty(auth)){
@@ -140,7 +141,10 @@ public class TokenServiceImpl implements TokenService {
             return null;
         }
 
-        return ssessionIdLogin;
+        UserSessionInfo userSessionInfo = new UserSessionInfo();
+        userSessionInfo.setSessionId(ssessionId);
+        userSessionInfo.setUserId(Integer.valueOf(uid));
+        return userSessionInfo;
     }
 
     @Override
@@ -148,12 +152,12 @@ public class TokenServiceImpl implements TokenService {
         if(StringUtils.isEmpty(encryptAuth)){
             return false;
         }
-        String sessionId = verifyLoginToken(encryptAuth);
-        if(StringUtils.isEmpty(sessionId)){
+        UserSessionInfo userSessionInfo = verifyLoginToken(encryptAuth);
+        if(userSessionInfo == null || StringUtils.isEmpty(userSessionInfo.getSessionId())){
             return false;
         }
         RedisKey redisKey = ConstantRedis.LOGIN_SESSION();
-        redisService.hdel(redisKey.getKey(),sessionId);
+        redisService.hdel(redisKey.getKey(),userSessionInfo.getSessionId());
         return true;
     }
 }

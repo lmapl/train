@@ -14,4 +14,13 @@ public interface UserDao {
     int insert(User record);
 
     List<User> getValidUserByUserName(String userName);
+
+    User getUserById(Integer id);
+
+    /**
+     * id和想要修改的字段不可为空
+     * @param user
+     * @return
+     */
+    int updateByPrimaryKey(User user);
 }
