@@ -15,6 +15,7 @@ import com.train.service.common.*;
 import com.train.utils.DateUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -125,7 +126,15 @@ public class UserServiceImpl implements UserService {
         long num = redisService.incrBy(redisKey.getKey(),1);
         redisService.expire(redisKey.getKey(),redisKey.getExpireSeconds());
         sessionId = time+""+num;
-        String auth = tokenService.getLoginToken(user.getId(),user.getRegisterCertificate(),user.getPlatform(),user.getDeviceUuid(),sessionId);
-        return auth;
+
+        return tokenService.getLoginToken(user.getId(),user.getRegisterCertificate(),user.getPlatform(),user.getDeviceUuid(),sessionId);
+    }
+
+    @Override
+    public Boolean loginOut(String autograph) {
+        if(StringUtils.isEmpty(autograph)){
+            return false;
+        }
+        return tokenService.loginOut(autograph);
     }
 }

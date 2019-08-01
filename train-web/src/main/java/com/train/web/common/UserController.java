@@ -8,10 +8,7 @@ import com.train.domain.enums.RegisterTypeEnum;
 import com.train.service.common.MobileService;
 import com.train.service.common.UserService;
 import com.train.web.bean.Result;
-import com.train.web.dao.LoginRequest;
-import com.train.web.dao.LoginResponse;
-import com.train.web.dao.MobileVerifyCodeRequest;
-import com.train.web.dao.RegisterRequest;
+import com.train.web.dao.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +20,9 @@ import javax.annotation.Resource;
  * Create Date: 2019/7/24 17:26
  * Description: ${DESCRIPTION}
  */
-@RequestMapping("/mobile")
+@RequestMapping("/user")
 @RestController
-public class MobileController {
+public class UserController {
 
     @Resource
     private MobileService mobileService;
@@ -33,7 +30,7 @@ public class MobileController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(value ="/mobileVerifyCode",method = RequestMethod.POST)
+    @RequestMapping(value ="/mobileVerifyCode/v1",method = RequestMethod.POST)
     @ResponseBody
     public Result<Boolean>  mobileVerifyCode(@RequestBody MobileVerifyCodeRequest request){
         Result<Boolean> result = new Result<>();
@@ -45,7 +42,7 @@ public class MobileController {
         return result;
     }
 
-    @RequestMapping(value ="/register",method = RequestMethod.POST)
+    @RequestMapping(value ="/mobileRegister/v1",method = RequestMethod.POST)
     @ResponseBody
     public Result<Boolean>  register(@RequestBody RegisterRequest request){
         Result<Boolean> result = new Result<>();
@@ -68,7 +65,7 @@ public class MobileController {
         return result;
     }
 
-    @RequestMapping(value ="/login",method = RequestMethod.POST)
+    @RequestMapping(value ="/mobileLogin/v1",method = RequestMethod.POST)
     @ResponseBody
     public Result<LoginResponse>  login(@RequestBody LoginRequest request){
         Result<LoginResponse> result = new Result<>();
@@ -96,6 +93,17 @@ public class MobileController {
         response.setGrade(user.getGrade());
         BeanUtils.copyProperties(request,response);
         result.setData(response);
+        return result;
+    }
+
+    @RequestMapping(value ="/loginOut/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean>  loginOut(@RequestBody LoginOutRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph()) ){
+            throw new InvalidParamException("参数为空");
+        }
+        result.setData(userService.loginOut(request.getAutograph()));
         return result;
     }
 

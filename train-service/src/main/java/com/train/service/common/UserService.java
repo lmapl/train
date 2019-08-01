@@ -31,4 +31,11 @@ public interface UserService {
      * @return
      */
     String login(User user);
+
+    /**
+     * 退出登录
+     * @param autograph
+     * @return
+     */
+    Boolean loginOut(String autograph);
 }

@@ -168,4 +168,13 @@ public class RedisServiceImpl implements RedisService {
         }
     }
 
+    public Long hdel(String key, String field)
+    {
+        try {
+            return jedis.hdel(key, field);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

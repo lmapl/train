@@ -28,4 +28,6 @@ public interface RedisService {
     Long incrBy(String key, long value);
 
     Long expire(String key, int expireSeconds);
+
+    Long hdel(String key, String field) ;
 }

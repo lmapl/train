@@ -24,11 +24,25 @@ public interface TokenService {
     boolean verifyNotLoginToken(Integer type ,String encryptAuth);
 
     /**
-     * 获取登录成功后的保持登录的token
+     * 登录成功后包装sessionid，并返回用于前端生成登录保持签名
      * userId|uuid|随机数|用户名|平台|有效时间|rediSsessionId|随机数
      * @return
      */
     String getLoginToken(Integer userId,String registerCertificate ,Integer platform,String uuid,String sessionId);
+
+    /**
+     * 校验登录保持签名token
+     * @param encryptAuth
+     * @return
+     */
+    String verifyLoginToken(String encryptAuth);
+
+    /**
+     * 退出登录
+     * @param encryptAuth
+     * @return
+     */
+    Boolean loginOut(String encryptAuth);
 
 
 }

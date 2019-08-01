@@ -7,7 +7,6 @@ import com.train.service.ConstantRedis;
 import com.train.service.common.RedisService;
 import com.train.service.common.RsaService;
 import com.train.service.common.TokenService;
-import com.train.utils.DateUtil;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -80,7 +79,7 @@ public class TokenServiceImpl implements TokenService {
 
     @Override
     public String getLoginToken(Integer userId,String registerCertificate, Integer platform, String uuid, String sessionId) {
-        //uuid|随机数|用户名|平台|时间|rediSsessionId|随机数
+        //uid|uuid|随机数|用户名|平台|时间|rediSsessionId|随机数
         String  random1 = RandomStringUtils.random(6,alphabet);
         String  random2 = RandomStringUtils.random(3,alphabet);
         Long time = System.currentTimeMillis()+ Constant.DAY_SECONDS * 1000;
@@ -101,5 +100,60 @@ public class TokenServiceImpl implements TokenService {
         return rsaService.encryptByPublicKey(token);
     }
 
+    @Override
+    public String verifyLoginToken(String encryptAuth) {
+        //平台|uid|uuid|随机数|用户名|时间|rediSsessionId|随机数
+        String auth = rsaService.decryptByPrivateKey(encryptAuth);
+        if(StringUtils.isEmpty(auth)){
+            return null;
+        }
 
+        String[] arrs = auth.split("\\|");
+
+        //平台|uuid|服务器凭证|随机数|时间|随机数
+        if(arrs.length != 8){
+            return null;
+        }
+        String uid = arrs[1];
+        String ssessionId = arrs[6];
+
+        RedisKey redisKey = ConstantRedis.LOGIN_SESSION();
+        String val = redisService.hget(redisKey.getKey(),ssessionId);
+        if(StringUtils.isEmpty(val)){
+            return null;
+        }
+
+        String[] loginArrs = val.split("\\|");
+        if(loginArrs.length != 8){
+            return null;
+        }
+        //uid|uuid|随机数|用户名|平台|时间|rediSsessionId|随机数
+        String expireTime = loginArrs[5];
+        String uidLogin = loginArrs[0];
+        String ssessionIdLogin = loginArrs[6];
+        Long time = System.currentTimeMillis();
+        if(Long.valueOf(expireTime) < time){
+            return null;
+        }
+
+        if(!uidLogin.equals(uid) || !ssessionIdLogin.equals(ssessionId)){
+            return null;
+        }
+
+        return ssessionIdLogin;
+    }
+
+    @Override
+    public Boolean loginOut(String encryptAuth) {
+        if(StringUtils.isEmpty(encryptAuth)){
+            return false;
+        }
+        String sessionId = verifyLoginToken(encryptAuth);
+        if(StringUtils.isEmpty(sessionId)){
+            return false;
+        }
+        RedisKey redisKey = ConstantRedis.LOGIN_SESSION();
+        redisService.hdel(redisKey.getKey(),sessionId);
+        return true;
+    }
 }
