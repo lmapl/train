@@ -4,7 +4,6 @@ D:\github_responsity\train\train-service\src\main\java\com\train\service\teacher
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\TokenServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\teacher\TeacherService.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\JedisFactory.java
-D:\github_responsity\train\train-service\src\main\java\com\train\service\Constant.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\RedisServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\ConstantRedis.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\demo\DemoService.java

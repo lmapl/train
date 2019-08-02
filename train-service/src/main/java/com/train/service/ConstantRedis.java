@@ -2,6 +2,7 @@ package com.train.service;
 
 
 import com.train.redis.RedisKey;
+import com.train.utils.Constant;
 
 /**
  * 彩蛋缓存

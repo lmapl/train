@@ -2,6 +2,7 @@ D:\github_responsity\train\train-common\src\main\java\com\train\Exception\RateLi
 D:\github_responsity\train\train-common\src\main\java\com\train\utils\RSAUtils.java
 D:\github_responsity\train\train-common\src\main\java\com\train\Exception\ErrorCode.java
 D:\github_responsity\train\train-common\src\main\java\com\train\utils\FastJsonConfigExt.java
+D:\github_responsity\train\train-common\src\main\java\com\train\utils\RSAUtilsClient.java
 D:\github_responsity\train\train-common\src\main\java\com\train\utils\DateUtil.java
 D:\github_responsity\train\train-common\src\main\java\com\train\Exception\AuthException.java
 D:\github_responsity\train\train-common\src\main\java\com\train\Exception\BaseException.java
