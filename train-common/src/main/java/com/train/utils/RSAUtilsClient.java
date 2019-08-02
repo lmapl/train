@@ -19,7 +19,7 @@ import java.util.Map;
  *
  * @author kongqz
  */
-public class RSAUtils {
+public class RSAUtilsClient {
     //非对称密钥算法
     public static final String KEY_ALGORITHM = "RSA";
 
@@ -70,7 +70,7 @@ public class RSAUtils {
         try{
             byte[] data = encodeStr.getBytes();
             byte[] keyBytes = Base64.decodeBase64(publicKey.getBytes());
-            byte[] code2 = RSAUtils.encryptByPublicKey(data, keyBytes);
+            byte[] code2 = RSAUtilsClient.encryptByPublicKey(data, keyBytes);
             return Base64.encodeBase64String(code2);
         }catch (Exception ex){
             ex.printStackTrace();
@@ -111,7 +111,7 @@ public class RSAUtils {
      */
     public static String decryptByPrivateKey(String encodeStr, String privateKey) {
         try{
-            byte[] decode2 = RSAUtils.decryptByPrivateKey(Base64.decodeBase64(encodeStr), Base64.decodeBase64(privateKey));
+            byte[] decode2 = RSAUtilsClient.decryptByPrivateKey(Base64.decodeBase64(encodeStr), Base64.decodeBase64(privateKey));
 
             return new String(decode2, Charset.forName("utf8"));
         }catch (Exception ex){
@@ -169,39 +169,23 @@ public class RSAUtils {
      */
     public static void main(String[] args) throws Exception {
 
-        String  publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfZxysy2HTsaUngIkZrew8FWm0SUrJ34WnCWjJnRC1ng5iqrvsx1aMWRc1gYtDUpSg4eY5a7oFfek8RN7+jFT5VhRqUHg5MMwpUQG+vmdeTLgxtM/1rk0G8I1iGDNitXd/hxl4JRAngHlWrIZ7l3ks7m/Cop/bP1E9hUDccCtdIQIDAQAB";
+        String  publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCG65AbyBmgXYgepKZHcTT1i/gSQLPZNvUwv/l7fvn8DH8BQChWCXJW7Ngr4PGun7dtQM/NH8MMtkHOfWsl/dpRWX07dfAb78tb595jJllMoLcc0VHYWa0rji3A171nDYUX1rMoQR6sorJm9f/VDHIe5EPbpRVbAxc9lwv6fSJ/ZQIDAQAB";
         //私钥
-        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJ9nHKzLYdOxpSeAiRmt7DwVabRJSsnfhacJaMmdELWeDmKqu+zHVoxZFzWBi0NSlKDh5jlrugV96TxE3v6MVPlWFGpQeDkwzClRAb6+Z15MuDG0z/WuTQbwjWIYM2K1d3+HGXglECeAeVashnuXeSzub8Kin9s/UT2FQNxwK10hAgMBAAECgYAe10xtAkzDMLPLmMrt9QCn/1ycTTHzLRQm5WMo3wLEoPgXjwEdJtRQA0zCRXY0aF3pYsuwgG9VcK8XwhuDFJO7+zYrcgQ2s2Ka1mLKBKgV25vOAd/c1X1rAGoPR8nPT3klBYUiferdqwclWACCqH6SP6ErQPHQDVHsOtPgWnjyoQJBAOl6Pwr/DcK0HzQj+DRm2kczwerT4ImRZENYeHdiTQLLIRLtnTdEj3YoUMDUs1oEm8JC1ASGppRkdIyahK9UabsCQQCux5Tl3SHoqCVjfvVjrkEUgSx8BC8zYqGW+iCqzwDWMn8bS4MA6EVjNrBV2kS/SbXfYySFSNURm6xy6fP4iSjTAkEAkkNi+yCNHkx4v9FIzIsicziZYuMY5xWOGiJyVVffpsBaF+GDe/wXY44eCK83LE12xlvXNn6kHJJR8UNbm/rlwQJADLPOm4Idw8XsqbWBahQxAKd+ryiysX5alhlppGBVBDw5RqePRtKasGI6IJMzad+WizyuW812RshUmSltpMN7JwJAU6Z6q2O/Rr5t5S0FwFUPtxql9sRyvlgmEAxTqDhGrmiXVqKaFG7t3Qr36fCI5Dvrsi5B1BG28yB6QIgcx3dkYA==";
+        String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIbrkBvIGaBdiB6kpkdxNPWL+BJAs9k29TC/+Xt++fwMfwFAKFYJclbs2Cvg8a6ft21Az80fwwy2Qc59ayX92lFZfTt18Bvvy1vn3mMmWUygtxzRUdhZrSuOLcDXvWcNhRfWsyhBHqyismb1/9UMch7kQ9ulFVsDFz2XC/p9In9lAgMBAAECgYEAhn3xJFB+gyZZVzqH6nWF9jN1sTRAU4n+Nn9XwWxc44zNWcDLtKAsE0x7XJoaMRlTLpxJyM8djuFrjdvl4HRBmBz7PAhBnFlX4Jk9mEac1DQ75OXDDWY5JF7wg1qYSHbPUJVNX1MbgTFp9vIz3K8KqpcV97p/hB0SpuO4uA/0meECQQDE2GtbLlyi2fqGtjjXZgiK6W23x92RBeGMExzcqsq3bWqEWTT5SpVz3LAhDmMQmr0FRNOVMJOIo4vb1A6OUGp9AkEAr3cnK6rHH1BCJ8qWH+wigJXt4qalzanMcX3S4uRr7dudXNR3uHBRNNVoOTa3G9TmO0UV5JyJc7V59b+j4+SVCQJAaFjlSBeiib2NfZ3ZMe3nt2OYguTTQk5gyvVSxnNPNL8uyOvVFhWAdkPVpiBPSX0NmF5s3tg6TSONP0IBWVWtrQJBAKribmGWtsqGTYeXQ1HflVKJsd300rFTVuqI0eNq9rn2EnGf8uDLcir0U8a0xOv0Ei1TARleYncwHJD7jM+bhJECQA/kr7IvQfeCJGUUVMk14CIoEum/nFCh1w+/yj/erl0p6c5ldRiqVU+MH+yWijSwDB5fBf3iQdjx69AjEIj9h5Y=";
 
         String uuid = "XEEANNnen==aaa=eee-xxxxa";
 
-        //平台|uuid|服务器凭证|随机数|时间|随机数
-        Long time = System.currentTimeMillis();
-        String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|fznoocbf|12|" +time+"|13";
-
-        //String mobile = "18911439763";
-
-        String passwd = "123&123";
-
-        //String mobileCode = "514028";
-        time = System.currentTimeMillis();
-        String loginToken = "1|6|XEEANNnen==aaa=eee-xxxxa|12|18911439763|" +
-                time +
-                "|15647130003442|12";
-
-        String str = loginToken;
+        String str = uuid;
 
         //乙方使用公钥对数据进行加密
-        String code2 = RSAUtils.encryptByPublicKey(str,publicKey);
+        String code2 = RSAUtilsClient.encryptByPublicKey(str,publicKey);
         System.out.println("加密后的数据：" + code2);
         //甲方使用私钥对数据进行解密
-        String decode2 = RSAUtils.decryptByPrivateKey(code2, privateKey);
+        String decode2 = RSAUtilsClient.decryptByPrivateKey(code2, privateKey);
         System.out.println("甲方解密后的数据：" + decode2);
 
-        //decode2 = RSAUtils.decryptByPrivateKey("ezsKI79UjWoUh4CzfvXaDgIPaq6nMsDFHeuqaPLDeluYRyhgyNkeclbj7BoTeHdf6788AHxp02fcUh0O+hBi7OVqalgb8xnCdbiIo3FWgwuIKAv7GQ+CbeSdANvRdvXGBevrjRTTCIYEmkMdevjYsE2xIKApT9J72XKt0abioNY=", privateKey);
-       // System.out.println("甲方解密后的数据：" + decode2);
-
-
+        decode2 = RSAUtilsClient.decryptByPrivateKey("ezsKI79UjWoUh4CzfvXaDgIPaq6nMsDFHeuqaPLDeluYRyhgyNkeclbj7BoTeHdf6788AHxp02fcUh0O+hBi7OVqalgb8xnCdbiIo3FWgwuIKAv7GQ+CbeSdANvRdvXGBevrjRTTCIYEmkMdevjYsE2xIKApT9J72XKt0abioNY=", privateKey);
+        System.out.println("甲方解密后的数据：" + decode2);
 
     }
 }

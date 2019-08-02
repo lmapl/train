@@ -16,11 +16,11 @@ public class ConstantRedis {
 
 
     public static RedisKey SERVER_TOKEN(String type, String uuid) {
-        return new RedisKey(PREFIX + "token:" + type + ":" + uuid, 60);
+        return new RedisKey(PREFIX + "token:" + type + ":" + uuid, 60000);
     }
 
     public static RedisKey MOBILE_CODE(String mobile) {
-        return new RedisKey(PREFIX + "mobile:code:" + mobile, Constant.MINUTES_5_SECONDS);
+        return new RedisKey(PREFIX + "mobile:code:" + mobile, Constant.MINUTES_5_SECONDS*1000);
     }
 
     public static RedisKey MOBILE_CODE_FREQUENCY_LIMIT(String mobile) {

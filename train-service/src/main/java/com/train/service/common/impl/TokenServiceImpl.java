@@ -75,7 +75,7 @@ public class TokenServiceImpl implements TokenService {
         RedisKey redisKey = ConstantRedis.SERVER_TOKEN(type+"",uuid);
         String val = redisService.get(redisKey.getKey());
         redisService.del(redisKey.getKey());
-        return arrs[1] != null && val != null && arrs[1].equals(val);
+        return  val != null && token.equals(val);
     }
 
     @Override

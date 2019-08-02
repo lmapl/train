@@ -32,8 +32,8 @@ public class UserDaoImpl implements UserDao {
         record.setCreateTime(date);
         record.setUpdateBy(Constant.SYSTEM_NAME);
         record.setUpdateTime(date);
-        userMapper.insert(record);
-        return 0;
+
+        return userMapper.insert(record);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public int updateByPrimaryKey(User user) {
-        return userMapper.updateByPrimaryKey(user);
+    public int updateById(User user) {
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 }

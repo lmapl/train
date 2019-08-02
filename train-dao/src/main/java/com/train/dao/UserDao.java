@@ -22,5 +22,5 @@ public interface UserDao {
      * @param user
      * @return
      */
-    int updateByPrimaryKey(User user);
+    int updateById(User user);
 }

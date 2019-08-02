@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService {
 
         //如果密码不为空，则验证密码是否匹配
         if(loginInfo.getPassword() != null){
-            String password = rsaService.decryptByPrivateKey(loginInfo.getUserName());
+            String password = rsaService.decryptByPrivateKey(loginInfo.getPassword());
             return user.getPassword().equals(password) ? user : null;
         }
 
@@ -181,7 +181,7 @@ public class UserServiceImpl implements UserService {
         user.setUserType(type);
         user.setUpdateTime(new Date());
         user.setUpdateBy(Constant.SYSTEM_DOMAIN);
-        return userDao.updateByPrimaryKey(user) == 1;
+        return userDao.updateById(user) == 1;
     }
 
     @Override
@@ -202,6 +202,6 @@ public class UserServiceImpl implements UserService {
         user.setGrade(grade);
         user.setUpdateTime(new Date());
         user.setUpdateBy(Constant.SYSTEM_DOMAIN);
-        return userDao.updateByPrimaryKey(user) == 1;
+        return userDao.updateById(user) == 1;
     }
 }

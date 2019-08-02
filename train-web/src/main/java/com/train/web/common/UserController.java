@@ -34,7 +34,7 @@ public class UserController {
     @ResponseBody
     public Result<Boolean>  mobileVerifyCode(@RequestBody MobileVerifyCodeRequest request){
         Result<Boolean> result = new Result<>();
-        if(StringUtils.isEmpty(request.getMobile()) || StringUtils.isEmpty(request.getToken()) || StringUtils.isEmpty(request.getUuid())){
+        if(StringUtils.isEmpty(request.getMobile()) || StringUtils.isEmpty(request.getToken())){
             throw new InvalidParamException("参数为空");
         }
         mobileService.getMobileVerifyCode(request.getMobile(),request.getUuid(),request.getToken());
@@ -91,7 +91,6 @@ public class UserController {
         response.setEducateLevel(user.getEducateLevel());
         response.setUserType(user.getUserType());
         response.setGrade(user.getGrade());
-        BeanUtils.copyProperties(request,response);
         result.setData(response);
         return result;
     }
@@ -138,7 +137,7 @@ public class UserController {
         Result<Boolean> result = new Result<>();
         if(StringUtils.isEmpty(request.getAutograph())
                 || request.getEducateLevel() == null
-                || request.getGrade() != null){
+                || request.getGrade() == null){
             throw new InvalidParamException("参数为空");
         }
         result.setData(userService.labelConfirm(request.getAutograph(),request.getEducateLevel(),request.getGrade()));
