@@ -2,19 +2,24 @@ package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
 import com.train.Exception.InternalServerException;
-import com.train.Exception.InvalidParamException;
+import com.train.dao.UserCompanyDao;
 import com.train.dao.UserDao;
+import com.train.dao.UserStuParentDao;
+import com.train.dao.UserTeacherDao;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
 import com.train.domain.bean.UserSessionInfo;
 import com.train.domain.entity.User;
+import com.train.domain.entity.UserCompany;
+import com.train.domain.entity.UserStuParent;
+import com.train.domain.entity.UserTeacher;
 import com.train.domain.enums.TokenTypeEnum;
 import com.train.domain.enums.UserStatusEnum;
 import com.train.domain.enums.UserTypeEnum;
 import com.train.redis.RedisKey;
-import com.train.service.Constant;
 import com.train.service.ConstantRedis;
 import com.train.service.common.*;
+import com.train.utils.Constant;
 import com.train.utils.DateUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -43,6 +48,16 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private UserStuParentDao userStuParentDao;
+
+    @Resource
+    private UserTeacherDao userTeacherDao;
+
+    @Resource
+    private UserCompanyDao userCompanyDao;
+
 
     @Resource
     private RedisService redisService;
@@ -175,13 +190,24 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        User user = userDao.getUserById(session.getUserId());
+        if(user.getUserType() != 0){
+            return false;
+        }
+
+        if(!initUserTypeDetail(session.getUserId(),type)){
+            return false;
+        }
+
         Integer userId = session.getUserId();
-        User user = new User();
-        user.setId(userId);
-        user.setUserType(type);
-        user.setUpdateTime(new Date());
-        user.setUpdateBy(Constant.SYSTEM_DOMAIN);
-        return userDao.updateById(user) == 1;
+        User userTemp = new User();
+        userTemp.setId(userId);
+        userTemp.setUserType(type);
+        userTemp.setUpdateTime(new Date());
+        userTemp.setUpdateBy(Constant.SYSTEM_NAME);
+
+        //生成对应的详细表记录
+        return userDao.updateById(userTemp) == 1;
     }
 
     @Override
@@ -201,7 +227,44 @@ public class UserServiceImpl implements UserService {
         user.setEducateLevel(educateLevel);
         user.setGrade(grade);
         user.setUpdateTime(new Date());
-        user.setUpdateBy(Constant.SYSTEM_DOMAIN);
+        user.setUpdateBy(Constant.SYSTEM_NAME);
         return userDao.updateById(user) == 1;
+    }
+
+    @Override
+    public Boolean initUserTypeDetail(Integer userId, Integer type) {
+        if(userId == null ||type == null){
+            return false;
+        }
+
+        Date date = new Date();
+        if(UserTypeEnum.STU_PARENT.getKey() == type){
+            UserStuParent userStuParent = new UserStuParent();
+            userStuParent.setId(userId);
+            userStuParent.setCreateby(Constant.SYSTEM_NAME);
+            userStuParent.setCreatetime(date);
+            userStuParent.setUpdateby(Constant.SYSTEM_NAME);
+            userStuParent.setUpdatetime(date);
+            return userStuParentDao.insert(userStuParent) == 1;
+        }else if(UserTypeEnum.TEACHER.getKey() == type){
+            UserTeacher userTeacher = new UserTeacher();
+            userTeacher.setId(userId);
+            userTeacher.setCreateby(Constant.SYSTEM_NAME);
+            userTeacher.setCreatetime(date);
+            userTeacher.setUpdateby(Constant.SYSTEM_NAME);
+            userTeacher.setUpdatetime(date);
+            return userTeacherDao.insert(userTeacher) == 1;
+        }else if(UserTypeEnum.COMPANY.getKey() == type){
+            UserCompany userCompany = new UserCompany();
+            userCompany.setId(userId);
+            userCompany.setCreateby(Constant.SYSTEM_NAME);
+            userCompany.setCreatetime(date);
+            userCompany.setUpdateby(Constant.SYSTEM_NAME);
+            userCompany.setUpdatetime(date);
+            return userCompanyDao.insert(userCompany) == 1;
+        }else {
+            return false;
+        }
+
     }
 }

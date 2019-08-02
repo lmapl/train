@@ -141,6 +141,8 @@ public class TokenServiceImpl implements TokenService {
             return null;
         }
 
+        // TODO: 2019/8/2 判断过期时间是否比当前时间大半天，如果不是，那么延长过期时间到1天
+
         UserSessionInfo userSessionInfo = new UserSessionInfo();
         userSessionInfo.setSessionId(ssessionId);
         userSessionInfo.setUserId(Integer.valueOf(uid));

@@ -1,5 +1,6 @@
-package com.train.dao;
+package com.train.dao.impl;
 
+import com.train.dao.UserDao;
 import com.train.dao.example.UserCompanyExample;
 import com.train.dao.example.UserExample;
 import com.train.dao.mapper.UserMapper;

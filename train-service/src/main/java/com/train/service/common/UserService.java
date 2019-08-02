@@ -61,4 +61,12 @@ public interface UserService {
      * @return
      */
     Boolean labelConfirm(String autograph, Integer educateLevel,Integer grade);
+
+    /**
+     * 根据用户身份，生成明细记录（默认数据）
+     * @param userId
+     * @param type
+     * @return
+     */
+    Boolean initUserTypeDetail(Integer userId, Integer type);
 }
