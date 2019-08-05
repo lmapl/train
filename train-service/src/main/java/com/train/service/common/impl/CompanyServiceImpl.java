@@ -1,10 +1,13 @@
 package com.train.service.common.impl;
 
+import com.train.dao.CompanyCurriculumDao;
 import com.train.dao.CompanyTeacherDao;
 import com.train.dao.UserCompanyDao;
 import com.train.dao.UserDao;
+import com.train.domain.bean.CompanyCurriculumInfo;
 import com.train.domain.bean.CompanyTeacherInfo;
 import com.train.domain.bean.UserSessionInfo;
+import com.train.domain.entity.CompanyCurriculum;
 import com.train.domain.entity.CompanyTeacher;
 import com.train.domain.entity.User;
 import com.train.domain.enums.UserStatusEnum;
@@ -31,6 +34,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Resource
     private CompanyTeacherDao companyTeacherDao;
+
+    @Resource
+    private CompanyCurriculumDao companyCurriculumDao;
 
     @Resource
     private UserDao userDao;
@@ -98,6 +104,51 @@ public class CompanyServiceImpl implements CompanyService {
         companyTeacher.setUpdateTime(new Date());
 
         int num = companyTeacherDao.updateByPrimaryKeySelective(companyTeacher);
+        return num == 1;
+    }
+
+    @Override
+    public Boolean addCurriculum(String autograph, CompanyCurriculumInfo info) {
+
+        if(StringUtils.isEmpty(autograph) || info == null ){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(autograph);
+        if(session == null || session.getSessionId() == null){
+            return false;
+        }
+        //判断用户有效
+        User user = userDao.getUserById(session.getUserId());
+        if(user == null || user.getUserType() != UserTypeEnum.COMPANY.getKey() || user.getStatus() != UserStatusEnum.VALID.getKey()){
+            return false;
+        }
+
+        CompanyTeacher companyTeacher = companyTeacherDao.getById(info.getCompanyTeacherId());
+        if(companyTeacher == null || companyTeacher.getCompanyId().intValue() != user.getId()){
+            return false;
+        }
+
+        CompanyCurriculum  companyCurriculum = new CompanyCurriculum();
+        companyCurriculum.setCompanyTeacherId(info.getCompanyTeacherId());
+        companyCurriculum.setContactTel(info.getContactTel());
+        companyCurriculum.setCurriculumName(info.getCurriculumName());
+        companyCurriculum.setStartTime(info.getStartTime());
+        companyCurriculum.setEndTime(info.getEndTime());
+        companyCurriculum.setTeachingTime(info.getTeachingTime());
+
+        companyCurriculum.setMaxNumber(info.getMaxNumber());
+        companyCurriculum.setMinNumber(info.getMinNumber());
+        companyCurriculum.setPeriod(info.getPeriod());
+        companyCurriculum.setPrice(info.getPrice());
+        companyCurriculum.setRemark(info.getRemark());
+        companyCurriculum.setSubjectId(info.getSubjectId());
+        companyCurriculum.setCreateBy(Constant.SYSTEM_NAME);
+        companyCurriculum.setCreateTime(new Date());
+        companyCurriculum.setUpdateBy(Constant.SYSTEM_NAME);
+        companyCurriculum.setUpdateTime(new Date());
+
+        int num = companyCurriculumDao.insert(companyCurriculum);
         return num == 1;
     }
 }

@@ -1,11 +1,13 @@
 package com.train.web.company;
 
 import com.train.Exception.InvalidParamException;
+import com.train.domain.bean.CompanyCurriculumInfo;
 import com.train.domain.bean.CompanyTeacherInfo;
 import com.train.domain.bean.ImproveInfo;
 import com.train.service.common.CompanyService;
 import com.train.service.common.UserService;
 import com.train.web.bean.Result;
+import com.train.web.dao.AddCurriculumRequest;
 import com.train.web.dao.AddTeacherRequest;
 import com.train.web.dao.ImproveRequest;
 import org.springframework.beans.BeanUtils;
@@ -63,5 +65,21 @@ public class CompanyController {
         result.setData(companyService.modifyTeacher(request.getAutograph(),teacherInfo));
         return result;
     }
+
+    @RequestMapping(value ="/addCurriculum/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean> addCurriculum(@RequestBody AddCurriculumRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph()) ){
+            throw new InvalidParamException("参数为空");
+        }
+        CompanyCurriculumInfo info = new CompanyCurriculumInfo();
+        BeanUtils.copyProperties(request,info);
+        result.setData(companyService.addCurriculum(request.getAutograph(),info));
+        return result;
+    }
+
+
+
 
 }

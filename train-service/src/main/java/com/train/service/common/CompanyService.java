@@ -1,5 +1,6 @@
 package com.train.service.common;
 
+import com.train.domain.bean.CompanyCurriculumInfo;
 import com.train.domain.bean.CompanyTeacherInfo; /**
  * Created by ma peiliang
  * Create Date: 2019/8/3 17:19
@@ -9,4 +10,6 @@ public interface CompanyService {
     Boolean addTeacher(String autograph, CompanyTeacherInfo teacherInfo);
 
     Boolean modifyTeacher(String autograph, CompanyTeacherInfo teacherInfo);
+
+    Boolean addCurriculum(String autograph, CompanyCurriculumInfo info);
 }
