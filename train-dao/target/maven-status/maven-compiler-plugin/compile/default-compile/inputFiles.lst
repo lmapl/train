@@ -1,9 +1,8 @@
-D:\github_responsity\train\train-dao\src\main\java\com\train\dao\example\UserStuParentExample.java
+D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\CompanyTeacherDaoImpl.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserCompanyDao.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\UserStuParentDaoImpl.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\UserStuParentMapper.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\UserCompanyDaoImpl.java
-D:\github_responsity\train\train-dao\src\main\java\com\train\dao\example\UserCompanyExample.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserStuParentDao.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\BaseMapper.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserDao.java
@@ -15,3 +14,5 @@ D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\UserTeache
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\UserTeacherMapper.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserTeacherDao.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\UserCompanyMapper.java
+D:\github_responsity\train\train-dao\src\main\java\com\train\dao\CompanyTeacherDao.java
+D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\CompanyTeacherMapper.java

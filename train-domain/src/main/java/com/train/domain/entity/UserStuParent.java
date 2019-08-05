@@ -26,7 +26,17 @@ public class UserStuParent {
     /**
      * 生日
      */
-    private String birthday;
+    private String birthdayYear;
+
+    /**
+     * 
+     */
+    private String birthdayMonth;
+
+    /**
+     * 
+     */
+    private String birthdayDay;
 
     /**
      * 创建时间
@@ -114,18 +124,50 @@ public class UserStuParent {
 
     /**
      * 生日
-     * @return birthday 生日
+     * @return birthday_year 生日
      */
-    public String getBirthday() {
-        return birthday;
+    public String getBirthdayYear() {
+        return birthdayYear;
     }
 
     /**
      * 生日
-     * @param birthday 生日
+     * @param birthdayYear 生日
      */
-    public void setBirthday(String birthday) {
-        this.birthday = birthday == null ? null : birthday.trim();
+    public void setBirthdayYear(String birthdayYear) {
+        this.birthdayYear = birthdayYear == null ? null : birthdayYear.trim();
+    }
+
+    /**
+     * 
+     * @return birthday_month 
+     */
+    public String getBirthdayMonth() {
+        return birthdayMonth;
+    }
+
+    /**
+     * 
+     * @param birthdayMonth 
+     */
+    public void setBirthdayMonth(String birthdayMonth) {
+        this.birthdayMonth = birthdayMonth == null ? null : birthdayMonth.trim();
+    }
+
+    /**
+     * 
+     * @return birthday_day 
+     */
+    public String getBirthdayDay() {
+        return birthdayDay;
+    }
+
+    /**
+     * 
+     * @param birthdayDay 
+     */
+    public void setBirthdayDay(String birthdayDay) {
+        this.birthdayDay = birthdayDay == null ? null : birthdayDay.trim();
     }
 
     /**
@@ -206,7 +248,9 @@ public class UserStuParent {
         sb.append(", nickname=").append(nickname);
         sb.append(", portrait=").append(portrait);
         sb.append(", gender=").append(gender);
-        sb.append(", birthday=").append(birthday);
+        sb.append(", birthdayYear=").append(birthdayYear);
+        sb.append(", birthdayMonth=").append(birthdayMonth);
+        sb.append(", birthdayDay=").append(birthdayDay);
         sb.append(", createtime=").append(createtime);
         sb.append(", createby=").append(createby);
         sb.append(", updatetime=").append(updatetime);

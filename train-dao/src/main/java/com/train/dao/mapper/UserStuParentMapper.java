@@ -1,7 +1,7 @@
 package com.train.dao.mapper;
 
-import com.train.dao.example.UserStuParentExample;
 import com.train.domain.entity.UserStuParent;
+import com.train.domain.entity.UserStuParentExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

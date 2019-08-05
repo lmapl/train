@@ -7,6 +7,8 @@ package com.train.domain.bean;
  */
 public class CompanyTeacherInfo {
 
+    private Integer id;
+
     private  String nickName;	//教师名称
     private String portrait;	//头像图片地址
     private Integer subject;	//教授科目
@@ -69,5 +71,13 @@ public class CompanyTeacherInfo {
 
     public void setFreeVideo(String freeVideo) {
         this.freeVideo = freeVideo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

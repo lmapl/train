@@ -6,6 +6,7 @@
     <result column="nickName" property="nickname" jdbcType="VARCHAR" />
     <result column="portrait" property="portrait" jdbcType="VARCHAR" />
     <result column="scale" property="scale" jdbcType="INTEGER" />
+    <result column="establishment_time" property="establishmentTime" jdbcType="VARCHAR" />
     <result column="position" property="position" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
     <result column="introductionPortrait" property="introductionportrait" jdbcType="VARCHAR" />
@@ -76,10 +77,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nickName, portrait, scale, position, introduction, introductionPortrait, contactPeple, 
-    contactInfon, certificate, createTime, createBy, updateTime, updateBy
+    id, nickName, portrait, scale, establishment_time, position, introduction, introductionPortrait, 
+    contactPeple, contactInfon, certificate, createTime, createBy, updateTime, updateBy
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserCompanyExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserCompanyExample" >
     select
     <if test="distinct" >
       distinct
@@ -103,7 +104,7 @@
     delete from user_company
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.train.dao.example.UserCompanyExample" >
+  <delete id="deleteByExample" parameterType="com.train.domain.entity.UserCompanyExample" >
     delete from user_company
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -111,15 +112,17 @@
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.UserCompany" >
     insert into user_company (id, nickName, portrait, 
-      scale, position, introduction, 
-      introductionPortrait, contactPeple, contactInfon, 
-      certificate, createTime, createBy, 
-      updateTime, updateBy)
+      scale, establishment_time, position, 
+      introduction, introductionPortrait, contactPeple, 
+      contactInfon, certificate, createTime, 
+      createBy, updateTime, updateBy
+      )
     values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
-      #{scale,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, 
-      #{introductionportrait,jdbcType=VARCHAR}, #{contactpeple,jdbcType=VARCHAR}, #{contactinfon,jdbcType=VARCHAR}, 
-      #{certificate,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{createby,jdbcType=VARCHAR}, 
-      #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR})
+      #{scale,jdbcType=INTEGER}, #{establishmentTime,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{introduction,jdbcType=VARCHAR}, #{introductionportrait,jdbcType=VARCHAR}, #{contactpeple,jdbcType=VARCHAR}, 
+      #{contactinfon,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserCompany" >
     insert into user_company
@@ -135,6 +138,9 @@
       </if>
       <if test="scale != null" >
         scale,
+      </if>
+      <if test="establishmentTime != null" >
+        establishment_time,
       </if>
       <if test="position != null" >
         position,
@@ -180,6 +186,9 @@
       <if test="scale != null" >
         #{scale,jdbcType=INTEGER},
       </if>
+      <if test="establishmentTime != null" >
+        #{establishmentTime,jdbcType=VARCHAR},
+      </if>
       <if test="position != null" >
         #{position,jdbcType=VARCHAR},
       </if>
@@ -212,7 +221,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.train.dao.example.UserCompanyExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.train.domain.entity.UserCompanyExample" resultType="java.lang.Integer" >
     select count(*) from user_company
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -232,6 +241,9 @@
       </if>
       <if test="record.scale != null" >
         scale = #{record.scale,jdbcType=INTEGER},
+      </if>
+      <if test="record.establishmentTime != null" >
+        establishment_time = #{record.establishmentTime,jdbcType=VARCHAR},
       </if>
       <if test="record.position != null" >
         position = #{record.position,jdbcType=VARCHAR},
@@ -274,6 +286,7 @@
       nickName = #{record.nickname,jdbcType=VARCHAR},
       portrait = #{record.portrait,jdbcType=VARCHAR},
       scale = #{record.scale,jdbcType=INTEGER},
+      establishment_time = #{record.establishmentTime,jdbcType=VARCHAR},
       position = #{record.position,jdbcType=VARCHAR},
       introduction = #{record.introduction,jdbcType=VARCHAR},
       introductionPortrait = #{record.introductionportrait,jdbcType=VARCHAR},
@@ -299,6 +312,9 @@
       </if>
       <if test="scale != null" >
         scale = #{scale,jdbcType=INTEGER},
+      </if>
+      <if test="establishmentTime != null" >
+        establishment_time = #{establishmentTime,jdbcType=VARCHAR},
       </if>
       <if test="position != null" >
         position = #{position,jdbcType=VARCHAR},
@@ -338,6 +354,7 @@
     set nickName = #{nickname,jdbcType=VARCHAR},
       portrait = #{portrait,jdbcType=VARCHAR},
       scale = #{scale,jdbcType=INTEGER},
+      establishment_time = #{establishmentTime,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=VARCHAR},
       introductionPortrait = #{introductionportrait,jdbcType=VARCHAR},

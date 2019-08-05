@@ -51,4 +51,17 @@ public class CompanyController {
         return result;
     }
 
+    @RequestMapping(value ="/modifyTeacher/v1",method = RequestMethod.POST)
+    @ResponseBody
+    public Result<Boolean> modifyTeacher(@RequestBody AddTeacherRequest request){
+        Result<Boolean> result = new Result<>();
+        if(StringUtils.isEmpty(request.getAutograph()) ){
+            throw new InvalidParamException("参数为空");
+        }
+        CompanyTeacherInfo teacherInfo = new CompanyTeacherInfo();
+        BeanUtils.copyProperties(request,teacherInfo);
+        result.setData(companyService.modifyTeacher(request.getAutograph(),teacherInfo));
+        return result;
+    }
+
 }

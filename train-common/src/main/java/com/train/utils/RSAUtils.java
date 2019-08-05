@@ -177,7 +177,7 @@ public class RSAUtils {
 
         //平台|uuid|服务器凭证|随机数|时间|随机数
         Long time = System.currentTimeMillis();
-        String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|fznoocbf|12|" +time+"|13";
+        String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|SLGyzQ71|12|" +time+"|13";
 
         //String mobile = "18911439763";
 
@@ -187,7 +187,7 @@ public class RSAUtils {
         time = System.currentTimeMillis();
         String loginToken = "1|6|XEEANNnen==aaa=eee-xxxxa|12|18911439763|" +
                 time +
-                "|15647130003442|12";
+                "|15649850495781|12";
 
         String str = loginToken;
 

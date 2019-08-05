@@ -12,4 +12,7 @@ public interface CompanyTeacherDao {
     int insert(CompanyTeacher record);
 
 
+    CompanyTeacher getById(Integer id);
+
+    int updateByPrimaryKeySelective(CompanyTeacher companyTeacher);
 }

@@ -29,4 +29,14 @@ public class CompanyTeacherDaoImpl implements CompanyTeacherDao {
         record.setUpdateTime(date);
         return companyTeacherMapper.insert(record);
     }
+
+    @Override
+    public CompanyTeacher getById(Integer id) {
+        return companyTeacherMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(CompanyTeacher companyTeacher) {
+        return companyTeacherMapper.updateByPrimaryKeySelective(companyTeacher);
+    }
 }

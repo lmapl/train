@@ -24,6 +24,11 @@ public class UserCompany {
     private Integer scale;
 
     /**
+     * 成立时间
+     */
+    private String establishmentTime;
+
+    /**
      * 位置
      */
     private String position;
@@ -135,6 +140,22 @@ public class UserCompany {
      */
     public void setScale(Integer scale) {
         this.scale = scale;
+    }
+
+    /**
+     * 成立时间
+     * @return establishment_time 成立时间
+     */
+    public String getEstablishmentTime() {
+        return establishmentTime;
+    }
+
+    /**
+     * 成立时间
+     * @param establishmentTime 成立时间
+     */
+    public void setEstablishmentTime(String establishmentTime) {
+        this.establishmentTime = establishmentTime == null ? null : establishmentTime.trim();
     }
 
     /**
@@ -311,6 +332,7 @@ public class UserCompany {
         sb.append(", nickname=").append(nickname);
         sb.append(", portrait=").append(portrait);
         sb.append(", scale=").append(scale);
+        sb.append(", establishmentTime=").append(establishmentTime);
         sb.append(", position=").append(position);
         sb.append(", introduction=").append(introduction);
         sb.append(", introductionportrait=").append(introductionportrait);

@@ -6,7 +6,9 @@
     <result column="nickName" property="nickname" jdbcType="VARCHAR" />
     <result column="portrait" property="portrait" jdbcType="VARCHAR" />
     <result column="gender" property="gender" jdbcType="INTEGER" />
-    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="birthday_year" property="birthdayYear" jdbcType="VARCHAR" />
+    <result column="birthday_month" property="birthdayMonth" jdbcType="VARCHAR" />
+    <result column="birthday_day" property="birthdayDay" jdbcType="VARCHAR" />
     <result column="createTime" property="createtime" jdbcType="DATE" />
     <result column="createBy" property="createby" jdbcType="VARCHAR" />
     <result column="updateTime" property="updatetime" jdbcType="DATE" />
@@ -71,9 +73,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nickName, portrait, gender, birthday, createTime, createBy, updateTime, updateBy
+    id, nickName, portrait, gender, birthday_year, birthday_month, birthday_day, createTime, 
+    createBy, updateTime, updateBy
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserStuParentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserStuParentExample" >
     select
     <if test="distinct" >
       distinct
@@ -97,7 +100,7 @@
     delete from user_stu_parent
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.train.dao.example.UserStuParentExample" >
+  <delete id="deleteByExample" parameterType="com.train.domain.entity.UserStuParentExample" >
     delete from user_stu_parent
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -105,13 +108,13 @@
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.UserStuParent" >
     insert into user_stu_parent (id, nickName, portrait, 
-      gender, birthday, createTime, 
-      createBy, updateTime, updateBy
-      )
+      gender, birthday_year, birthday_month, 
+      birthday_day, createTime, createBy, 
+      updateTime, updateBy)
     values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
-      #{gender,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
-      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
-      )
+      #{gender,jdbcType=INTEGER}, #{birthdayYear,jdbcType=VARCHAR}, #{birthdayMonth,jdbcType=VARCHAR}, 
+      #{birthdayDay,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{createby,jdbcType=VARCHAR}, 
+      #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserStuParent" >
     insert into user_stu_parent
@@ -128,8 +131,14 @@
       <if test="gender != null" >
         gender,
       </if>
-      <if test="birthday != null" >
-        birthday,
+      <if test="birthdayYear != null" >
+        birthday_year,
+      </if>
+      <if test="birthdayMonth != null" >
+        birthday_month,
+      </if>
+      <if test="birthdayDay != null" >
+        birthday_day,
       </if>
       <if test="createtime != null" >
         createTime,
@@ -157,8 +166,14 @@
       <if test="gender != null" >
         #{gender,jdbcType=INTEGER},
       </if>
-      <if test="birthday != null" >
-        #{birthday,jdbcType=VARCHAR},
+      <if test="birthdayYear != null" >
+        #{birthdayYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdayMonth != null" >
+        #{birthdayMonth,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdayDay != null" >
+        #{birthdayDay,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null" >
         #{createtime,jdbcType=DATE},
@@ -174,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.train.dao.example.UserStuParentExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.train.domain.entity.UserStuParentExample" resultType="java.lang.Integer" >
     select count(*) from user_stu_parent
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -195,8 +210,14 @@
       <if test="record.gender != null" >
         gender = #{record.gender,jdbcType=INTEGER},
       </if>
-      <if test="record.birthday != null" >
-        birthday = #{record.birthday,jdbcType=VARCHAR},
+      <if test="record.birthdayYear != null" >
+        birthday_year = #{record.birthdayYear,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthdayMonth != null" >
+        birthday_month = #{record.birthdayMonth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthdayDay != null" >
+        birthday_day = #{record.birthdayDay,jdbcType=VARCHAR},
       </if>
       <if test="record.createtime != null" >
         createTime = #{record.createtime,jdbcType=DATE},
@@ -221,7 +242,9 @@
       nickName = #{record.nickname,jdbcType=VARCHAR},
       portrait = #{record.portrait,jdbcType=VARCHAR},
       gender = #{record.gender,jdbcType=INTEGER},
-      birthday = #{record.birthday,jdbcType=VARCHAR},
+      birthday_year = #{record.birthdayYear,jdbcType=VARCHAR},
+      birthday_month = #{record.birthdayMonth,jdbcType=VARCHAR},
+      birthday_day = #{record.birthdayDay,jdbcType=VARCHAR},
       createTime = #{record.createtime,jdbcType=DATE},
       createBy = #{record.createby,jdbcType=VARCHAR},
       updateTime = #{record.updatetime,jdbcType=DATE},
@@ -242,8 +265,14 @@
       <if test="gender != null" >
         gender = #{gender,jdbcType=INTEGER},
       </if>
-      <if test="birthday != null" >
-        birthday = #{birthday,jdbcType=VARCHAR},
+      <if test="birthdayYear != null" >
+        birthday_year = #{birthdayYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdayMonth != null" >
+        birthday_month = #{birthdayMonth,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdayDay != null" >
+        birthday_day = #{birthdayDay,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null" >
         createTime = #{createtime,jdbcType=DATE},
@@ -265,7 +294,9 @@
     set nickName = #{nickname,jdbcType=VARCHAR},
       portrait = #{portrait,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=INTEGER},
-      birthday = #{birthday,jdbcType=VARCHAR},
+      birthday_year = #{birthdayYear,jdbcType=VARCHAR},
+      birthday_month = #{birthdayMonth,jdbcType=VARCHAR},
+      birthday_day = #{birthdayDay,jdbcType=VARCHAR},
       createTime = #{createtime,jdbcType=DATE},
       createBy = #{createby,jdbcType=VARCHAR},
       updateTime = #{updatetime,jdbcType=DATE},

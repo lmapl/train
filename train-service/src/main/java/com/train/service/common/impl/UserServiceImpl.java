@@ -287,7 +287,9 @@ public class UserServiceImpl implements UserService {
 
         userStuParent.setNickname(improveInfo.getNickName());
         userStuParent.setPortrait(improveInfo.getPortrait());
-        userStuParent.setBirthday(improveInfo.getBirthday());
+        userStuParent.setBirthdayYear(improveInfo.getBirthdayYear());
+        userStuParent.setBirthdayMonth(improveInfo.getBirthdayMonth());
+        userStuParent.setBirthdayDay(improveInfo.getBirthdayDay());
         userStuParent.setGender(improveInfo.getGender());
         userStuParent.setUpdateby(Constant.SYSTEM_NAME);
         userStuParent.setUpdatetime(new Date());
@@ -352,7 +354,7 @@ public class UserServiceImpl implements UserService {
         userCompany.setContactpeple(improveInfo.getContactPeple());
         userCompany.setContactinfon(improveInfo.getContactInfon());
         userCompany.setCertificate(improveInfo.getCertificate());
-        //private Integer curriculum;	//成立时间
+        userCompany.setEstablishmentTime(improveInfo.getEstablishmentTime());
         userCompany.setUpdateby(Constant.SYSTEM_NAME);
         userCompany.setUpdatetime(new Date());
 

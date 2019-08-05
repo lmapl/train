@@ -10,7 +10,9 @@ public class ImproveRequest extends BaseRequest{
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
     private Integer gender	;  //性别	1=男； 2=女
-    private String birthday;	//生日
+    private String birthdayYear;	//生日
+    private String birthdayMonth;	//生日
+    private String birthdayDay;	//生日
 
 
     private Integer subject;	//教授科目
@@ -21,7 +23,7 @@ public class ImproveRequest extends BaseRequest{
 
 
     private Integer scale;	//规模
-    private Integer curriculum;	//成立时间
+    private String establishmentTime;	//成立时间
     private String introductionPortrait;	//环境图片地址	多个图片以 ; 分割
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
@@ -51,14 +53,6 @@ public class ImproveRequest extends BaseRequest{
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
 
     public Integer getSubject() {
@@ -109,14 +103,6 @@ public class ImproveRequest extends BaseRequest{
         this.scale = scale;
     }
 
-    public Integer getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(Integer curriculum) {
-        this.curriculum = curriculum;
-    }
-
     public String getIntroductionPortrait() {
         return introductionPortrait;
     }
@@ -147,5 +133,37 @@ public class ImproveRequest extends BaseRequest{
 
     public void setCertificate(String certificate) {
         this.certificate = certificate;
+    }
+
+    public String getBirthdayYear() {
+        return birthdayYear;
+    }
+
+    public void setBirthdayYear(String birthdayYear) {
+        this.birthdayYear = birthdayYear;
+    }
+
+    public String getBirthdayMonth() {
+        return birthdayMonth;
+    }
+
+    public void setBirthdayMonth(String birthdayMonth) {
+        this.birthdayMonth = birthdayMonth;
+    }
+
+    public String getBirthdayDay() {
+        return birthdayDay;
+    }
+
+    public void setBirthdayDay(String birthdayDay) {
+        this.birthdayDay = birthdayDay;
+    }
+
+    public String getEstablishmentTime() {
+        return establishmentTime;
+    }
+
+    public void setEstablishmentTime(String establishmentTime) {
+        this.establishmentTime = establishmentTime;
     }
 }

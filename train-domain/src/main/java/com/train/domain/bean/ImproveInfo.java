@@ -11,7 +11,9 @@ public class ImproveInfo {
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
     private Integer gender	;  //性别	1=男； 2=女
-    private String birthday;	//生日
+    private String birthdayYear;	//生日
+    private String birthdayMonth;	//生日
+    private String birthdayDay;	//生日
 
     private Integer subject;	//教授科目
     private Integer teachingAge;//	教龄
@@ -27,6 +29,8 @@ public class ImproveInfo {
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
     private String certificate	;//机构资质证明图片地址
+    private String establishmentTime;	//成立时间
+
 
 
     public String getNickName() {
@@ -51,14 +55,6 @@ public class ImproveInfo {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
 
     public String getAutograph() {
@@ -155,5 +151,37 @@ public class ImproveInfo {
 
     public void setCertificate(String certificate) {
         this.certificate = certificate;
+    }
+
+    public String getBirthdayYear() {
+        return birthdayYear;
+    }
+
+    public void setBirthdayYear(String birthdayYear) {
+        this.birthdayYear = birthdayYear;
+    }
+
+    public String getBirthdayMonth() {
+        return birthdayMonth;
+    }
+
+    public void setBirthdayMonth(String birthdayMonth) {
+        this.birthdayMonth = birthdayMonth;
+    }
+
+    public String getBirthdayDay() {
+        return birthdayDay;
+    }
+
+    public void setBirthdayDay(String birthdayDay) {
+        this.birthdayDay = birthdayDay;
+    }
+
+    public String getEstablishmentTime() {
+        return establishmentTime;
+    }
+
+    public void setEstablishmentTime(String establishmentTime) {
+        this.establishmentTime = establishmentTime;
     }
 }

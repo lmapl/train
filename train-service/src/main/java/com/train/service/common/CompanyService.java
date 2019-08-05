@@ -7,4 +7,6 @@ import com.train.domain.bean.CompanyTeacherInfo; /**
  */
 public interface CompanyService {
     Boolean addTeacher(String autograph, CompanyTeacherInfo teacherInfo);
+
+    Boolean modifyTeacher(String autograph, CompanyTeacherInfo teacherInfo);
 }

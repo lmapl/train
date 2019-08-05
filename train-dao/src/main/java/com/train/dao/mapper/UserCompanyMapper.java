@@ -1,10 +1,9 @@
 package com.train.dao.mapper;
 
-import com.train.dao.example.UserCompanyExample;
 import com.train.domain.entity.UserCompany;
-import org.apache.ibatis.annotations.Param;
-
+import com.train.domain.entity.UserCompanyExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserCompanyMapper {
     /**
