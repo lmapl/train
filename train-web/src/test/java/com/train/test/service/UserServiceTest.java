@@ -6,7 +6,6 @@ package com.train.test.service;
  * Description: ${DESCRIPTION}
  */
 
-import com.train.service.common.RedisService;
 import com.train.service.common.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +31,7 @@ public class UserServiceTest {
      */
     @Test
     public void set(){
-        boolean result = userService.userTypeDetail(6,3);
-        System.out.println();
+       /* boolean result = userService.userTypeDetail(6,3);
+        System.out.println();*/
     }
 }

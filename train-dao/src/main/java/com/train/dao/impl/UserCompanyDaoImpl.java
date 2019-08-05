@@ -22,4 +22,14 @@ public class UserCompanyDaoImpl implements UserCompanyDao {
     public int insert(UserCompany userCompany) {
         return userCompanyMapper.insert(userCompany);
     }
+
+    @Override
+    public UserCompany getByUserId(Integer userId) {
+        return userCompanyMapper.selectByPrimaryKey(userId);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(UserCompany userCompany) {
+        return userCompanyMapper.updateByPrimaryKeySelective(userCompany);
+    }
 }

@@ -7,20 +7,9 @@ import java.io.Serializable;
  * Create Date: 2019/7/29 19:25
  * Description: ${DESCRIPTION}
  */
-public class IdentityRequest implements Serializable{
-
-    private String autograph;	// 登录保持签名 需要用服务器端rsa公钥加密,
+public class IdentityRequest extends BaseRequest implements Serializable{
 
     private  Integer type;	//身份类型 学生家长=1    教师=2；    机构=3；
-
-    public String getAutograph() {
-        return autograph;
-    }
-
-    public void setAutograph(String autograph) {
-        this.autograph = autograph;
-    }
-
 
     public Integer getType() {
         return type;

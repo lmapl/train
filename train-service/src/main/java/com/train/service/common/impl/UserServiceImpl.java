@@ -6,6 +6,7 @@ import com.train.dao.UserCompanyDao;
 import com.train.dao.UserDao;
 import com.train.dao.UserStuParentDao;
 import com.train.dao.UserTeacherDao;
+import com.train.domain.bean.ImproveInfo;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
 import com.train.domain.bean.UserSessionInfo;
@@ -266,5 +267,96 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+    }
+
+    @Override
+    public Boolean userStuImproveInfo(ImproveInfo improveInfo) {
+        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        if(session == null){
+            return false;
+        }
+
+        UserStuParent userStuParent = userStuParentDao.getByUserId(session.getUserId());
+        if(userStuParent == null){
+            return false;
+        }
+
+        userStuParent.setNickname(improveInfo.getNickName());
+        userStuParent.setPortrait(improveInfo.getPortrait());
+        userStuParent.setBirthday(improveInfo.getBirthday());
+        userStuParent.setGender(improveInfo.getGender());
+        userStuParent.setUpdateby(Constant.SYSTEM_NAME);
+        userStuParent.setUpdatetime(new Date());
+
+        //修改学生家长明细
+        return userStuParentDao.updateByPrimaryKeySelective(userStuParent) == 1;
+    }
+
+    @Override
+    public Boolean teacherImproveInfo(ImproveInfo improveInfo) {
+
+        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        if(session == null){
+            return false;
+        }
+
+        UserTeacher userTeacher = userTeacherDao.getByUserId(session.getUserId());
+        if(userTeacher == null){
+            return false;
+        }
+
+        userTeacher.setNickname(improveInfo.getNickName());
+        userTeacher.setPortrait(improveInfo.getPortrait());
+        userTeacher.setSubjectid(improveInfo.getSubject());
+        userTeacher.setTeachingage(improveInfo.getTeachingAge());
+        userTeacher.setPosition(improveInfo.getPosition());
+        userTeacher.setIntroduction(improveInfo.getIntroduction());
+        userTeacher.setFreevideo(improveInfo.getFreeVideo());
+        userTeacher.setUpdateby(Constant.SYSTEM_NAME);
+        userTeacher.setUpdatetime(new Date());
+
+        //修改学生家长明细
+        return userTeacherDao.updateByPrimaryKeySelective(userTeacher) == 1;
+    }
+
+    @Override
+    public Boolean companyImproveInfo(ImproveInfo improveInfo) {
+        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+            return false;
+        }
+
+        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        if(session == null){
+            return false;
+        }
+
+        UserCompany userCompany = userCompanyDao.getByUserId(session.getUserId());
+        if(userCompany == null){
+            return false;
+        }
+
+        userCompany.setNickname(improveInfo.getNickName());
+        userCompany.setPortrait(improveInfo.getPortrait());
+        userCompany.setPosition(improveInfo.getPosition());
+        userCompany.setIntroduction(improveInfo.getIntroduction());
+        userCompany.setScale(improveInfo.getScale());
+        userCompany.setIntroductionportrait(improveInfo.getIntroductionPortrait());
+        userCompany.setContactpeple(improveInfo.getContactPeple());
+        userCompany.setContactinfon(improveInfo.getContactInfon());
+        userCompany.setCertificate(improveInfo.getCertificate());
+        //private Integer curriculum;	//成立时间
+        userCompany.setUpdateby(Constant.SYSTEM_NAME);
+        userCompany.setUpdatetime(new Date());
+
+        //修改学生家长明细
+        return userCompanyDao.updateByPrimaryKeySelective(userCompany) == 1;
     }
 }

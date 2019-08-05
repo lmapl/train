@@ -23,4 +23,14 @@ public class UserStuParentDaoImpl implements UserStuParentDao {
     public int insert(UserStuParent userStuParent) {
         return userStuParentMapper.insert(userStuParent);
     }
+
+    @Override
+    public UserStuParent getByUserId(Integer userId) {
+        return userStuParentMapper.selectByPrimaryKey(userId);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(UserStuParent userStuParent) {
+        return  userStuParentMapper.updateByPrimaryKeySelective(userStuParent);
+    }
 }

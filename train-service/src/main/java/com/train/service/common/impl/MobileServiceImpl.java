@@ -52,6 +52,7 @@ public class MobileServiceImpl implements MobileService {
         String day = DateUtil.format(new Date(),DateUtil.YMD_FORMAT);
         RedisKey redisKey =  ConstantRedis.MOBILE_CODE_TIMES_LIMIT(day);
         Long times = redisService.hincrBy(redisKey.getKey(),mobile,1);
+        redisService.expire(redisKey.getKey(),redisKey.getExpireSeconds());
         if(times > 10){
             return;
         }

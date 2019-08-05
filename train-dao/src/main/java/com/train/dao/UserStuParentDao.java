@@ -7,4 +7,8 @@ import com.train.domain.entity.UserStuParent; /**
  */
 public interface UserStuParentDao {
     int insert(UserStuParent userStuParent);
+
+    UserStuParent getByUserId(Integer userId);
+
+    int updateByPrimaryKeySelective(UserStuParent userStuParent);
 }

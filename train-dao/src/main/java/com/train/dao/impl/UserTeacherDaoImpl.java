@@ -22,4 +22,14 @@ public class UserTeacherDaoImpl implements UserTeacherDao {
     public int insert(UserTeacher userTeacher) {
         return userTeacherMapper.insert(userTeacher);
     }
+
+    @Override
+    public UserTeacher getByUserId(Integer userId) {
+        return userTeacherMapper.selectByPrimaryKey(userId);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(UserTeacher userTeacher) {
+        return userTeacherMapper.updateByPrimaryKeySelective(userTeacher);
+    }
 }

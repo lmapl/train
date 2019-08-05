@@ -9,9 +9,8 @@ import java.io.Serializable;
  * Create Date: 2019/7/29 19:25
  * Description: ${DESCRIPTION}
  */
-public class LoginRequest implements Serializable{
+public class LoginRequest  extends  BaseRequest implements Serializable{
 
-    private String autograph;	//设备唯一码		需要用服务器端rsa公钥加密,
     private String userName;	//用户名		需要用服务器端rsa公钥加密（手机号码）手机号码、微信名
     private String password;	//密码		需要用服务器端rsa公钥加密,（md5加密, 微信token等）
     private String mobileVerifyCode;	//手机验证码		需要用服务器端rsa公钥加密,（手机验证码）
@@ -40,19 +39,4 @@ public class LoginRequest implements Serializable{
         this.mobileVerifyCode = mobileVerifyCode;
     }
 
-    public static void main(String[] args){
-        RegisterRequest registerRequest = new RegisterRequest();
-        registerRequest.setMobileVerifyCode("xxxx");
-        registerRequest.setPassword("bbbb");
-        registerRequest.setUserName("aaa");
-        System.out.println(new Gson().toJson(registerRequest));
-    }
-
-    public String getAutograph() {
-        return autograph;
-    }
-
-    public void setAutograph(String autograph) {
-        this.autograph = autograph;
-    }
 }
