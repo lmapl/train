@@ -1,21 +1,14 @@
 package com.train.web.common;
 
 import com.train.Exception.InvalidParamException;
-import com.train.domain.bean.RegisterInfo;
-import com.train.service.common.MobileService;
 import com.train.service.common.TokenService;
-import com.train.service.common.UserService;
 import com.train.web.bean.Result;
-import com.train.web.dao.MobileVerifyCodeRequest;
-import com.train.web.dao.RegisterRequest;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.BeanUtils;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by ma peiliang
@@ -28,12 +21,6 @@ public class CommonController {
 
     @Resource
     private TokenService tokenService;
-
-    @Resource
-    private MobileService mobileService;
-
-    @Resource
-    private UserService userService;
 
     @RequestMapping(value ="/getToken")
     @ResponseBody

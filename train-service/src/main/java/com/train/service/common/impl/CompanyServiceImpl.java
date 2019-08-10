@@ -5,6 +5,7 @@ import com.train.dao.CompanyTeacherDao;
 import com.train.dao.UserCompanyDao;
 import com.train.dao.UserDao;
 import com.train.domain.bean.CompanyCurriculumInfo;
+import com.train.domain.bean.CompanyInfo;
 import com.train.domain.bean.CompanyTeacherInfo;
 import com.train.domain.bean.UserSessionInfo;
 import com.train.domain.entity.CompanyCurriculum;
@@ -20,6 +21,7 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ma peiliang
@@ -150,5 +152,10 @@ public class CompanyServiceImpl implements CompanyService {
 
         int num = companyCurriculumDao.insert(companyCurriculum);
         return num == 1;
+    }
+
+    @Override
+    public List<CompanyInfo> selectedCompany() {
+        return null;
     }
 }

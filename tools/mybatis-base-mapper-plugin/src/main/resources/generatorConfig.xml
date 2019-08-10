@@ -39,7 +39,7 @@
 
 
         <!--<table tableName="t_demo"></table>-->
-        <table tableName="company_curriculum"></table>
+        <table tableName="addr_area"></table>
         <!--<table tableName="user_company"></table>
         <table tableName="user_stu_parent"></table>
         <table tableName="user_teacher"></table>-->

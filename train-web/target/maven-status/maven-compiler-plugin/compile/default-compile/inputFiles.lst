@@ -1,11 +1,13 @@
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\ImproveRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\stuparent\UserStuParentController.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\bean\Result.java
+D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\AreaDto.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\LoginResponse.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\LabelRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\LoginOutRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\teacher\UserTeacherController.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\RegisterRequest.java
+D:\github_responsity\train\train-web\src\main\java\com\train\web\common\AreaController.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\AddTeacherRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\BaseRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\IdentityRequest.java
@@ -15,5 +17,7 @@ D:\github_responsity\train\train-web\src\main\java\com\train\web\bean\ExceptionA
 D:\github_responsity\train\train-web\src\main\java\com\train\web\company\CompanyController.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\bean\Error.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\common\CommonController.java
+D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\AddCurriculumRequest.java
+D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\AreaRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\BindRequest.java
 D:\github_responsity\train\train-web\src\main\java\com\train\web\dao\MobileVerifyCodeRequest.java
