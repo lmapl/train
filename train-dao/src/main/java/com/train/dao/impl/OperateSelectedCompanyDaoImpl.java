@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.OperateSelectedCompanyDao;
+import com.train.dao.declare.OperateSelectedCompanyDao;
 import com.train.dao.mapper.OperateSelectedCompanyMapper;
 import com.train.domain.entity.OperateSelectedCompany;
 import com.train.domain.entity.OperateSelectedCompanyExample;

@@ -11,7 +11,7 @@ public class UserCompany {
     /**
      * 昵称
      */
-    private String nickname;
+    private String nickName;
 
     /**
      * 头像地址
@@ -41,17 +41,17 @@ public class UserCompany {
     /**
      * 环境图片地址
      */
-    private String introductionportrait;
+    private String introductionPortrait;
 
     /**
      * 机构联系人
      */
-    private String contactpeple;
+    private String contactPeple;
 
     /**
      * 机构联系方式
      */
-    private String contactinfon;
+    private String contactInfo;
 
     /**
      * 机构资质证明图片地址
@@ -61,22 +61,22 @@ public class UserCompany {
     /**
      * 创建时间
      */
-    private Date createtime;
+    private Date createTime;
 
     /**
      * 创建人，默认系统
      */
-    private String createby;
+    private String createBy;
 
     /**
      * 最后一次修改时间
      */
-    private Date updatetime;
+    private Date updateTime;
 
     /**
      * 最后一次修改人
      */
-    private String updateby;
+    private String updateBy;
 
     /**
      * 用户id，user表的主键
@@ -96,18 +96,18 @@ public class UserCompany {
 
     /**
      * 昵称
-     * @return nickName 昵称
+     * @return nick_Name 昵称
      */
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
     /**
      * 昵称
-     * @param nickname 昵称
+     * @param nickName 昵称
      */
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
     }
 
     /**
@@ -192,50 +192,50 @@ public class UserCompany {
 
     /**
      * 环境图片地址
-     * @return introductionPortrait 环境图片地址
+     * @return introduction_portrait 环境图片地址
      */
-    public String getIntroductionportrait() {
-        return introductionportrait;
+    public String getIntroductionPortrait() {
+        return introductionPortrait;
     }
 
     /**
      * 环境图片地址
-     * @param introductionportrait 环境图片地址
+     * @param introductionPortrait 环境图片地址
      */
-    public void setIntroductionportrait(String introductionportrait) {
-        this.introductionportrait = introductionportrait == null ? null : introductionportrait.trim();
+    public void setIntroductionPortrait(String introductionPortrait) {
+        this.introductionPortrait = introductionPortrait == null ? null : introductionPortrait.trim();
     }
 
     /**
      * 机构联系人
-     * @return contactPeple 机构联系人
+     * @return contact_peple 机构联系人
      */
-    public String getContactpeple() {
-        return contactpeple;
+    public String getContactPeple() {
+        return contactPeple;
     }
 
     /**
      * 机构联系人
-     * @param contactpeple 机构联系人
+     * @param contactPeple 机构联系人
      */
-    public void setContactpeple(String contactpeple) {
-        this.contactpeple = contactpeple == null ? null : contactpeple.trim();
+    public void setContactPeple(String contactPeple) {
+        this.contactPeple = contactPeple == null ? null : contactPeple.trim();
     }
 
     /**
      * 机构联系方式
-     * @return contactInfon 机构联系方式
+     * @return contact_info 机构联系方式
      */
-    public String getContactinfon() {
-        return contactinfon;
+    public String getContactInfo() {
+        return contactInfo;
     }
 
     /**
      * 机构联系方式
-     * @param contactinfon 机构联系方式
+     * @param contactInfo 机构联系方式
      */
-    public void setContactinfon(String contactinfon) {
-        this.contactinfon = contactinfon == null ? null : contactinfon.trim();
+    public void setContactInfo(String contactInfo) {
+        this.contactInfo = contactInfo == null ? null : contactInfo.trim();
     }
 
     /**
@@ -256,66 +256,66 @@ public class UserCompany {
 
     /**
      * 创建时间
-     * @return createTime 创建时间
+     * @return create_time 创建时间
      */
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 创建时间
-     * @param createtime 创建时间
+     * @param createTime 创建时间
      */
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
      * 创建人，默认系统
-     * @return createBy 创建人，默认系统
+     * @return create_by 创建人，默认系统
      */
-    public String getCreateby() {
-        return createby;
+    public String getCreateBy() {
+        return createBy;
     }
 
     /**
      * 创建人，默认系统
-     * @param createby 创建人，默认系统
+     * @param createBy 创建人，默认系统
      */
-    public void setCreateby(String createby) {
-        this.createby = createby == null ? null : createby.trim();
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
     /**
      * 最后一次修改时间
-     * @return updateTime 最后一次修改时间
+     * @return update_time 最后一次修改时间
      */
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
     /**
      * 最后一次修改时间
-     * @param updatetime 最后一次修改时间
+     * @param updateTime 最后一次修改时间
      */
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     /**
      * 最后一次修改人
-     * @return updateBy 最后一次修改人
+     * @return update_by 最后一次修改人
      */
-    public String getUpdateby() {
-        return updateby;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
     /**
      * 最后一次修改人
-     * @param updateby 最后一次修改人
+     * @param updateBy 最后一次修改人
      */
-    public void setUpdateby(String updateby) {
-        this.updateby = updateby == null ? null : updateby.trim();
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
     }
 
     /**
@@ -329,20 +329,20 @@ public class UserCompany {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", nickname=").append(nickname);
+        sb.append(", nickName=").append(nickName);
         sb.append(", portrait=").append(portrait);
         sb.append(", scale=").append(scale);
         sb.append(", establishmentTime=").append(establishmentTime);
         sb.append(", position=").append(position);
         sb.append(", introduction=").append(introduction);
-        sb.append(", introductionportrait=").append(introductionportrait);
-        sb.append(", contactpeple=").append(contactpeple);
-        sb.append(", contactinfon=").append(contactinfon);
+        sb.append(", introductionPortrait=").append(introductionPortrait);
+        sb.append(", contactPeple=").append(contactPeple);
+        sb.append(", contactInfo=").append(contactInfo);
         sb.append(", certificate=").append(certificate);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", createby=").append(createby);
-        sb.append(", updatetime=").append(updatetime);
-        sb.append(", updateby=").append(updateby);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", createBy=").append(createBy);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", updateBy=").append(updateBy);
         sb.append("]");
         return sb.toString();
     }

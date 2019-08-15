@@ -5,6 +5,7 @@ D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\Us
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\CompanyCurriculumExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserStuParent.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateRotationShowExample.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateRotationShow.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\ImproveInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateSelectedCompany.java
@@ -27,6 +28,7 @@ D:\github_responsity\train\train-domain\src\main\java\com\train\domain\enums\Loc
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateSelectedCompanyExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\CompanyTeacherInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\AddrArea.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserTeacherExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\AreaInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\UserSessionInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\CompanyTeacherExample.java

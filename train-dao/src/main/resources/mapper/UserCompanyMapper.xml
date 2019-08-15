@@ -3,20 +3,20 @@
 <mapper namespace="com.train.dao.mapper.UserCompanyMapper" >
   <resultMap id="BaseResultMap" type="com.train.domain.entity.UserCompany" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="nickName" property="nickname" jdbcType="VARCHAR" />
+    <result column="nick_Name" property="nickName" jdbcType="VARCHAR" />
     <result column="portrait" property="portrait" jdbcType="VARCHAR" />
     <result column="scale" property="scale" jdbcType="INTEGER" />
     <result column="establishment_time" property="establishmentTime" jdbcType="VARCHAR" />
     <result column="position" property="position" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="introductionPortrait" property="introductionportrait" jdbcType="VARCHAR" />
-    <result column="contactPeple" property="contactpeple" jdbcType="VARCHAR" />
-    <result column="contactInfon" property="contactinfon" jdbcType="VARCHAR" />
+    <result column="introduction_portrait" property="introductionPortrait" jdbcType="VARCHAR" />
+    <result column="contact_peple" property="contactPeple" jdbcType="VARCHAR" />
+    <result column="contact_info" property="contactInfo" jdbcType="VARCHAR" />
     <result column="certificate" property="certificate" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="DATE" />
-    <result column="createBy" property="createby" jdbcType="VARCHAR" />
-    <result column="updateTime" property="updatetime" jdbcType="DATE" />
-    <result column="updateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -77,8 +77,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nickName, portrait, scale, establishment_time, position, introduction, introductionPortrait, 
-    contactPeple, contactInfon, certificate, createTime, createBy, updateTime, updateBy
+    id, nick_Name, portrait, scale, establishment_time, position, introduction, introduction_portrait, 
+    contact_peple, contact_info, certificate, create_time, create_by, update_time, update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserCompanyExample" >
     select
@@ -111,17 +111,17 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.UserCompany" >
-    insert into user_company (id, nickName, portrait, 
+    insert into user_company (id, nick_Name, portrait, 
       scale, establishment_time, position, 
-      introduction, introductionPortrait, contactPeple, 
-      contactInfon, certificate, createTime, 
-      createBy, updateTime, updateBy
+      introduction, introduction_portrait, contact_peple, 
+      contact_info, certificate, create_time, 
+      create_by, update_time, update_by
       )
-    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
       #{scale,jdbcType=INTEGER}, #{establishmentTime,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
-      #{introduction,jdbcType=VARCHAR}, #{introductionportrait,jdbcType=VARCHAR}, #{contactpeple,jdbcType=VARCHAR}, 
-      #{contactinfon,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
-      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+      #{introduction,jdbcType=VARCHAR}, #{introductionPortrait,jdbcType=VARCHAR}, #{contactPeple,jdbcType=VARCHAR}, 
+      #{contactInfo,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserCompany" >
@@ -130,8 +130,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="nickname != null" >
-        nickName,
+      <if test="nickName != null" >
+        nick_Name,
       </if>
       <if test="portrait != null" >
         portrait,
@@ -148,37 +148,37 @@
       <if test="introduction != null" >
         introduction,
       </if>
-      <if test="introductionportrait != null" >
-        introductionPortrait,
+      <if test="introductionPortrait != null" >
+        introduction_portrait,
       </if>
-      <if test="contactpeple != null" >
-        contactPeple,
+      <if test="contactPeple != null" >
+        contact_peple,
       </if>
-      <if test="contactinfon != null" >
-        contactInfon,
+      <if test="contactInfo != null" >
+        contact_info,
       </if>
       <if test="certificate != null" >
         certificate,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="createby != null" >
-        createBy,
+      <if test="createBy != null" >
+        create_by,
       </if>
-      <if test="updatetime != null" >
-        updateTime,
+      <if test="updateTime != null" >
+        update_time,
       </if>
-      <if test="updateby != null" >
-        updateBy,
+      <if test="updateBy != null" >
+        update_by,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="nickname != null" >
-        #{nickname,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="portrait != null" >
         #{portrait,jdbcType=VARCHAR},
@@ -195,29 +195,29 @@
       <if test="introduction != null" >
         #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="introductionportrait != null" >
-        #{introductionportrait,jdbcType=VARCHAR},
+      <if test="introductionPortrait != null" >
+        #{introductionPortrait,jdbcType=VARCHAR},
       </if>
-      <if test="contactpeple != null" >
-        #{contactpeple,jdbcType=VARCHAR},
+      <if test="contactPeple != null" >
+        #{contactPeple,jdbcType=VARCHAR},
       </if>
-      <if test="contactinfon != null" >
-        #{contactinfon,jdbcType=VARCHAR},
+      <if test="contactInfo != null" >
+        #{contactInfo,jdbcType=VARCHAR},
       </if>
       <if test="certificate != null" >
         #{certificate,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
       </if>
-      <if test="createby != null" >
-        #{createby,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=DATE},
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateby != null" >
-        #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -233,8 +233,8 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.nickname != null" >
-        nickName = #{record.nickname,jdbcType=VARCHAR},
+      <if test="record.nickName != null" >
+        nick_Name = #{record.nickName,jdbcType=VARCHAR},
       </if>
       <if test="record.portrait != null" >
         portrait = #{record.portrait,jdbcType=VARCHAR},
@@ -251,29 +251,29 @@
       <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
-      <if test="record.introductionportrait != null" >
-        introductionPortrait = #{record.introductionportrait,jdbcType=VARCHAR},
+      <if test="record.introductionPortrait != null" >
+        introduction_portrait = #{record.introductionPortrait,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactpeple != null" >
-        contactPeple = #{record.contactpeple,jdbcType=VARCHAR},
+      <if test="record.contactPeple != null" >
+        contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
       </if>
-      <if test="record.contactinfon != null" >
-        contactInfon = #{record.contactinfon,jdbcType=VARCHAR},
+      <if test="record.contactInfo != null" >
+        contact_info = #{record.contactInfo,jdbcType=VARCHAR},
       </if>
       <if test="record.certificate != null" >
         certificate = #{record.certificate,jdbcType=VARCHAR},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=DATE},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=DATE},
       </if>
-      <if test="record.createby != null" >
-        createBy = #{record.createby,jdbcType=VARCHAR},
+      <if test="record.createBy != null" >
+        create_by = #{record.createBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.updatetime != null" >
-        updateTime = #{record.updatetime,jdbcType=DATE},
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=DATE},
       </if>
-      <if test="record.updateby != null" >
-        updateBy = #{record.updateby,jdbcType=VARCHAR},
+      <if test="record.updateBy != null" >
+        update_by = #{record.updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -283,20 +283,20 @@
   <update id="updateByExample" parameterType="map" >
     update user_company
     set id = #{record.id,jdbcType=INTEGER},
-      nickName = #{record.nickname,jdbcType=VARCHAR},
+      nick_Name = #{record.nickName,jdbcType=VARCHAR},
       portrait = #{record.portrait,jdbcType=VARCHAR},
       scale = #{record.scale,jdbcType=INTEGER},
       establishment_time = #{record.establishmentTime,jdbcType=VARCHAR},
       position = #{record.position,jdbcType=VARCHAR},
       introduction = #{record.introduction,jdbcType=VARCHAR},
-      introductionPortrait = #{record.introductionportrait,jdbcType=VARCHAR},
-      contactPeple = #{record.contactpeple,jdbcType=VARCHAR},
-      contactInfon = #{record.contactinfon,jdbcType=VARCHAR},
+      introduction_portrait = #{record.introductionPortrait,jdbcType=VARCHAR},
+      contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
+      contact_info = #{record.contactInfo,jdbcType=VARCHAR},
       certificate = #{record.certificate,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=DATE},
-      createBy = #{record.createby,jdbcType=VARCHAR},
-      updateTime = #{record.updatetime,jdbcType=DATE},
-      updateBy = #{record.updateby,jdbcType=VARCHAR}
+      create_time = #{record.createTime,jdbcType=DATE},
+      create_by = #{record.createBy,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=DATE},
+      update_by = #{record.updateBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -304,8 +304,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.train.domain.entity.UserCompany" >
     update user_company
     <set >
-      <if test="nickname != null" >
-        nickName = #{nickname,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        nick_Name = #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="portrait != null" >
         portrait = #{portrait,jdbcType=VARCHAR},
@@ -322,49 +322,49 @@
       <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="introductionportrait != null" >
-        introductionPortrait = #{introductionportrait,jdbcType=VARCHAR},
+      <if test="introductionPortrait != null" >
+        introduction_portrait = #{introductionPortrait,jdbcType=VARCHAR},
       </if>
-      <if test="contactpeple != null" >
-        contactPeple = #{contactpeple,jdbcType=VARCHAR},
+      <if test="contactPeple != null" >
+        contact_peple = #{contactPeple,jdbcType=VARCHAR},
       </if>
-      <if test="contactinfon != null" >
-        contactInfon = #{contactinfon,jdbcType=VARCHAR},
+      <if test="contactInfo != null" >
+        contact_info = #{contactInfo,jdbcType=VARCHAR},
       </if>
       <if test="certificate != null" >
         certificate = #{certificate,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=DATE},
       </if>
-      <if test="createby != null" >
-        createBy = #{createby,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="updatetime != null" >
-        updateTime = #{updatetime,jdbcType=DATE},
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateby != null" >
-        updateBy = #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.train.domain.entity.UserCompany" >
     update user_company
-    set nickName = #{nickname,jdbcType=VARCHAR},
+    set nick_Name = #{nickName,jdbcType=VARCHAR},
       portrait = #{portrait,jdbcType=VARCHAR},
       scale = #{scale,jdbcType=INTEGER},
       establishment_time = #{establishmentTime,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=VARCHAR},
-      introductionPortrait = #{introductionportrait,jdbcType=VARCHAR},
-      contactPeple = #{contactpeple,jdbcType=VARCHAR},
-      contactInfon = #{contactinfon,jdbcType=VARCHAR},
+      introduction_portrait = #{introductionPortrait,jdbcType=VARCHAR},
+      contact_peple = #{contactPeple,jdbcType=VARCHAR},
+      contact_info = #{contactInfo,jdbcType=VARCHAR},
       certificate = #{certificate,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=DATE},
-      createBy = #{createby,jdbcType=VARCHAR},
-      updateTime = #{updatetime,jdbcType=DATE},
-      updateBy = #{updateby,jdbcType=VARCHAR}
+      create_time = #{createTime,jdbcType=DATE},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

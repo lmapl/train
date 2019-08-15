@@ -3,6 +3,7 @@ package com.train.service.common;
 import com.train.domain.bean.CompanyInfo;
 import com.train.domain.bean.OperateRecommendInfo;
 import com.train.domain.bean.RotationShowInfo;
+import com.train.domain.bean.SubjectInfo;
 
 import java.util.List;
 
@@ -23,4 +24,6 @@ public interface OperateService {
      * @return
      */
     List<CompanyInfo> getSelectedCompanyByLocation(int location);
+
+    List<SubjectInfo> getSubject();
 }

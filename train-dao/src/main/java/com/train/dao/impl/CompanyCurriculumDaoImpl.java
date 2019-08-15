@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.CompanyCurriculumDao;
+import com.train.dao.declare.CompanyCurriculumDao;
 import com.train.dao.mapper.CompanyCurriculumMapper;
 import com.train.domain.entity.CompanyCurriculum;
 import org.springframework.stereotype.Repository;

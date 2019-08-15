@@ -2,10 +2,10 @@ package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
 import com.train.Exception.InternalServerException;
-import com.train.dao.UserCompanyDao;
-import com.train.dao.UserDao;
-import com.train.dao.UserStuParentDao;
-import com.train.dao.UserTeacherDao;
+import com.train.dao.declare.UserCompanyDao;
+import com.train.dao.declare.UserDao;
+import com.train.dao.declare.UserStuParentDao;
+import com.train.dao.declare.UserTeacherDao;
 import com.train.domain.bean.ImproveInfo;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
@@ -242,26 +242,26 @@ public class UserServiceImpl implements UserService {
         if(UserTypeEnum.STU_PARENT.getKey() == type){
             UserStuParent userStuParent = new UserStuParent();
             userStuParent.setId(userId);
-            userStuParent.setCreateby(Constant.SYSTEM_NAME);
-            userStuParent.setCreatetime(date);
-            userStuParent.setUpdateby(Constant.SYSTEM_NAME);
-            userStuParent.setUpdatetime(date);
+            userStuParent.setCreateBy(Constant.SYSTEM_NAME);
+            userStuParent.setCreateTime(date);
+            userStuParent.setUpdateBy(Constant.SYSTEM_NAME);
+            userStuParent.setUpdateTime(date);
             return userStuParentDao.insert(userStuParent) == 1;
         }else if(UserTypeEnum.TEACHER.getKey() == type){
             UserTeacher userTeacher = new UserTeacher();
             userTeacher.setId(userId);
-            userTeacher.setCreateby(Constant.SYSTEM_NAME);
-            userTeacher.setCreatetime(date);
-            userTeacher.setUpdateby(Constant.SYSTEM_NAME);
-            userTeacher.setUpdatetime(date);
+            userTeacher.setCreateBy(Constant.SYSTEM_NAME);
+            userTeacher.setCreateTime(date);
+            userTeacher.setUpdateBy(Constant.SYSTEM_NAME);
+            userTeacher.setUpdateTime(date);
             return userTeacherDao.insert(userTeacher) == 1;
         }else if(UserTypeEnum.COMPANY.getKey() == type){
             UserCompany userCompany = new UserCompany();
             userCompany.setId(userId);
-            userCompany.setCreateby(Constant.SYSTEM_NAME);
-            userCompany.setCreatetime(date);
-            userCompany.setUpdateby(Constant.SYSTEM_NAME);
-            userCompany.setUpdatetime(date);
+            userCompany.setCreateBy(Constant.SYSTEM_NAME);
+            userCompany.setCreateTime(date);
+            userCompany.setUpdateBy(Constant.SYSTEM_NAME);
+            userCompany.setUpdateTime(date);
             return userCompanyDao.insert(userCompany) == 1;
         }else {
             return false;
@@ -291,8 +291,8 @@ public class UserServiceImpl implements UserService {
         userStuParent.setBirthdayMonth(improveInfo.getBirthdayMonth());
         userStuParent.setBirthdayDay(improveInfo.getBirthdayDay());
         userStuParent.setGender(improveInfo.getGender());
-        userStuParent.setUpdateby(Constant.SYSTEM_NAME);
-        userStuParent.setUpdatetime(new Date());
+        userStuParent.setUpdateBy(Constant.SYSTEM_NAME);
+        userStuParent.setUpdateTime(new Date());
 
         //修改学生家长明细
         return userStuParentDao.updateByPrimaryKeySelective(userStuParent) == 1;
@@ -315,15 +315,15 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
-        userTeacher.setNickname(improveInfo.getNickName());
+        userTeacher.setNickName(improveInfo.getNickName());
         userTeacher.setPortrait(improveInfo.getPortrait());
-        userTeacher.setSubjectid(improveInfo.getSubject());
-        userTeacher.setTeachingage(improveInfo.getTeachingAge());
+        userTeacher.setSubjectId(improveInfo.getSubject());
+        userTeacher.setTeachingAge(improveInfo.getTeachingAge());
         userTeacher.setPosition(improveInfo.getPosition());
         userTeacher.setIntroduction(improveInfo.getIntroduction());
-        userTeacher.setFreevideo(improveInfo.getFreeVideo());
-        userTeacher.setUpdateby(Constant.SYSTEM_NAME);
-        userTeacher.setUpdatetime(new Date());
+        userTeacher.setFreeVideo(improveInfo.getFreeVideo());
+        userTeacher.setUpdateBy(Constant.SYSTEM_NAME);
+        userTeacher.setUpdateTime(new Date());
 
         //修改学生家长明细
         return userTeacherDao.updateByPrimaryKeySelective(userTeacher) == 1;
@@ -345,18 +345,18 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
-        userCompany.setNickname(improveInfo.getNickName());
+        userCompany.setNickName(improveInfo.getNickName());
         userCompany.setPortrait(improveInfo.getPortrait());
         userCompany.setPosition(improveInfo.getPosition());
         userCompany.setIntroduction(improveInfo.getIntroduction());
         userCompany.setScale(improveInfo.getScale());
-        userCompany.setIntroductionportrait(improveInfo.getIntroductionPortrait());
-        userCompany.setContactpeple(improveInfo.getContactPeple());
-        userCompany.setContactinfon(improveInfo.getContactInfon());
+        userCompany.setIntroductionPortrait(improveInfo.getIntroductionPortrait());
+        userCompany.setContactPeple(improveInfo.getContactPeple());
+        userCompany.setContactInfo(improveInfo.getContactInfon());
         userCompany.setCertificate(improveInfo.getCertificate());
         userCompany.setEstablishmentTime(improveInfo.getEstablishmentTime());
-        userCompany.setUpdateby(Constant.SYSTEM_NAME);
-        userCompany.setUpdatetime(new Date());
+        userCompany.setUpdateBy(Constant.SYSTEM_NAME);
+        userCompany.setUpdateTime(new Date());
 
         //修改学生家长明细
         return userCompanyDao.updateByPrimaryKeySelective(userCompany) == 1;

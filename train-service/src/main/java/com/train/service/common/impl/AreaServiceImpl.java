@@ -1,6 +1,6 @@
 package com.train.service.common.impl;
 
-import com.train.dao.AddrAreaDao;
+import com.train.dao.declare.AddrAreaDao;
 import com.train.domain.bean.AreaInfo;
 import com.train.domain.entity.AddrArea;
 import com.train.service.common.AreaService;

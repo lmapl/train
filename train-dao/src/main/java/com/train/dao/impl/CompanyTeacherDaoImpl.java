@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.CompanyTeacherDao;
+import com.train.dao.declare.CompanyTeacherDao;
 import com.train.dao.mapper.CompanyTeacherMapper;
 import com.train.domain.entity.CompanyTeacher;
 import com.train.utils.Constant;

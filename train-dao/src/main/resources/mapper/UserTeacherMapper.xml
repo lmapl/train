@@ -3,17 +3,17 @@
 <mapper namespace="com.train.dao.mapper.UserTeacherMapper" >
   <resultMap id="BaseResultMap" type="com.train.domain.entity.UserTeacher" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="nickName" property="nickname" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
     <result column="portrait" property="portrait" jdbcType="VARCHAR" />
-    <result column="subjectId" property="subjectid" jdbcType="INTEGER" />
-    <result column="teachingAge" property="teachingage" jdbcType="INTEGER" />
+    <result column="subject_id" property="subjectId" jdbcType="INTEGER" />
+    <result column="teaching_age" property="teachingAge" jdbcType="INTEGER" />
     <result column="position" property="position" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="freeVideo" property="freevideo" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="DATE" />
-    <result column="createBy" property="createby" jdbcType="VARCHAR" />
-    <result column="updateTime" property="updatetime" jdbcType="DATE" />
-    <result column="updateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="free_video" property="freeVideo" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -74,10 +74,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nickName, portrait, subjectId, teachingAge, position, introduction, freeVideo, 
-    createTime, createBy, updateTime, updateBy
+    id, nick_name, portrait, subject_id, teaching_age, position, introduction, free_video, 
+    create_time, create_by, update_time, update_by
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserTeacherExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserTeacherExample" >
     select
     <if test="distinct" >
       distinct
@@ -101,22 +101,22 @@
     delete from user_teacher
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.train.dao.example.UserTeacherExample" >
+  <delete id="deleteByExample" parameterType="com.train.domain.entity.UserTeacherExample" >
     delete from user_teacher
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.UserTeacher" >
-    insert into user_teacher (id, nickName, portrait, 
-      subjectId, teachingAge, position, 
-      introduction, freeVideo, createTime, 
-      createBy, updateTime, updateBy
+    insert into user_teacher (id, nick_name, portrait, 
+      subject_id, teaching_age, position, 
+      introduction, free_video, create_time, 
+      create_by, update_time, update_by
       )
-    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
-      #{subjectid,jdbcType=INTEGER}, #{teachingage,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, 
-      #{introduction,jdbcType=VARCHAR}, #{freevideo,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
-      #{createby,jdbcType=VARCHAR}, #{updatetime,jdbcType=DATE}, #{updateby,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
+      #{subjectId,jdbcType=INTEGER}, #{teachingAge,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, 
+      #{introduction,jdbcType=VARCHAR}, #{freeVideo,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserTeacher" >
@@ -125,17 +125,17 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="nickname != null" >
-        nickName,
+      <if test="nickName != null" >
+        nick_name,
       </if>
       <if test="portrait != null" >
         portrait,
       </if>
-      <if test="subjectid != null" >
-        subjectId,
+      <if test="subjectId != null" >
+        subject_id,
       </if>
-      <if test="teachingage != null" >
-        teachingAge,
+      <if test="teachingAge != null" >
+        teaching_age,
       </if>
       <if test="position != null" >
         position,
@@ -143,37 +143,37 @@
       <if test="introduction != null" >
         introduction,
       </if>
-      <if test="freevideo != null" >
-        freeVideo,
+      <if test="freeVideo != null" >
+        free_video,
       </if>
-      <if test="createtime != null" >
-        createTime,
+      <if test="createTime != null" >
+        create_time,
       </if>
-      <if test="createby != null" >
-        createBy,
+      <if test="createBy != null" >
+        create_by,
       </if>
-      <if test="updatetime != null" >
-        updateTime,
+      <if test="updateTime != null" >
+        update_time,
       </if>
-      <if test="updateby != null" >
-        updateBy,
+      <if test="updateBy != null" >
+        update_by,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="nickname != null" >
-        #{nickname,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="portrait != null" >
         #{portrait,jdbcType=VARCHAR},
       </if>
-      <if test="subjectid != null" >
-        #{subjectid,jdbcType=INTEGER},
+      <if test="subjectId != null" >
+        #{subjectId,jdbcType=INTEGER},
       </if>
-      <if test="teachingage != null" >
-        #{teachingage,jdbcType=INTEGER},
+      <if test="teachingAge != null" >
+        #{teachingAge,jdbcType=INTEGER},
       </if>
       <if test="position != null" >
         #{position,jdbcType=VARCHAR},
@@ -181,24 +181,24 @@
       <if test="introduction != null" >
         #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="freevideo != null" >
-        #{freevideo,jdbcType=VARCHAR},
+      <if test="freeVideo != null" >
+        #{freeVideo,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=DATE},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
       </if>
-      <if test="createby != null" >
-        #{createby,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=DATE},
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateby != null" >
-        #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.train.dao.example.UserTeacherExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.train.domain.entity.UserTeacherExample" resultType="java.lang.Integer" >
     select count(*) from user_teacher
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -210,17 +210,17 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.nickname != null" >
-        nickName = #{record.nickname,jdbcType=VARCHAR},
+      <if test="record.nickName != null" >
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
       </if>
       <if test="record.portrait != null" >
         portrait = #{record.portrait,jdbcType=VARCHAR},
       </if>
-      <if test="record.subjectid != null" >
-        subjectId = #{record.subjectid,jdbcType=INTEGER},
+      <if test="record.subjectId != null" >
+        subject_id = #{record.subjectId,jdbcType=INTEGER},
       </if>
-      <if test="record.teachingage != null" >
-        teachingAge = #{record.teachingage,jdbcType=INTEGER},
+      <if test="record.teachingAge != null" >
+        teaching_age = #{record.teachingAge,jdbcType=INTEGER},
       </if>
       <if test="record.position != null" >
         position = #{record.position,jdbcType=VARCHAR},
@@ -228,20 +228,20 @@
       <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
-      <if test="record.freevideo != null" >
-        freeVideo = #{record.freevideo,jdbcType=VARCHAR},
+      <if test="record.freeVideo != null" >
+        free_video = #{record.freeVideo,jdbcType=VARCHAR},
       </if>
-      <if test="record.createtime != null" >
-        createTime = #{record.createtime,jdbcType=DATE},
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=DATE},
       </if>
-      <if test="record.createby != null" >
-        createBy = #{record.createby,jdbcType=VARCHAR},
+      <if test="record.createBy != null" >
+        create_by = #{record.createBy,jdbcType=VARCHAR},
       </if>
-      <if test="record.updatetime != null" >
-        updateTime = #{record.updatetime,jdbcType=DATE},
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=DATE},
       </if>
-      <if test="record.updateby != null" >
-        updateBy = #{record.updateby,jdbcType=VARCHAR},
+      <if test="record.updateBy != null" >
+        update_by = #{record.updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -251,17 +251,17 @@
   <update id="updateByExample" parameterType="map" >
     update user_teacher
     set id = #{record.id,jdbcType=INTEGER},
-      nickName = #{record.nickname,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
       portrait = #{record.portrait,jdbcType=VARCHAR},
-      subjectId = #{record.subjectid,jdbcType=INTEGER},
-      teachingAge = #{record.teachingage,jdbcType=INTEGER},
+      subject_id = #{record.subjectId,jdbcType=INTEGER},
+      teaching_age = #{record.teachingAge,jdbcType=INTEGER},
       position = #{record.position,jdbcType=VARCHAR},
       introduction = #{record.introduction,jdbcType=VARCHAR},
-      freeVideo = #{record.freevideo,jdbcType=VARCHAR},
-      createTime = #{record.createtime,jdbcType=DATE},
-      createBy = #{record.createby,jdbcType=VARCHAR},
-      updateTime = #{record.updatetime,jdbcType=DATE},
-      updateBy = #{record.updateby,jdbcType=VARCHAR}
+      free_video = #{record.freeVideo,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=DATE},
+      create_by = #{record.createBy,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=DATE},
+      update_by = #{record.updateBy,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -269,17 +269,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.train.domain.entity.UserTeacher" >
     update user_teacher
     <set >
-      <if test="nickname != null" >
-        nickName = #{nickname,jdbcType=VARCHAR},
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
       </if>
       <if test="portrait != null" >
         portrait = #{portrait,jdbcType=VARCHAR},
       </if>
-      <if test="subjectid != null" >
-        subjectId = #{subjectid,jdbcType=INTEGER},
+      <if test="subjectId != null" >
+        subject_id = #{subjectId,jdbcType=INTEGER},
       </if>
-      <if test="teachingage != null" >
-        teachingAge = #{teachingage,jdbcType=INTEGER},
+      <if test="teachingAge != null" >
+        teaching_age = #{teachingAge,jdbcType=INTEGER},
       </if>
       <if test="position != null" >
         position = #{position,jdbcType=VARCHAR},
@@ -287,37 +287,37 @@
       <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="freevideo != null" >
-        freeVideo = #{freevideo,jdbcType=VARCHAR},
+      <if test="freeVideo != null" >
+        free_video = #{freeVideo,jdbcType=VARCHAR},
       </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=DATE},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=DATE},
       </if>
-      <if test="createby != null" >
-        createBy = #{createby,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="updatetime != null" >
-        updateTime = #{updatetime,jdbcType=DATE},
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateby != null" >
-        updateBy = #{updateby,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.train.domain.entity.UserTeacher" >
     update user_teacher
-    set nickName = #{nickname,jdbcType=VARCHAR},
+    set nick_name = #{nickName,jdbcType=VARCHAR},
       portrait = #{portrait,jdbcType=VARCHAR},
-      subjectId = #{subjectid,jdbcType=INTEGER},
-      teachingAge = #{teachingage,jdbcType=INTEGER},
+      subject_id = #{subjectId,jdbcType=INTEGER},
+      teaching_age = #{teachingAge,jdbcType=INTEGER},
       position = #{position,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=VARCHAR},
-      freeVideo = #{freevideo,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=DATE},
-      createBy = #{createby,jdbcType=VARCHAR},
-      updateTime = #{updatetime,jdbcType=DATE},
-      updateBy = #{updateby,jdbcType=VARCHAR}
+      free_video = #{freeVideo,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=DATE},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

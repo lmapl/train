@@ -175,19 +175,23 @@ public class RSAUtils {
 
         String uuid = "XEEANNnen==aaa=eee-xxxxa";
 
-        //平台|uuid|服务器凭证|随机数|时间|随机数
         Long time = System.currentTimeMillis();
+        //zsIh9zOE
+        //未登陆token ==服务端RS公钥加密（平台|uuid|服务器凭证|随机数|时间|随机数）
+        String unLoginToken = "1|XEEANNnen==aaa=eee-xxxxa|IyEaOgX7|1|" +time +"|123";
+
+        //平台|uuid|服务器凭证|随机数|时间|随机数
         String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|SLGyzQ71|12|" +time+"|13";
 
         //String mobile = "18911439763";
 
         String passwd = "123&123";
 
-        //String mobileCode = "514028";
+        String mobileCode = "277149";
         time = System.currentTimeMillis();
         String loginToken = "1|6|XEEANNnen==aaa=eee-xxxxa|12|18911439763|" +
                 time +
-                "|15649850495781|12";
+                "|15658611484371|12";
 
         String str = loginToken;
 

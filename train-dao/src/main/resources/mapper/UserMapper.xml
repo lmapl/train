@@ -81,7 +81,7 @@
     status, educate_level, grade, merge_parent_ids, create_time, create_by, update_time, 
     update_by
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.dao.example.UserExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserExample" >
     select
     <if test="distinct" >
       distinct
@@ -105,7 +105,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.train.dao.example.UserExample" >
+  <delete id="deleteByExample" parameterType="com.train.domain.entity.UserExample" >
     delete from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -222,7 +222,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.train.dao.example.UserExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.train.domain.entity.UserExample" resultType="java.lang.Integer" >
     select count(*) from user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

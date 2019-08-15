@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.UserStuParentDao;
+import com.train.dao.declare.UserStuParentDao;
 import com.train.dao.mapper.UserStuParentMapper;
 import com.train.domain.entity.UserStuParent;
 import org.springframework.stereotype.Repository;

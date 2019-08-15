@@ -1,4 +1,4 @@
-package com.train.dao;
+package com.train.dao.declare;
 
 import com.train.domain.entity.UserTeacher; /**
  * Created by ma peiliang

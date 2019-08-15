@@ -1,16 +1,11 @@
 package com.train.service.common.impl;
 
-import com.train.dao.OperateRecommendDao;
-import com.train.dao.OperateRotationShowDao;
-import com.train.dao.OperateSelectedCompanyDao;
-import com.train.dao.UserCompanyDao;
+import com.train.dao.declare.*;
 import com.train.domain.bean.CompanyInfo;
 import com.train.domain.bean.OperateRecommendInfo;
 import com.train.domain.bean.RotationShowInfo;
-import com.train.domain.entity.OperateRecommend;
-import com.train.domain.entity.OperateRotationShow;
-import com.train.domain.entity.OperateSelectedCompany;
-import com.train.domain.entity.UserCompany;
+import com.train.domain.bean.SubjectInfo;
+import com.train.domain.entity.*;
 import com.train.service.common.OperateService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -38,9 +33,11 @@ public class OperateServiceImpl implements OperateService {
     @Resource
     private OperateSelectedCompanyDao selectedCompanyDao;
 
-
     @Resource
     private UserCompanyDao userCompanyDao;
+
+    @Resource
+    private SubjectDao subjectDao;
 
     @Override
     public List<RotationShowInfo> getRotationShowByLocation(int location) {
@@ -88,10 +85,24 @@ public class OperateServiceImpl implements OperateService {
         for(UserCompany userCompany : userCompanyList){
             companyInfo = new CompanyInfo();
             companyInfo.setId(userCompany.getId());
-            companyInfo.setName(userCompany.getNickname());
+            companyInfo.setName(userCompany.getNickName());
             companyInfo.setPortrait(userCompany.getPortrait());
             companyInfoList.add(companyInfo);
         }
         return companyInfoList;
+    }
+
+    @Override
+    public List<SubjectInfo> getSubject() {
+        List<Subject> subjectList =  subjectDao.getAll();
+
+        List<SubjectInfo> subjectInfoList = new ArrayList<>();
+        SubjectInfo subjectInfo;
+        for(Subject subject : subjectList){
+            subjectInfo = new SubjectInfo();
+            BeanUtils.copyProperties(subject,subjectInfo);
+            subjectInfoList.add(subjectInfo);
+        }
+        return subjectInfoList;
     }
 }

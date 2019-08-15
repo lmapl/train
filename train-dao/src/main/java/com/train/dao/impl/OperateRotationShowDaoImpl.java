@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.OperateRotationShowDao;
+import com.train.dao.declare.OperateRotationShowDao;
 import com.train.dao.mapper.OperateRotationShowMapper;
 import com.train.domain.entity.OperateRotationShow;
 import com.train.domain.entity.OperateRotationShowExample;

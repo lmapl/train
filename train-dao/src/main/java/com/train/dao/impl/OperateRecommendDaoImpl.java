@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.OperateRecommendDao;
+import com.train.dao.declare.OperateRecommendDao;
 import com.train.dao.mapper.OperateRecommendMapper;
 import com.train.domain.entity.OperateRecommend;
 import com.train.domain.entity.OperateRecommendExample;

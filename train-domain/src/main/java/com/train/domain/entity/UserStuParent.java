@@ -41,22 +41,22 @@ public class UserStuParent {
     /**
      * 创建时间
      */
-    private Date createtime;
+    private Date createTime;
 
     /**
      * 创建人，默认系统
      */
-    private String createby;
+    private String createBy;
 
     /**
      * 最后一次修改时间
      */
-    private Date updatetime;
+    private Date updateTime;
 
     /**
      * 最后一次修改人
      */
-    private String updateby;
+    private String updateBy;
 
     /**
      * 用户id，user表的主键
@@ -172,66 +172,66 @@ public class UserStuParent {
 
     /**
      * 创建时间
-     * @return createTime 创建时间
+     * @return create_time 创建时间
      */
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 创建时间
-     * @param createtime 创建时间
+     * @param createTime 创建时间
      */
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
      * 创建人，默认系统
-     * @return createBy 创建人，默认系统
+     * @return create_by 创建人，默认系统
      */
-    public String getCreateby() {
-        return createby;
+    public String getCreateBy() {
+        return createBy;
     }
 
     /**
      * 创建人，默认系统
-     * @param createby 创建人，默认系统
+     * @param createBy 创建人，默认系统
      */
-    public void setCreateby(String createby) {
-        this.createby = createby == null ? null : createby.trim();
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
     /**
      * 最后一次修改时间
-     * @return updateTime 最后一次修改时间
+     * @return update_time 最后一次修改时间
      */
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
     /**
      * 最后一次修改时间
-     * @param updatetime 最后一次修改时间
+     * @param updateTime 最后一次修改时间
      */
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     /**
      * 最后一次修改人
-     * @return updateBy 最后一次修改人
+     * @return update_by 最后一次修改人
      */
-    public String getUpdateby() {
-        return updateby;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
     /**
      * 最后一次修改人
-     * @param updateby 最后一次修改人
+     * @param updateBy 最后一次修改人
      */
-    public void setUpdateby(String updateby) {
-        this.updateby = updateby == null ? null : updateby.trim();
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
     }
 
     /**
@@ -251,10 +251,10 @@ public class UserStuParent {
         sb.append(", birthdayYear=").append(birthdayYear);
         sb.append(", birthdayMonth=").append(birthdayMonth);
         sb.append(", birthdayDay=").append(birthdayDay);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", createby=").append(createby);
-        sb.append(", updatetime=").append(updatetime);
-        sb.append(", updateby=").append(updateby);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", createBy=").append(createBy);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", updateBy=").append(updateBy);
         sb.append("]");
         return sb.toString();
     }

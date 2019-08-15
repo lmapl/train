@@ -1,15 +1,13 @@
 package com.train.dao.impl;
 
-import com.train.dao.UserCompanyDao;
+import com.train.dao.declare.UserCompanyDao;
 import com.train.dao.mapper.UserCompanyMapper;
-import com.train.domain.entity.AddrAreaExample;
 import com.train.domain.entity.UserCompany;
 import com.train.domain.entity.UserCompanyExample;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

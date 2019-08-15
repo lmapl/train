@@ -1,6 +1,6 @@
 package com.train.dao.impl;
 
-import com.train.dao.AddrAreaDao;
+import com.train.dao.declare.AddrAreaDao;
 import com.train.dao.mapper.AddrAreaMapper;
 import com.train.domain.entity.AddrArea;
 import com.train.domain.entity.AddrAreaExample;

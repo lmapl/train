@@ -1,8 +1,9 @@
-package com.train.dao;
+package com.train.dao.declare;
 
 import com.train.domain.entity.UserCompany;
 
-import java.util.List; /**
+import java.util.List;
+/**
  * Created by ma peiliang
  * Create Date: 2019/8/2 11:37
  * Description: ${DESCRIPTION}

@@ -1,10 +1,9 @@
 package com.train.dao.mapper;
 
-import com.train.dao.example.UserTeacherExample;
 import com.train.domain.entity.UserTeacher;
-import org.apache.ibatis.annotations.Param;
-
+import com.train.domain.entity.UserTeacherExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserTeacherMapper {
     /**

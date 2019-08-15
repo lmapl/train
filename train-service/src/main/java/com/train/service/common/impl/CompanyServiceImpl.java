@@ -1,6 +1,9 @@
 package com.train.service.common.impl;
 
-import com.train.dao.*;
+import com.train.dao.declare.CompanyCurriculumDao;
+import com.train.dao.declare.CompanyTeacherDao;
+import com.train.dao.declare.UserCompanyDao;
+import com.train.dao.declare.UserDao;
 import com.train.domain.bean.CompanyCurriculumInfo;
 import com.train.domain.bean.CompanyInfo;
 import com.train.domain.bean.CompanyTeacherInfo;
@@ -20,7 +23,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by ma peiliang

@@ -2,9 +2,8 @@ package com.train.dao.mapper;
 
 import com.train.domain.entity.UserStuParent;
 import com.train.domain.entity.UserStuParentExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserStuParentMapper {
     /**

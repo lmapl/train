@@ -10,11 +10,9 @@ D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\BaseMapp
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\OperateRotationShowDaoImpl.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\OperateSelectedCompanyDao.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserDao.java
-D:\github_responsity\train\train-dao\src\main\java\com\train\dao\example\UserTeacherExample.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\UserDaoImpl.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\OperateRotationShowMapper.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\mapper\UserMapper.java
-D:\github_responsity\train\train-dao\src\main\java\com\train\dao\example\UserExample.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\UserTeacherDaoImpl.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\UserTeacherDao.java
 D:\github_responsity\train\train-dao\src\main\java\com\train\dao\impl\OperateRecommendDaoImpl.java
