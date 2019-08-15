@@ -18,9 +18,6 @@ public interface CompanyService {
 
     Boolean addCurriculum(String autograph, CompanyCurriculumInfo info);
 
-    /**
-     * 获取精选机构
-     * @return
-     */
-    List<CompanyInfo> selectedCompany();
+    //查询机构列表（客户端）
+    List<CompanyInfo> getCompanyInfo(Integer lastId,Integer size);
 }

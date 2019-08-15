@@ -1,27 +1,26 @@
 package com.train.service.common.impl;
 
-import com.train.dao.CompanyCurriculumDao;
-import com.train.dao.CompanyTeacherDao;
-import com.train.dao.UserCompanyDao;
-import com.train.dao.UserDao;
+import com.train.dao.*;
 import com.train.domain.bean.CompanyCurriculumInfo;
 import com.train.domain.bean.CompanyInfo;
 import com.train.domain.bean.CompanyTeacherInfo;
 import com.train.domain.bean.UserSessionInfo;
-import com.train.domain.entity.CompanyCurriculum;
-import com.train.domain.entity.CompanyTeacher;
-import com.train.domain.entity.User;
+import com.train.domain.entity.*;
 import com.train.domain.enums.UserStatusEnum;
 import com.train.domain.enums.UserTypeEnum;
 import com.train.service.common.CompanyService;
 import com.train.service.common.TokenService;
 import com.train.utils.Constant;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ma peiliang
@@ -42,6 +41,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private UserCompanyDao userCompanyDao;
 
     @Override
     public Boolean addTeacher(String autograph, CompanyTeacherInfo teacherInfo) {
@@ -155,7 +157,20 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public List<CompanyInfo> selectedCompany() {
-        return null;
+    public List<CompanyInfo> getCompanyInfo(Integer lastId, Integer size) {
+
+        List<UserCompany> userCompanyList = userCompanyDao.getCompanyInfo(lastId,size);
+        if(CollectionUtils.isEmpty(userCompanyList)){
+            return new ArrayList<>();
+        }
+
+        List<CompanyInfo> companyInfoList = new ArrayList<>();
+        CompanyInfo companyInfo ;
+        for(UserCompany userCompany : userCompanyList){
+            companyInfo = new CompanyInfo();
+            BeanUtils.copyProperties(userCompany,companyInfo);
+            companyInfoList.add(companyInfo);
+        }
+        return companyInfoList;
     }
 }

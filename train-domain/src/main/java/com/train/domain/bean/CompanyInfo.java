@@ -7,22 +7,28 @@ package com.train.domain.bean;
  */
 public class CompanyInfo {
 
-    private Integer id;
+    private Integer id	; //id		是
+    private String name;	//机构名称		否
+    private String portrait	;//logo图片地址
+    private String position;	//位置	String	是	需要分割符，待定
+    private String subjects	;//科目			物理、化学，语文等组成的字符串
+    private Integer collectedNumber;//	被收藏人数
+    private Integer evaluationGrade	;//评价等级
 
-    private  String nickName;	//教师名称
-    private String portrait;	//头像图片地址
-    private Integer subject;	//教授科目
-    private Integer teachingAge;//	教龄
-    private String position;	//位置	需要分割符，待定
-    private String introduction;//	简介
-    private String freeVideo;	//试听视频地址
-
-    public String getNickName() {
-        return nickName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPortrait() {
@@ -33,22 +39,6 @@ public class CompanyInfo {
         this.portrait = portrait;
     }
 
-    public Integer getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Integer subject) {
-        this.subject = subject;
-    }
-
-    public Integer getTeachingAge() {
-        return teachingAge;
-    }
-
-    public void setTeachingAge(Integer teachingAge) {
-        this.teachingAge = teachingAge;
-    }
-
     public String getPosition() {
         return position;
     }
@@ -57,27 +47,27 @@ public class CompanyInfo {
         this.position = position;
     }
 
-    public String getIntroduction() {
-        return introduction;
+    public String getSubjects() {
+        return subjects;
     }
 
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
     }
 
-    public String getFreeVideo() {
-        return freeVideo;
+    public Integer getCollectedNumber() {
+        return collectedNumber;
     }
 
-    public void setFreeVideo(String freeVideo) {
-        this.freeVideo = freeVideo;
+    public void setCollectedNumber(Integer collectedNumber) {
+        this.collectedNumber = collectedNumber;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getEvaluationGrade() {
+        return evaluationGrade;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEvaluationGrade(Integer evaluationGrade) {
+        this.evaluationGrade = evaluationGrade;
     }
 }

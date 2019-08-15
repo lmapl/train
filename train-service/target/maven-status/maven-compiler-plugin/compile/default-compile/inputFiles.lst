@@ -2,6 +2,7 @@ D:\github_responsity\train\train-service\src\main\java\com\train\service\demo\im
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\UserServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\teacher\impl\TeacherImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\TokenServiceImpl.java
+D:\github_responsity\train\train-service\src\main\java\com\train\service\common\OperateService.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\CompanyServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\teacher\TeacherService.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\AreaServiceImpl.java
@@ -9,6 +10,7 @@ D:\github_responsity\train\train-service\src\main\java\com\train\service\common\
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\AreaService.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\RedisServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\ConstantRedis.java
+D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\OperateServiceImpl.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\demo\DemoService.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\impl\RedisConfig.java
 D:\github_responsity\train\train-service\src\main\java\com\train\service\common\CompanyService.java

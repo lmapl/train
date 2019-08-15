@@ -2,10 +2,15 @@ package com.train.dao.impl;
 
 import com.train.dao.UserCompanyDao;
 import com.train.dao.mapper.UserCompanyMapper;
+import com.train.domain.entity.AddrAreaExample;
 import com.train.domain.entity.UserCompany;
+import com.train.domain.entity.UserCompanyExample;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ma peiliang
@@ -31,5 +36,23 @@ public class UserCompanyDaoImpl implements UserCompanyDao {
     @Override
     public int updateByPrimaryKeySelective(UserCompany userCompany) {
         return userCompanyMapper.updateByPrimaryKeySelective(userCompany);
+    }
+
+    @Override
+    public List<UserCompany> getByIdList(List<Integer> idList) {
+        if(CollectionUtils.isEmpty(idList)){
+            return null;
+        }
+        UserCompanyExample example = new UserCompanyExample();
+        example.createCriteria().andIdIn(idList);
+        return userCompanyMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<UserCompany> getCompanyInfo(Integer lastId, Integer size) {
+        UserCompanyExample example = new UserCompanyExample();
+        example.createCriteria().andIdGreaterThan(lastId);
+        example.setOrderByClause(" create_time desc limit "+size);
+        return userCompanyMapper.selectByExample(example);
     }
 }

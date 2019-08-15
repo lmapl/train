@@ -39,7 +39,9 @@
 
 
         <!--<table tableName="t_demo"></table>-->
-        <table tableName="addr_area"></table>
+        <table tableName="operate_recommend"></table>
+        <table tableName="operate_rotation_show"></table>
+        <table tableName="operate_selected_company"></table>
         <!--<table tableName="user_company"></table>
         <table tableName="user_stu_parent"></table>
         <table tableName="user_teacher"></table>-->
