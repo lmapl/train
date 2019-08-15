@@ -22,7 +22,7 @@ public class CommonController {
     @Resource
     private TokenService tokenService;
 
-    @RequestMapping(value ="/getToken")
+    @RequestMapping(value ="/getToken/v1")
     @ResponseBody
     public Result<String> getToken(String type ,String uuid){
         Result<String> result = new Result<>();

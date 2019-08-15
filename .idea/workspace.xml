@@ -10,28 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dcd3d87-7f88-4c93-96d2-f0b7ae3d92bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateRecommendDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateRotationShowDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateSelectedCompanyDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRecommendDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRotationShowDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateSelectedCompanyDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/OperateRecommendInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/RotationShowInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/enums/LocationEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/OperateService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/OperateServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/UserCompanyDao.java" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/UserCompanyDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserCompanyDaoImpl.java" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserCompanyDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CompanyInfo.java" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CompanyInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CompanyService.java" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CompanyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CompanyServiceImpl.java" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CompanyServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/stuparent/UserStuParentController.java" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/stuparent/UserStuParentController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,11 +42,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserStuParentController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserStuParentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/stuparent/UserStuParentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -74,16 +67,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="159" column="37" lean-forward="false" selection-start-line="159" selection-start-column="37" selection-end-line="159" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserCompanyDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/UserCompanyDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -224,7 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/AddrController.java" />
         <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/AreaDto.java" />
         <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/AreaService.java" />
         <option value="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/AreaInfo.java" />
@@ -275,6 +257,7 @@
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserCompanyDaoImpl.java" />
         <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CompanyServiceImpl.java" />
         <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/stuparent/UserStuParentController.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" />
       </list>
     </option>
   </component>
@@ -333,78 +316,6 @@
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
               <item name="train-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -445,17 +356,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
@@ -832,7 +733,7 @@
       <workItem from="1564555130574" duration="43613000" />
       <workItem from="1564984029668" duration="27730000" />
       <workItem from="1565429784753" duration="3426000" />
-      <workItem from="1565686955153" duration="10672000" />
+      <workItem from="1565686955153" duration="10724000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1563963200202</created>
@@ -1002,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565433218651</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="init">
+      <created>1565859488390</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1565859488390</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1038,7 +946,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152177000" />
+    <option name="totallyTimeSpent" value="152229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1364,14 +1272,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/CompanySelectedMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="36" column="64" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/AddrAreaDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1809,6 +1709,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
         </state>
       </provider>
