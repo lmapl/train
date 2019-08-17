@@ -1,11 +1,11 @@
-package com.train.web.dao;
+package com.train.domain.bean;
 
 /**
  * Created by ma peiliang
  * Create Date: 2019/8/15 19:27
  * Description: ${DESCRIPTION}
  */
-public class DynamicEventRequest extends BaseRequest{
+public class DynamicEventInfo {
 
     /**
      * 标题

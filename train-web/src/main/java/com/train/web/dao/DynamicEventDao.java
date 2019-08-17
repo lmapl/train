@@ -5,7 +5,12 @@ package com.train.web.dao;
  * Create Date: 2019/8/15 19:27
  * Description: ${DESCRIPTION}
  */
-public class DynamicEventRequest extends BaseRequest{
+public class DynamicEventDao {
+
+    private Integer id;//id
+    private String  nickName;//	昵称	用户昵称/机构名称/教师名称
+    private  String portrait;//	头像	 用户头像、机构头像，教师头像
+
 
     /**
      * 标题
@@ -57,5 +62,29 @@ public class DynamicEventRequest extends BaseRequest{
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getPortrait() {
+        return portrait;
+    }
+
+    public void setPortrait(String portrait) {
+        this.portrait = portrait;
     }
 }

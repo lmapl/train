@@ -11,27 +11,27 @@ public class DynamicEvent {
     /**
      * 发布人d
      */
-    private Integer userid;
+    private Integer userId;
 
     /**
      * 标题
      */
-    private Integer title;
+    private String title;
 
     /**
      * 文案内容
      */
-    private Integer content;
+    private String content;
 
     /**
      * 图片地址
      */
-    private Integer imgurl;
+    private String imgUrl;
 
     /**
      * 视频地址
      */
-    private Integer videourl;
+    private String videoUrl;
 
     /**
      * 创建人
@@ -71,25 +71,25 @@ public class DynamicEvent {
 
     /**
      * 发布人d
-     * @return userId 发布人d
+     * @return user_Id 发布人d
      */
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
      * 发布人d
-     * @param userid 发布人d
+     * @param userId 发布人d
      */
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**
      * 标题
      * @return title 标题
      */
-    public Integer getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -97,15 +97,15 @@ public class DynamicEvent {
      * 标题
      * @param title 标题
      */
-    public void setTitle(Integer title) {
-        this.title = title;
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
     /**
      * 文案内容
      * @return content 文案内容
      */
-    public Integer getContent() {
+    public String getContent() {
         return content;
     }
 
@@ -113,40 +113,40 @@ public class DynamicEvent {
      * 文案内容
      * @param content 文案内容
      */
-    public void setContent(Integer content) {
-        this.content = content;
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
     /**
      * 图片地址
-     * @return imgurl 图片地址
+     * @return img_url 图片地址
      */
-    public Integer getImgurl() {
-        return imgurl;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     /**
      * 图片地址
-     * @param imgurl 图片地址
+     * @param imgUrl 图片地址
      */
-    public void setImgurl(Integer imgurl) {
-        this.imgurl = imgurl;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
     /**
      * 视频地址
-     * @return videoUrl 视频地址
+     * @return video_url 视频地址
      */
-    public Integer getVideourl() {
-        return videourl;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
     /**
      * 视频地址
-     * @param videourl 视频地址
+     * @param videoUrl 视频地址
      */
-    public void setVideourl(Integer videourl) {
-        this.videourl = videourl;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl == null ? null : videoUrl.trim();
     }
 
     /**
@@ -224,11 +224,11 @@ public class DynamicEvent {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", userid=").append(userid);
+        sb.append(", userId=").append(userId);
         sb.append(", title=").append(title);
         sb.append(", content=").append(content);
-        sb.append(", imgurl=").append(imgurl);
-        sb.append(", videourl=").append(videourl);
+        sb.append(", imgUrl=").append(imgUrl);
+        sb.append(", videoUrl=").append(videoUrl);
         sb.append(", createBy=").append(createBy);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateBy=").append(updateBy);

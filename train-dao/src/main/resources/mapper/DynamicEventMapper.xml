@@ -3,11 +3,11 @@
 <mapper namespace="com.train.dao.mapper.DynamicEventMapper" >
   <resultMap id="BaseResultMap" type="com.train.domain.entity.DynamicEvent" >
     <result column="id" property="id" jdbcType="INTEGER" />
-    <result column="userId" property="userid" jdbcType="INTEGER" />
-    <result column="title" property="title" jdbcType="INTEGER" />
-    <result column="content" property="content" jdbcType="INTEGER" />
-    <result column="imgurl" property="imgurl" jdbcType="INTEGER" />
-    <result column="videoUrl" property="videourl" jdbcType="INTEGER" />
+    <result column="user_Id" property="userId" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
     <result column="create_by" property="createBy" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userId, title, content, imgurl, videoUrl, create_by, create_time, update_by, 
+    id, user_Id, title, content, img_url, video_url, create_by, create_time, update_by, 
     update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.DynamicEventExample" >
@@ -96,12 +96,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.train.domain.entity.DynamicEvent" >
-    insert into dynamic_event (id, userId, title, 
-      content, imgurl, videoUrl, 
+    insert into dynamic_event (id, user_Id, title, 
+      content, img_url, video_url, 
       create_by, create_time, update_by, 
       update_time)
-    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{title,jdbcType=INTEGER}, 
-      #{content,jdbcType=INTEGER}, #{imgurl,jdbcType=INTEGER}, #{videourl,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{imgUrl,jdbcType=VARCHAR}, #{videoUrl,jdbcType=VARCHAR}, 
       #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
@@ -111,8 +111,8 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="userid != null" >
-        userId,
+      <if test="userId != null" >
+        user_Id,
       </if>
       <if test="title != null" >
         title,
@@ -120,11 +120,11 @@
       <if test="content != null" >
         content,
       </if>
-      <if test="imgurl != null" >
-        imgurl,
+      <if test="imgUrl != null" >
+        img_url,
       </if>
-      <if test="videourl != null" >
-        videoUrl,
+      <if test="videoUrl != null" >
+        video_url,
       </if>
       <if test="createBy != null" >
         create_by,
@@ -143,20 +143,20 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userid != null" >
-        #{userid,jdbcType=INTEGER},
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="title != null" >
-        #{title,jdbcType=INTEGER},
+        #{title,jdbcType=VARCHAR},
       </if>
       <if test="content != null" >
-        #{content,jdbcType=INTEGER},
+        #{content,jdbcType=VARCHAR},
       </if>
-      <if test="imgurl != null" >
-        #{imgurl,jdbcType=INTEGER},
+      <if test="imgUrl != null" >
+        #{imgUrl,jdbcType=VARCHAR},
       </if>
-      <if test="videourl != null" >
-        #{videourl,jdbcType=INTEGER},
+      <if test="videoUrl != null" >
+        #{videoUrl,jdbcType=VARCHAR},
       </if>
       <if test="createBy != null" >
         #{createBy,jdbcType=VARCHAR},
@@ -184,20 +184,20 @@
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userid != null" >
-        userId = #{record.userid,jdbcType=INTEGER},
+      <if test="record.userId != null" >
+        user_Id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.title != null" >
-        title = #{record.title,jdbcType=INTEGER},
+        title = #{record.title,jdbcType=VARCHAR},
       </if>
       <if test="record.content != null" >
-        content = #{record.content,jdbcType=INTEGER},
+        content = #{record.content,jdbcType=VARCHAR},
       </if>
-      <if test="record.imgurl != null" >
-        imgurl = #{record.imgurl,jdbcType=INTEGER},
+      <if test="record.imgUrl != null" >
+        img_url = #{record.imgUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.videourl != null" >
-        videoUrl = #{record.videourl,jdbcType=INTEGER},
+      <if test="record.videoUrl != null" >
+        video_url = #{record.videoUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.createBy != null" >
         create_by = #{record.createBy,jdbcType=VARCHAR},
@@ -219,11 +219,11 @@
   <update id="updateByExample" parameterType="map" >
     update dynamic_event
     set id = #{record.id,jdbcType=INTEGER},
-      userId = #{record.userid,jdbcType=INTEGER},
-      title = #{record.title,jdbcType=INTEGER},
-      content = #{record.content,jdbcType=INTEGER},
-      imgurl = #{record.imgurl,jdbcType=INTEGER},
-      videoUrl = #{record.videourl,jdbcType=INTEGER},
+      user_Id = #{record.userId,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=VARCHAR},
+      img_url = #{record.imgUrl,jdbcType=VARCHAR},
+      video_url = #{record.videoUrl,jdbcType=VARCHAR},
       create_by = #{record.createBy,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_by = #{record.updateBy,jdbcType=VARCHAR},
