@@ -32,8 +32,7 @@ public class CommonController {
     @Resource
     private OperateService operateService;
 
-    @Resource
-    private DynamicEventService dynamicEventService;
+
 
     @RequestMapping(value ="/getToken/v1")
     @ResponseBody
@@ -66,60 +65,6 @@ public class CommonController {
         return result;
     }
 
-    @RequestMapping(value ="/addDynamicEvent/v1",method = RequestMethod.POST)
-    @ResponseBody
-    public Result<Boolean> addDynamicEvent(@RequestBody DynamicEventRequest request){
-        Result<Boolean> result = new Result<>();
-        if(StringUtils.isEmpty(request.getAutograph())
-                ){
-            throw new InvalidParamException("参数为空");
-        }
-
-
-        DynamicEventInfo dynamicEventInfo = new DynamicEventInfo();
-        BeanUtils.copyProperties(dynamicEventInfo,request);
-        boolean flag = dynamicEventService.addDynamicEvent(request.getAutograph(),dynamicEventInfo);
-        result.setData(flag);
-        return result;
-    }
-
-
-    @RequestMapping(value ="/getDynamicEvent/v1",method = RequestMethod.POST)
-    @ResponseBody
-    public Result<List<DynamicEventDao>> getDynamicEvent(@RequestBody QueryBaseRequest request){
-        Result<List<DynamicEventDao>> result = new Result<>();
-        if(StringUtils.isEmpty(request.getAutograph())
-                ){
-            throw new InvalidParamException("参数为空");
-        }
-
-        List<DynamicEventInfo> eventInfoList = dynamicEventService.getDynamicEvent(request.getStart(),request.getSize());
-        List<DynamicEventDao> dynamicEventDaoList = new ArrayList<>();
-        if(CollectionUtils.isEmpty(eventInfoList)){
-            DynamicEventDao dao;
-            for(DynamicEventInfo info : eventInfoList){
-                dao = new DynamicEventDao();
-                BeanUtils.copyProperties(info,dao);
-                dynamicEventDaoList.add(dao);
-            }
-        }
-        result.setData(dynamicEventDaoList);
-        return result;
-    }
-
-    @RequestMapping(value ="/delDynamicEvent/v1",method = RequestMethod.POST)
-    @ResponseBody
-    public Result<Boolean> delDynamicEvent(@RequestBody DelBaseRequest request){
-        Result<Boolean> result = new Result<>();
-        if(StringUtils.isEmpty(request.getAutograph())
-                ){
-            throw new InvalidParamException("参数为空");
-        }
-
-        boolean flag = dynamicEventService.delDynamicEvent(request.getAutograph(),request.getId());
-        result.setData(flag);
-        return result;
-    }
 
 
 

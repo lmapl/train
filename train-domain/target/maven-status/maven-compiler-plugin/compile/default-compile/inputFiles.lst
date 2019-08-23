@@ -1,11 +1,14 @@
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\enums\TokenTypeEnum.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\OperateRecommendInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserStuParentExample.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\DynamicEventInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserCompany.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\CompanyCurriculumExample.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\SubjectExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserStuParent.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateRotationShowExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\UserExample.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\DynamicEventExample.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateRotationShow.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\ImproveInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\OperateSelectedCompany.java
@@ -14,6 +17,9 @@ D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\Comp
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\CompanyCurriculum.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\enums\UserStatusEnum.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\LoginInfo.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\Subject.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\DynamicEvent.java
+D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\SubjectInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\bean\CompanyInfo.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\User.java
 D:\github_responsity\train\train-domain\src\main\java\com\train\domain\entity\AddrAreaExample.java

@@ -10,16 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dcd3d87-7f88-4c93-96d2-f0b7ae3d92bb" name="Default" comment="init">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CollectDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CommentDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CollectDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CommentDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CollectInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CommentInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CollectService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CommentService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CollectServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CommentServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CollectController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommentController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/DynamicEventController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CollectRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CommentRequest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/java/com/train/mybatis/generator/MyCommentGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/java/com/train/mybatis/generator/Util.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/DynamicEventDao.java" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/DynamicEventDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java" afterPath="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/src/main/resources/mapper/DynamicEventMapper.xml" afterPath="$PROJECT_DIR$/train-dao/src/main/resources/mapper/DynamicEventMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/DynamicEvent.java" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/DynamicEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/DynamicEventExample.java" afterPath="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/DynamicEventExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/DynamicEventService.java" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/DynamicEventService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/DynamicEventServiceImpl.java" afterPath="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/DynamicEventServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DynamicEventRequest.java" afterPath="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DynamicEventRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/train-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,150 +65,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="456">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryBaseRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/QueryBaseRequest.java">
+      <file leaf-file-name="CollectController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CollectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#287#288#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#358#359#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelBaseRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DelBaseRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="27" />
-              <folding>
-                <element signature="e#252#253#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicEventDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/DynamicEventDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="335">
+              <caret line="71" column="72" lean-forward="false" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DynamicEventDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java">
+      <file leaf-file-name="CollectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CollectService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-              <folding>
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicEventInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/DynamicEventInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
-                <element signature="e#485#486#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#773#774#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#923#924#0" expanded="true" />
-                <element signature="e#963#964#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicEventDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DynamicEventDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
-              <folding>
-                <element signature="e#1119#1120#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-                <element signature="e#1181#1182#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1244#1245#0" expanded="true" />
-                <element signature="e#1275#1276#0" expanded="true" />
-                <element signature="e#1323#1324#0" expanded="true" />
-                <element signature="e#1363#1364#0" expanded="true" />
-                <element signature="e#1398#1399#0" expanded="true" />
-                <element signature="e#1429#1430#0" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
-                <element signature="e#1517#1518#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/LoginRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicEventService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/DynamicEventService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DynamicEventServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/DynamicEventServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+            <state relative-caret-position="216">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1656">
+              <caret line="81" column="5" lean-forward="false" selection-start-line="69" selection-start-column="3" selection-end-line="81" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollectServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CollectServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1344">
+              <caret line="73" column="26" lean-forward="false" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollectDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CollectDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollectDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CollectDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CommentServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1704">
+              <caret line="87" column="46" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="87" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddrAreaDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/AddrAreaDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CommentDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="39" column="54" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="39" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,7 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>com.train.mybatis.mapper.UserTeacher</find>
       <find>UserTeacher</find>
       <find>Example</find>
       <find>.User&quot;</find>
@@ -238,6 +225,7 @@
       <find>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfZxysy2HTsaUngIkZrew8FWm0SUrJ34WnCWjJnRC1ng5iqrvsx1aMWRc1gYtDUpSg4eY5a7oFfek8RN7+jFT5VhRqUHg5MMwpUQG+vmdeTLgxtM/1rk0G8I1iGDNitXd/hxl4JRAngHlWrIZ7l3ks7m/Cop/bP1E9hUDccCtdIQIDAQAB</find>
       <find>UserCompanyDao</find>
       <find>tokenService</find>
+      <find>1.0-SNAPSHOT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,24 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/enums/LocationEnum.java" />
-        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/RotationShowServiceImpl.java" />
-        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/RotationShowService.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/RotationShowDao.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/RotationShowDaoImpl.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateRotationShowDao.java" />
-        <option value="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/OperateRecommendInfo.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateRecommendDao.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRecommendDaoImpl.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/OperateSelectedCompanyDao.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateSelectedCompanyDaoImpl.java" />
-        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CompanyService.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/UserCompanyDao.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/UserCompanyExtendMapper.java" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/resources/mapper/UserCompanyExtendMapper.xml" />
-        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserCompanyDaoImpl.java" />
-        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CompanyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/stuparent/UserStuParentController.java" />
         <option value="$PROJECT_DIR$/train-common/src/main/java/com/train/utils/RSAUtils.java" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/UserTeacherMapper.java" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/UserMapper.java" />
@@ -286,7 +256,6 @@
         <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/OperateService.java" />
         <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/OperateServiceImpl.java" />
         <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/SubjectDto.java" />
-        <option value="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/dao/DynamicEventDao.java" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/dao/impl/DynamicEventDaoImpl.java" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/UserDao.java" />
@@ -301,7 +270,26 @@
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java" />
         <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/DynamicEventDao.java" />
         <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/DynamicEventServiceImpl.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommentControler.java" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CommentInfo.java" />
+        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CommentService.java" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CommentDao.java" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CommentDaoImpl.java" />
+        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/DynamicEventController.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CommentRequest.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CollectRequest.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommentController.java" />
+        <option value="$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/CollectMapper.java" />
+        <option value="$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CollectInfo.java" />
+        <option value="$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CollectController.java" />
+        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CollectService.java" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CollectDao.java" />
+        <option value="$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CollectDaoImpl.java" />
+        <option value="$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CollectServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -346,6 +334,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -357,30 +346,25 @@
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -389,6 +373,31 @@
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
               <item name="train-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="train" type="b2602c69:ProjectViewProjectNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="train" type="b2602c69:ProjectViewProjectNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="train-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train" type="b2602c69:ProjectViewProjectNode" />
@@ -435,23 +444,12 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="train" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,14 +465,15 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\github_responsity\train\train-dao\src\main\resources\mapper" />
+      <recent name="D:\github_responsity\train\train-domain\src\main\java" />
       <recent name="D:\github_responsity\train\train-dao\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.train.web.dao" />
       <recent name="com.train.domain.bean" />
+      <recent name="com.train.web.dao" />
+      <recent name="com.train.web.common" />
       <recent name="com.train.dao.mapper" />
       <recent name="com.train.domain.enums" />
-      <recent name="com.train.web.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github_responsity\train\train-dao\src\main\resources\mapper" />
@@ -496,7 +495,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Util">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration name="RSAUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -729,6 +728,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mybatis-base-mapper-plugin" />
+      <envs />
+    </configuration>
     <configuration default="true" type="lua.app" factoryName="Lua Application">
       <option name="program" value="lua.exe" />
       <option name="file" value="" />
@@ -812,7 +823,12 @@
       <workItem from="1564984029668" duration="27730000" />
       <workItem from="1565429784753" duration="3426000" />
       <workItem from="1565686955153" duration="19198000" />
-      <workItem from="1566048797126" duration="5394000" />
+      <workItem from="1566048797126" duration="5498000" />
+      <workItem from="1566217632133" duration="4155000" />
+      <workItem from="1566304262265" duration="2531000" />
+      <workItem from="1566355326847" duration="43000" />
+      <workItem from="1566391778701" duration="602000" />
+      <workItem from="1566568622338" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1563963200202</created>
@@ -1032,11 +1048,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166097000" />
+    <option name="totallyTimeSpent" value="173580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1050,20 +1065,19 @@
       <window_info id="News Feed" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33184358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3310962" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23825504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24692738" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19776537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40231213" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27038628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Reviews" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1072,6 +1086,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1365,218 +1380,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/AreaServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/resources/mapper/AddrAreaMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1565250183690" expanded="true" signature="3718:3739" ph="delete from " />
-            <marker date="1565250183690" expanded="true" signature="3922:4241" ph="insert into addr_area... " />
-            <marker date="1565250183690" expanded="true" signature="5653:5683" ph="select count... addr_area" />
-            <marker date="1565250183690" expanded="true" signature="6808:7180" ph="update addr_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/resources/mapper/CompanyCurriculumMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1564991422428" expanded="true" signature="4682:4796" ph="select from company_curriculum" />
-            <marker date="1564991422428" expanded="true" signature="4883:4951" ph="delete from " />
-            <marker date="1564991422428" expanded="true" signature="5066:5096" ph="delete from " />
-            <marker date="1564991422428" expanded="true" signature="5288:6117" ph="insert into company_curriculum... " />
-            <marker date="1564991422428" expanded="true" signature="9187:9226" ph="select count... company_curriculum" />
-            <marker date="1564991422428" expanded="true" signature="11555:12535" ph="update compa... " />
-            <marker date="1564991422428" expanded="true" signature="12758:14463" ph="update compa... " />
-            <marker date="1564991422428" expanded="true" signature="14574:15438" ph="update compa... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/resources/mapper/CompanyTeacherMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1564989310122" expanded="true" signature="4309:4420" ph="select from company_teacher" />
-            <marker date="1564989310122" expanded="true" signature="4507:4572" ph="delete from " />
-            <marker date="1564989310122" expanded="true" signature="4684:4711" ph="delete from " />
-            <marker date="1564989310122" expanded="true" signature="4900:5535" ph="insert into company_teacher... " />
-            <marker date="1564989310122" expanded="true" signature="7959:7995" ph="select count... company_teacher" />
-            <marker date="1564989310122" expanded="true" signature="9854:10598" ph="update compa... " />
-            <marker date="1564989310122" expanded="true" signature="10818:12109" ph="update compa... " />
-            <marker date="1564989310122" expanded="true" signature="12217:12873" ph="update compa... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/resources/mapper/OperateRecommendMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="78" lean-forward="true" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
-          <folding>
-            <marker date="1565850977702" expanded="true" signature="3865:3894" ph="delete from " />
-            <marker date="1565850977702" expanded="true" signature="4085:4471" ph="insert into operate_recommend... " />
-            <marker date="1565850977702" expanded="true" signature="6090:6128" ph="select count... operate_recommend" />
-            <marker date="1565850977702" expanded="true" signature="7397:7850" ph="update opera... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/SubjectMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/SubjectInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/SubjectDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/BaseRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/dev_soft/jdk/jdk1.8/src.zip!/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/AddrAreaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CompanyCurriculumDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CompanyTeacherDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/OperateRecommendDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/OperateRotationShowDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/OperateSelectedCompanyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/UserCompanyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CompanyTeacherDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRecommendDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRotationShowDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateSelectedCompanyDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserCompanyDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -1584,18 +1387,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/AddrAreaDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CompanyCurriculumDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1603,9 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1613,9 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1623,9 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1944">
           <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1633,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1669,19 +1454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/mybatis-base-mapper-plugin/src/main/java/com/train/mybatis/generator/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/DynamicEventMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1689,12 +1465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="67" lean-forward="false" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-          <folding>
-            <marker date="1566050762824" expanded="true" signature="4008:4033" ph="delete from " />
-            <marker date="1566050762824" expanded="true" signature="4220:4691" ph="insert into dynamic_event... " />
-            <marker date="1566050762824" expanded="true" signature="6589:6623" ph="select count... dynamic_event" />
-            <marker date="1566050762824" expanded="true" signature="8101:8653" ph="update dynam... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1702,67 +1472,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="34" column="0" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <marker date="1566050530740" expanded="true" signature="3940:4216" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DynamicEventRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/DynamicEventInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/LoginRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1770,20 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="e#1119#1120#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1398#1399#0" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1791,16 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1808,31 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/DynamicEventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1840,14 +1507,173 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/DynamicEventService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/DynamicEventServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+        <state relative-caret-position="144">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/DynamicEventInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CommentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CommentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/OperateRecommendDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/DynamicEventDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="43" column="39" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="43" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/entity/DynamicEventExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-common/src/main/java/com/train/utils/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="168" column="7" lean-forward="true" selection-start-line="168" selection-start-column="7" selection-end-line="168" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-common/src/main/java/com/train/utils/RSAUtilsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1968">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/resources/prop/common.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/DynamicEventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1367">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/DynamicEventRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CommentRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/dao/CollectRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/mybatis-base-mapper-plugin/src/main/resources/generatorConfig.xml" />
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/mybatis-base-mapper-plugin/src/main/java/com/train/mybatis/generator/Util.java" />
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/mapper/CollectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-domain/src/main/java/com/train/domain/bean/CollectInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/AddrAreaDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="81" column="5" lean-forward="false" selection-start-line="69" selection-start-column="3" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1856,8 +1682,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CommonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="456">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/CollectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1704">
+          <caret line="87" column="46" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="87" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/declare/CollectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CommentDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="39" column="54" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="39" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-dao/src/main/java/com/train/dao/impl/CollectDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-service/src/main/java/com/train/service/common/impl/CollectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="73" column="26" lean-forward="false" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train-web/src/main/java/com/train/web/common/CollectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="71" column="72" lean-forward="false" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
           <folding />
         </state>
       </provider>
@@ -1916,11 +1814,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>train-common</last-edited>
+          <last-edited>train-domain</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.47397047" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
