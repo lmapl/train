@@ -3,6 +3,7 @@ package com.train.service.common;
 import com.train.domain.bean.ImproveInfo;
 import com.train.domain.bean.LoginInfo;
 import com.train.domain.bean.RegisterInfo;
+import com.train.domain.bean.TeacherInfo;
 import com.train.domain.entity.User;
 
 /**
@@ -86,4 +87,5 @@ public interface UserService {
     Boolean teacherImproveInfo(ImproveInfo improveInfo);
 
     Boolean companyImproveInfo(ImproveInfo improveInfo);
+
 }

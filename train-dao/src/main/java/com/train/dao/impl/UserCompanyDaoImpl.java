@@ -53,4 +53,15 @@ public class UserCompanyDaoImpl implements UserCompanyDao {
         example.setOrderByClause(" create_time desc limit "+size);
         return userCompanyMapper.selectByExample(example);
     }
+
+    @Override
+    public UserCompany getById(Integer id) {
+        UserCompanyExample example = new UserCompanyExample();
+        example.createCriteria().andIdEqualTo(id);
+        List<UserCompany> userCompanyList = userCompanyMapper.selectByExample(example);
+        if(CollectionUtils.isEmpty(userCompanyList)){
+            return null;
+        }
+        return userCompanyList.get(0);
+    }
 }

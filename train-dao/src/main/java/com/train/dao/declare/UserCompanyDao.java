@@ -18,4 +18,6 @@ public interface UserCompanyDao {
     List<UserCompany> getByIdList(List<Integer> idList);
 
     List<UserCompany> getCompanyInfo(Integer lastId, Integer size);
+
+    UserCompany getById(Integer id);
 }

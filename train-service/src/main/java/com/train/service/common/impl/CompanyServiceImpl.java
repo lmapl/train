@@ -175,4 +175,27 @@ public class CompanyServiceImpl implements CompanyService {
         }
         return companyInfoList;
     }
+
+    @Override
+    public CompanyInfo getCompanyDetailDto(Integer id) {
+        UserCompany userCompany = userCompanyDao.getById(id);
+        CompanyInfo companyInfo = new CompanyInfo();
+
+        BeanUtils.copyProperties(userCompany,companyInfo);
+        return companyInfo;
+    }
+
+    @Override
+    public List<CompanyTeacherInfo> getCompanyTeacherList(Integer id, Integer start) {
+
+        List<CompanyTeacher> companyTeacherList = companyTeacherDao.getCompanyTeacherList(id,start);
+        List<CompanyTeacherInfo> teacherInfos = new ArrayList<>();
+        CompanyTeacherInfo teacherInfo;
+        for(CompanyTeacher teacher : companyTeacherList){
+            teacherInfo = new CompanyTeacherInfo();
+            BeanUtils.copyProperties(teacher,teacherInfo);
+            teacherInfos.add(teacherInfo);
+        }
+        return teacherInfos;
+    }
 }

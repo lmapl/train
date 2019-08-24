@@ -1,10 +1,7 @@
 package com.train.service.common.impl;
 
 import com.train.dao.declare.*;
-import com.train.domain.bean.CompanyInfo;
-import com.train.domain.bean.OperateRecommendInfo;
-import com.train.domain.bean.RotationShowInfo;
-import com.train.domain.bean.SubjectInfo;
+import com.train.domain.bean.*;
 import com.train.domain.entity.*;
 import com.train.service.common.OperateService;
 import org.springframework.beans.BeanUtils;
@@ -104,5 +101,10 @@ public class OperateServiceImpl implements OperateService {
             subjectInfoList.add(subjectInfo);
         }
         return subjectInfoList;
+    }
+
+    @Override
+    public List<TeacherInfo> getSelectedTeacherByLocation(int location) {
+        return null;
     }
 }

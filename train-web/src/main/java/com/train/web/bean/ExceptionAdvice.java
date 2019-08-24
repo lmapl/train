@@ -1,3 +1,4 @@
+/*
 package com.train.web.bean;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -8,11 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+*/
 /**
  * Created by Nian Zecong
  * Create Date: 2017/12/18 14:27
  * Description: 异常处理切面
- */
+ *//*
+
 @Aspect
 @Order(200)
 @Component
@@ -34,3 +37,4 @@ public class ExceptionAdvice {
         }
     }
 }
+*/

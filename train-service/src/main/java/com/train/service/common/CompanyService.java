@@ -20,4 +20,8 @@ public interface CompanyService {
 
     //查询机构列表（客户端）
     List<CompanyInfo> getCompanyInfo(Integer lastId,Integer size);
+
+    CompanyInfo getCompanyDetailDto(Integer id);
+
+    List<CompanyTeacherInfo> getCompanyTeacherList(Integer id,Integer start);
 }

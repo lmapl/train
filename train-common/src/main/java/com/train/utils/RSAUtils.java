@@ -178,7 +178,8 @@ public class RSAUtils {
         Long time = System.currentTimeMillis();
         //zsIh9zOE
         //未登陆token ==服务端RS公钥加密（平台|uuid|服务器凭证|随机数|时间|随机数）
-        String unLoginToken = "1|XEEANNnen==aaa=eee-xxxxa|IyEaOgX7|1|" +time +"|123";
+        //1|X32ADE62B-CA69-F0A9-B68E-08D242BCE683|WYnBc4VI|1|1566642085094|123
+        String unLoginToken = "1|32ADE62B-CA69-F0A9-B68E-08D242BCE683|HO1gZGAX|1|" +time +"|123";
 
         //平台|uuid|服务器凭证|随机数|时间|随机数
         String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|SLGyzQ71|12|" +time+"|13";
@@ -193,7 +194,7 @@ public class RSAUtils {
                 time +
                 "|15658611484371|12";
 
-        String str = loginToken;
+        String str = unLoginToken;
 
         //乙方使用公钥对数据进行加密
         String code2 = RSAUtils.encryptByPublicKey(str,publicKey);
@@ -202,8 +203,8 @@ public class RSAUtils {
         String decode2 = RSAUtils.decryptByPrivateKey(code2, privateKey);
         System.out.println("甲方解密后的数据：" + decode2);
 
-        //decode2 = RSAUtils.decryptByPrivateKey("ezsKI79UjWoUh4CzfvXaDgIPaq6nMsDFHeuqaPLDeluYRyhgyNkeclbj7BoTeHdf6788AHxp02fcUh0O+hBi7OVqalgb8xnCdbiIo3FWgwuIKAv7GQ+CbeSdANvRdvXGBevrjRTTCIYEmkMdevjYsE2xIKApT9J72XKt0abioNY=", privateKey);
-       // System.out.println("甲方解密后的数据：" + decode2);
+        decode2 = RSAUtils.decryptByPrivateKey("\"aDPEgNprJhIlZdR1WRM8LS8Wj+OmDuqOwuGe2N76BSLpI4XzKppZqvmzuQQ6dnqisSVahzdrXvlThaE1A/+CIOMWUDQnqGnJXz3ntKyjU+LfwxZO1as7bejfu4TjRFujCBr+Gx2L0qQANzdL0pzlcXNeEuyQiGT7md/AjjcFNWE=", privateKey);
+        System.out.println("甲方解密后的数据：" + decode2);
 
 
 

@@ -6,10 +6,7 @@ import com.train.dao.declare.UserCompanyDao;
 import com.train.dao.declare.UserDao;
 import com.train.dao.declare.UserStuParentDao;
 import com.train.dao.declare.UserTeacherDao;
-import com.train.domain.bean.ImproveInfo;
-import com.train.domain.bean.LoginInfo;
-import com.train.domain.bean.RegisterInfo;
-import com.train.domain.bean.UserSessionInfo;
+import com.train.domain.bean.*;
 import com.train.domain.entity.User;
 import com.train.domain.entity.UserCompany;
 import com.train.domain.entity.UserStuParent;
@@ -23,6 +20,7 @@ import com.train.service.common.*;
 import com.train.utils.Constant;
 import com.train.utils.DateUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -181,6 +179,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public Boolean userTypeConfirm(String autograph, Integer type) {
         if(StringUtils.isEmpty(autograph) || type == null ){
             return false;
@@ -233,6 +232,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public Boolean initUserTypeDetail(Integer userId, Integer type) {
         if(userId == null ||type == null){
             return false;
@@ -240,33 +240,45 @@ public class UserServiceImpl implements UserService {
 
         Date date = new Date();
         if(UserTypeEnum.STU_PARENT.getKey() == type){
-            UserStuParent userStuParent = new UserStuParent();
-            userStuParent.setId(userId);
-            userStuParent.setCreateBy(Constant.SYSTEM_NAME);
-            userStuParent.setCreateTime(date);
-            userStuParent.setUpdateBy(Constant.SYSTEM_NAME);
-            userStuParent.setUpdateTime(date);
-            return userStuParentDao.insert(userStuParent) == 1;
+            UserStuParent userStuParent =   userStuParentDao.getByUserId(userId);
+            if(userStuParent == null ){
+                userStuParent = new UserStuParent();
+                userStuParent.setId(userId);
+                userStuParent.setCreateBy(Constant.SYSTEM_NAME);
+                userStuParent.setCreateTime(date);
+                userStuParent.setUpdateBy(Constant.SYSTEM_NAME);
+                userStuParent.setUpdateTime(date);
+                return userStuParentDao.insert(userStuParent) == 1;
+            }
         }else if(UserTypeEnum.TEACHER.getKey() == type){
-            UserTeacher userTeacher = new UserTeacher();
-            userTeacher.setId(userId);
-            userTeacher.setCreateBy(Constant.SYSTEM_NAME);
-            userTeacher.setCreateTime(date);
-            userTeacher.setUpdateBy(Constant.SYSTEM_NAME);
-            userTeacher.setUpdateTime(date);
-            return userTeacherDao.insert(userTeacher) == 1;
+            UserTeacher userTeacher =  userTeacherDao.getByUserId(userId);
+            if(userTeacher == null){
+                 userTeacher = new UserTeacher();
+                userTeacher.setId(userId);
+                userTeacher.setCreateBy(Constant.SYSTEM_NAME);
+                userTeacher.setCreateTime(date);
+                userTeacher.setUpdateBy(Constant.SYSTEM_NAME);
+                userTeacher.setUpdateTime(date);
+                return userTeacherDao.insert(userTeacher) == 1;
+            }
+
         }else if(UserTypeEnum.COMPANY.getKey() == type){
-            UserCompany userCompany = new UserCompany();
-            userCompany.setId(userId);
-            userCompany.setCreateBy(Constant.SYSTEM_NAME);
-            userCompany.setCreateTime(date);
-            userCompany.setUpdateBy(Constant.SYSTEM_NAME);
-            userCompany.setUpdateTime(date);
-            return userCompanyDao.insert(userCompany) == 1;
+            UserCompany userCompany = userCompanyDao.getByUserId(userId);
+            if(userCompany == null){
+                userCompany = new UserCompany();
+                userCompany.setId(userId);
+                userCompany.setCreateBy(Constant.SYSTEM_NAME);
+                userCompany.setCreateTime(date);
+                userCompany.setUpdateBy(Constant.SYSTEM_NAME);
+                userCompany.setUpdateTime(date);
+                return userCompanyDao.insert(userCompany) == 1;
+            }
+
         }else {
             return false;
         }
 
+        return true;
     }
 
     @Override
@@ -361,4 +373,6 @@ public class UserServiceImpl implements UserService {
         //修改学生家长明细
         return userCompanyDao.updateByPrimaryKeySelective(userCompany) == 1;
     }
+
+
 }

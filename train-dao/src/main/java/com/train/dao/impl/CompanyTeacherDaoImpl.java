@@ -3,11 +3,14 @@ package com.train.dao.impl;
 import com.train.dao.declare.CompanyTeacherDao;
 import com.train.dao.mapper.CompanyTeacherMapper;
 import com.train.domain.entity.CompanyTeacher;
+import com.train.domain.entity.CompanyTeacherExample;
+import com.train.domain.entity.UserCompanyExample;
 import com.train.utils.Constant;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ma peiliang
@@ -38,5 +41,13 @@ public class CompanyTeacherDaoImpl implements CompanyTeacherDao {
     @Override
     public int updateByPrimaryKeySelective(CompanyTeacher companyTeacher) {
         return companyTeacherMapper.updateByPrimaryKeySelective(companyTeacher);
+    }
+
+    @Override
+    public List<CompanyTeacher> getCompanyTeacherList(Integer companyId, Integer start) {
+        CompanyTeacherExample example = new CompanyTeacherExample();
+        example.createCriteria().andIdGreaterThan(start).andCompanyIdEqualTo(companyId);
+        example.setOrderByClause(" create_time desc limit "+10);
+        return companyTeacherMapper.selectByExample(example);
     }
 }
