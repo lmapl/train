@@ -181,7 +181,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public Boolean userTypeConfirm(String autograph, Integer type) {
-        if(StringUtils.isEmpty(autograph) || type == null ){
+        /*if(StringUtils.isEmpty(autograph) || type == null ){
             return false;
         }
 
@@ -194,12 +194,14 @@ public class UserServiceImpl implements UserService {
         if(user.getUserType() != 0){
             return false;
         }
-
-        if(!initUserTypeDetail(session.getUserId(),type)){
+*/
+        Integer userId = 6;
+         type = 1;
+        if(!initUserTypeDetail(userId,type)){
             return false;
         }
 
-        Integer userId = session.getUserId();
+
         User userTemp = new User();
         userTemp.setId(userId);
         userTemp.setUserType(type);
@@ -231,9 +233,9 @@ public class UserServiceImpl implements UserService {
         return userDao.updateById(user) == 1;
     }
 
-    @Override
-    @Transactional
-    public Boolean initUserTypeDetail(Integer userId, Integer type) {
+    //@Override
+    //@Transactional
+    private Boolean initUserTypeDetail(Integer userId, Integer type) {
         if(userId == null ||type == null){
             return false;
         }

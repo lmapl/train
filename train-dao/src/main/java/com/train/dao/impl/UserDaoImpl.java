@@ -54,6 +54,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int updateById(User user) {
-        return userMapper.updateByPrimaryKeySelective(user);
+        int num = userMapper.updateByPrimaryKeySelective(user);
+        return num;
     }
 }

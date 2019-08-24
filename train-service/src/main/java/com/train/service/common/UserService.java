@@ -70,7 +70,7 @@ public interface UserService {
      * @param type
      * @return
      */
-    Boolean initUserTypeDetail(Integer userId, Integer type);
+   // Boolean initUserTypeDetail(Integer userId, Integer type);
 
     /**
      * 补充学生家长信息
