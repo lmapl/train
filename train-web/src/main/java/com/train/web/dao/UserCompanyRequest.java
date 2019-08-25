@@ -1,11 +1,13 @@
 package com.train.web.dao;
 
+import java.util.List;
+
 /**
  * Created by ma peiliang
  * Create Date: 2019/8/2 16:43
  * Description: ${DESCRIPTION}
  */
-public class ImproveRequest extends BaseRequest{
+public class UserCompanyRequest extends BaseRequest{
 
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
@@ -22,9 +24,9 @@ public class ImproveRequest extends BaseRequest{
     private String freeVideo;	//试听视频地址
 
 
-    private Integer scale;	//规模
-    private String establishmentTime;	//成立时间
-    private String introductionPortrait;	//环境图片地址	多个图片以 ; 分割
+    private String scale;	//规模
+    private Long establishmentTime;	//成立时间
+    private List<Image> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
     private String certificate	;//机构资质证明图片地址
@@ -95,21 +97,6 @@ public class ImproveRequest extends BaseRequest{
         this.freeVideo = freeVideo;
     }
 
-    public Integer getScale() {
-        return scale;
-    }
-
-    public void setScale(Integer scale) {
-        this.scale = scale;
-    }
-
-    public String getIntroductionPortrait() {
-        return introductionPortrait;
-    }
-
-    public void setIntroductionPortrait(String introductionPortrait) {
-        this.introductionPortrait = introductionPortrait;
-    }
 
     public String getContactPeple() {
         return contactPeple;
@@ -159,11 +146,27 @@ public class ImproveRequest extends BaseRequest{
         this.birthdayDay = birthdayDay;
     }
 
-    public String getEstablishmentTime() {
+    public List<Image> getIntroductionPortraits() {
+        return introductionPortraits;
+    }
+
+    public void setIntroductionPortraits(List<Image> introductionPortraits) {
+        this.introductionPortraits = introductionPortraits;
+    }
+
+    public Long getEstablishmentTime() {
         return establishmentTime;
     }
 
-    public void setEstablishmentTime(String establishmentTime) {
+    public void setEstablishmentTime(Long establishmentTime) {
         this.establishmentTime = establishmentTime;
+    }
+
+    public String getScale() {
+        return scale;
+    }
+
+    public void setScale(String scale) {
+        this.scale = scale;
     }
 }

@@ -37,14 +37,22 @@ public class CompanyController {
 
     @RequestMapping(value ="/improveInfo/v1",method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean> improveInfo(@RequestBody ImproveRequest request){
+    public Result<Boolean> improveInfo(@RequestBody UserCompanyRequest request){
         Result<Boolean> result = new Result<>();
         if(StringUtils.isEmpty(request.getAutograph()) ){
             throw new InvalidParamException("参数为空");
         }
-        ImproveInfo improveInfo = new ImproveInfo();
-        BeanUtils.copyProperties(request,improveInfo);
-        result.setData(userService.companyImproveInfo(improveInfo));
+        UserCompanyInfo userCompanyInfo = new UserCompanyInfo();
+        BeanUtils.copyProperties(request,userCompanyInfo);
+        List<ImageInfo> imageInfos = new ArrayList<>();
+        ImageInfo imageInfo ;
+        for(Image image : request.getIntroductionPortraits()){
+            imageInfo = new ImageInfo();
+            BeanUtils.copyProperties(image,imageInfo);
+            imageInfos.add(imageInfo);
+        }
+        userCompanyInfo.setIntroductionPortraits(imageInfos);
+        result.setData(userService.companyImproveInfo(request.getAutograph(),userCompanyInfo));
         return result;
     }
 

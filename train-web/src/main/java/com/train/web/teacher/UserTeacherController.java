@@ -1,13 +1,13 @@
 package com.train.web.teacher;
 
 import com.train.Exception.InvalidParamException;
-import com.train.domain.bean.ImproveInfo;
 import com.train.domain.bean.TeacherInfo;
+import com.train.domain.bean.UserCompanyInfo;
+import com.train.domain.bean.UserTeacherInfo;
 import com.train.service.common.UserService;
 import com.train.service.teacher.TeacherService;
 import com.train.web.bean.Result;
 import com.train.web.dao.CompanyRequest;
-import com.train.web.dao.ImproveRequest;
 import com.train.web.dao.TeacherDto;
 import com.train.web.dao.UserTeacherRequest;
 import org.springframework.beans.BeanUtils;
@@ -29,14 +29,14 @@ public class UserTeacherController {
 
     @RequestMapping(value = "/improveInfo/v1", method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean> improveInfo(@RequestBody ImproveRequest request) {
+    public Result<Boolean> improveInfo(@RequestBody UserTeacherRequest request) {
         Result<Boolean> result = new Result<>();
         if (StringUtils.isEmpty(request.getAutograph())) {
             throw new InvalidParamException("参数为空");
         }
-        ImproveInfo improveInfo = new ImproveInfo();
+        UserTeacherInfo improveInfo = new UserTeacherInfo();
         BeanUtils.copyProperties(request, improveInfo);
-        result.setData(userService.teacherImproveInfo(improveInfo));
+        result.setData(userService.teacherImproveInfo(request.getAutograph(),improveInfo));
         return result;
     }
 
@@ -48,7 +48,7 @@ public class UserTeacherController {
         if (StringUtils.isEmpty(request.getAutograph()) || request.getId() == null) {
             throw new InvalidParamException("参数为空");
         }
-        ImproveInfo improveInfo = new ImproveInfo();
+        UserCompanyInfo improveInfo = new UserCompanyInfo();
         BeanUtils.copyProperties(request, improveInfo);
         TeacherInfo teacherInfo = teacherService.getTeacherInfo(request.getId());
         TeacherDto teacherDto = new TeacherDto();

@@ -1,10 +1,7 @@
 package com.train.web.stuparent;
 
 import com.train.Exception.InvalidParamException;
-import com.train.domain.bean.CompanyInfo;
-import com.train.domain.bean.ImproveInfo;
-import com.train.domain.bean.OperateRecommendInfo;
-import com.train.domain.bean.RotationShowInfo;
+import com.train.domain.bean.*;
 import com.train.domain.enums.LocationEnum;
 import com.train.service.common.CompanyService;
 import com.train.service.common.OperateService;
@@ -41,14 +38,14 @@ public class UserStuParentController {
 
     @RequestMapping(value ="/improveInfo/v1",method = RequestMethod.POST)
     @ResponseBody
-    public Result<Boolean> improveInfo(@RequestBody ImproveRequest request){
+    public Result<Boolean> improveInfo(@RequestBody UserStuParentRequest request){
         Result<Boolean> result = new Result<>();
         if(StringUtils.isEmpty(request.getAutograph()) ){
             throw new InvalidParamException("参数为空");
         }
-        ImproveInfo improveInfo = new ImproveInfo();
+        UserStuParentInfo improveInfo = new UserStuParentInfo();
         BeanUtils.copyProperties(request,improveInfo);
-        result.setData(userService.userStuImproveInfo(improveInfo));
+        result.setData(userService.userStuImproveInfo(request.getAutograph(),improveInfo));
         return result;
     }
 

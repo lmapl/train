@@ -2,15 +2,9 @@ package com.train.service.common.impl;
 
 import com.train.Exception.AuthException;
 import com.train.Exception.InternalServerException;
-import com.train.dao.declare.UserCompanyDao;
-import com.train.dao.declare.UserDao;
-import com.train.dao.declare.UserStuParentDao;
-import com.train.dao.declare.UserTeacherDao;
+import com.train.dao.declare.*;
 import com.train.domain.bean.*;
-import com.train.domain.entity.User;
-import com.train.domain.entity.UserCompany;
-import com.train.domain.entity.UserStuParent;
-import com.train.domain.entity.UserTeacher;
+import com.train.domain.entity.*;
 import com.train.domain.enums.TokenTypeEnum;
 import com.train.domain.enums.UserStatusEnum;
 import com.train.domain.enums.UserTypeEnum;
@@ -25,8 +19,11 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ma peiliang
@@ -60,6 +57,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private RedisService redisService;
+
+    @Resource
+    private UserCompanyImageDao userCompanyImageDao;
 
     @Override
     public boolean register(RegisterInfo registerInfo) {
@@ -284,12 +284,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean userStuImproveInfo(ImproveInfo improveInfo) {
-        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+    public Boolean userStuImproveInfo(String autograph,UserStuParentInfo improveInfo) {
+        if(StringUtils.isEmpty(autograph)){
             return false;
         }
 
-        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        UserSessionInfo session = tokenService.verifyLoginToken(autograph);
         if(session == null){
             return false;
         }
@@ -313,13 +313,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean teacherImproveInfo(ImproveInfo improveInfo) {
+    public Boolean teacherImproveInfo(String autograph,UserTeacherInfo improveInfo) {
 
-        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+        if(StringUtils.isEmpty(autograph)){
             return false;
         }
 
-        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        UserSessionInfo session = tokenService.verifyLoginToken(autograph);
         if(session == null){
             return false;
         }
@@ -344,12 +344,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean companyImproveInfo(ImproveInfo improveInfo) {
-        if(StringUtils.isEmpty(improveInfo.getAutograph())){
+    public Boolean companyImproveInfo(String authGraph,UserCompanyInfo improveInfo) {
+        if(StringUtils.isEmpty(authGraph)){
             return false;
         }
 
-        UserSessionInfo session = tokenService.verifyLoginToken(improveInfo.getAutograph());
+        UserSessionInfo session = tokenService.verifyLoginToken(authGraph);
         if(session == null){
             return false;
         }
@@ -359,16 +359,30 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        if(!CollectionUtils.isEmpty(improveInfo.getIntroductionPortraits())){
+            userCompanyImageDao.delByUserCompanyId(userCompany.getId());
+            int sort=0;
+            for(ImageInfo imageInfo : improveInfo.getIntroductionPortraits()){
+                UserCompanyImage image = new UserCompanyImage();
+                image.setUserCompanyId(userCompany.getId());
+                image.setSort(sort);
+                image.setImageUrl(imageInfo.getImageUrl());
+                image.setHigh(imageInfo.getHigh());
+                image.setWitdh(imageInfo.getWidth());
+                userCompanyImageDao.insert(image);
+                sort++;
+            }
+        }
+
         userCompany.setNickName(improveInfo.getNickName());
         userCompany.setPortrait(improveInfo.getPortrait());
         userCompany.setPosition(improveInfo.getPosition());
         userCompany.setIntroduction(improveInfo.getIntroduction());
         userCompany.setScale(improveInfo.getScale());
-        userCompany.setIntroductionPortrait(improveInfo.getIntroductionPortrait());
         userCompany.setContactPeple(improveInfo.getContactPeple());
         userCompany.setContactInfo(improveInfo.getContactInfon());
         userCompany.setCertificate(improveInfo.getCertificate());
-        userCompany.setEstablishmentTime(improveInfo.getEstablishmentTime());
+        userCompany.setEstablishmentTime(new Timestamp(improveInfo.getEstablishmentTime()));
         userCompany.setUpdateBy(Constant.SYSTEM_NAME);
         userCompany.setUpdateTime(new Date());
 

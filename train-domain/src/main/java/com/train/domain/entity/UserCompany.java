@@ -1,5 +1,6 @@
 package com.train.domain.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class UserCompany {
@@ -21,17 +22,27 @@ public class UserCompany {
     /**
      * 规模
      */
-    private Integer scale;
+    private String scale;
 
     /**
      * 成立时间
      */
-    private String establishmentTime;
+    private Date establishmentTime;
 
     /**
      * 位置
      */
     private String position;
+
+    /**
+     * 经纬度：经度
+     */
+    private BigDecimal lon;
+
+    /**
+     * 经纬度：纬度
+     */
+    private BigDecimal lat;
 
     /**
      * 简介
@@ -41,7 +52,7 @@ public class UserCompany {
     /**
      * 环境图片地址
      */
-    private String introductionPortrait;
+    private String introductionPortraitIds;
 
     /**
      * 机构联系人
@@ -130,7 +141,7 @@ public class UserCompany {
      * 规模
      * @return scale 规模
      */
-    public Integer getScale() {
+    public String getScale() {
         return scale;
     }
 
@@ -138,15 +149,15 @@ public class UserCompany {
      * 规模
      * @param scale 规模
      */
-    public void setScale(Integer scale) {
-        this.scale = scale;
+    public void setScale(String scale) {
+        this.scale = scale == null ? null : scale.trim();
     }
 
     /**
      * 成立时间
      * @return establishment_time 成立时间
      */
-    public String getEstablishmentTime() {
+    public Date getEstablishmentTime() {
         return establishmentTime;
     }
 
@@ -154,8 +165,8 @@ public class UserCompany {
      * 成立时间
      * @param establishmentTime 成立时间
      */
-    public void setEstablishmentTime(String establishmentTime) {
-        this.establishmentTime = establishmentTime == null ? null : establishmentTime.trim();
+    public void setEstablishmentTime(Date establishmentTime) {
+        this.establishmentTime = establishmentTime;
     }
 
     /**
@@ -172,6 +183,38 @@ public class UserCompany {
      */
     public void setPosition(String position) {
         this.position = position == null ? null : position.trim();
+    }
+
+    /**
+     * 经纬度：经度
+     * @return lon 经纬度：经度
+     */
+    public BigDecimal getLon() {
+        return lon;
+    }
+
+    /**
+     * 经纬度：经度
+     * @param lon 经纬度：经度
+     */
+    public void setLon(BigDecimal lon) {
+        this.lon = lon;
+    }
+
+    /**
+     * 经纬度：纬度
+     * @return lat 经纬度：纬度
+     */
+    public BigDecimal getLat() {
+        return lat;
+    }
+
+    /**
+     * 经纬度：纬度
+     * @param lat 经纬度：纬度
+     */
+    public void setLat(BigDecimal lat) {
+        this.lat = lat;
     }
 
     /**
@@ -192,18 +235,18 @@ public class UserCompany {
 
     /**
      * 环境图片地址
-     * @return introduction_portrait 环境图片地址
+     * @return introduction_portrait_ids 环境图片地址
      */
-    public String getIntroductionPortrait() {
-        return introductionPortrait;
+    public String getIntroductionPortraitIds() {
+        return introductionPortraitIds;
     }
 
     /**
      * 环境图片地址
-     * @param introductionPortrait 环境图片地址
+     * @param introductionPortraitIds 环境图片地址
      */
-    public void setIntroductionPortrait(String introductionPortrait) {
-        this.introductionPortrait = introductionPortrait == null ? null : introductionPortrait.trim();
+    public void setIntroductionPortraitIds(String introductionPortraitIds) {
+        this.introductionPortraitIds = introductionPortraitIds == null ? null : introductionPortraitIds.trim();
     }
 
     /**
@@ -334,8 +377,10 @@ public class UserCompany {
         sb.append(", scale=").append(scale);
         sb.append(", establishmentTime=").append(establishmentTime);
         sb.append(", position=").append(position);
+        sb.append(", lon=").append(lon);
+        sb.append(", lat=").append(lat);
         sb.append(", introduction=").append(introduction);
-        sb.append(", introductionPortrait=").append(introductionPortrait);
+        sb.append(", introductionPortraitIds=").append(introductionPortraitIds);
         sb.append(", contactPeple=").append(contactPeple);
         sb.append(", contactInfo=").append(contactInfo);
         sb.append(", certificate=").append(certificate);

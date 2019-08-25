@@ -5,11 +5,13 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="nick_Name" property="nickName" jdbcType="VARCHAR" />
     <result column="portrait" property="portrait" jdbcType="VARCHAR" />
-    <result column="scale" property="scale" jdbcType="INTEGER" />
-    <result column="establishment_time" property="establishmentTime" jdbcType="VARCHAR" />
+    <result column="scale" property="scale" jdbcType="VARCHAR" />
+    <result column="establishment_time" property="establishmentTime" jdbcType="TIMESTAMP" />
     <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="lon" property="lon" jdbcType="DECIMAL" />
+    <result column="lat" property="lat" jdbcType="DECIMAL" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="introduction_portrait" property="introductionPortrait" jdbcType="VARCHAR" />
+    <result column="introduction_portrait_ids" property="introductionPortraitIds" jdbcType="VARCHAR" />
     <result column="contact_peple" property="contactPeple" jdbcType="VARCHAR" />
     <result column="contact_info" property="contactInfo" jdbcType="VARCHAR" />
     <result column="certificate" property="certificate" jdbcType="VARCHAR" />
@@ -77,8 +79,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nick_Name, portrait, scale, establishment_time, position, introduction, introduction_portrait, 
-    contact_peple, contact_info, certificate, create_time, create_by, update_time, update_by
+    id, nick_Name, portrait, scale, establishment_time, position, lon, lat, introduction, 
+    introduction_portrait_ids, contact_peple, contact_info, certificate, create_time, 
+    create_by, update_time, update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserCompanyExample" >
     select
@@ -113,13 +116,15 @@
   <insert id="insert" parameterType="com.train.domain.entity.UserCompany" >
     insert into user_company (id, nick_Name, portrait, 
       scale, establishment_time, position, 
-      introduction, introduction_portrait, contact_peple, 
+      lon, lat, introduction, 
+      introduction_portrait_ids, contact_peple, 
       contact_info, certificate, create_time, 
       create_by, update_time, update_by
       )
     values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
-      #{scale,jdbcType=INTEGER}, #{establishmentTime,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
-      #{introduction,jdbcType=VARCHAR}, #{introductionPortrait,jdbcType=VARCHAR}, #{contactPeple,jdbcType=VARCHAR}, 
+      #{scale,jdbcType=VARCHAR}, #{establishmentTime,jdbcType=TIMESTAMP}, #{position,jdbcType=VARCHAR}, 
+      #{lon,jdbcType=DECIMAL}, #{lat,jdbcType=DECIMAL}, #{introduction,jdbcType=VARCHAR}, 
+      #{introductionPortraitIds,jdbcType=VARCHAR}, #{contactPeple,jdbcType=VARCHAR}, 
       #{contactInfo,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
       #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
       )
@@ -145,11 +150,17 @@
       <if test="position != null" >
         position,
       </if>
+      <if test="lon != null" >
+        lon,
+      </if>
+      <if test="lat != null" >
+        lat,
+      </if>
       <if test="introduction != null" >
         introduction,
       </if>
-      <if test="introductionPortrait != null" >
-        introduction_portrait,
+      <if test="introductionPortraitIds != null" >
+        introduction_portrait_ids,
       </if>
       <if test="contactPeple != null" >
         contact_peple,
@@ -184,19 +195,25 @@
         #{portrait,jdbcType=VARCHAR},
       </if>
       <if test="scale != null" >
-        #{scale,jdbcType=INTEGER},
+        #{scale,jdbcType=VARCHAR},
       </if>
       <if test="establishmentTime != null" >
-        #{establishmentTime,jdbcType=VARCHAR},
+        #{establishmentTime,jdbcType=TIMESTAMP},
       </if>
       <if test="position != null" >
         #{position,jdbcType=VARCHAR},
       </if>
+      <if test="lon != null" >
+        #{lon,jdbcType=DECIMAL},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=DECIMAL},
+      </if>
       <if test="introduction != null" >
         #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="introductionPortrait != null" >
-        #{introductionPortrait,jdbcType=VARCHAR},
+      <if test="introductionPortraitIds != null" >
+        #{introductionPortraitIds,jdbcType=VARCHAR},
       </if>
       <if test="contactPeple != null" >
         #{contactPeple,jdbcType=VARCHAR},
@@ -240,19 +257,25 @@
         portrait = #{record.portrait,jdbcType=VARCHAR},
       </if>
       <if test="record.scale != null" >
-        scale = #{record.scale,jdbcType=INTEGER},
+        scale = #{record.scale,jdbcType=VARCHAR},
       </if>
       <if test="record.establishmentTime != null" >
-        establishment_time = #{record.establishmentTime,jdbcType=VARCHAR},
+        establishment_time = #{record.establishmentTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.position != null" >
         position = #{record.position,jdbcType=VARCHAR},
       </if>
+      <if test="record.lon != null" >
+        lon = #{record.lon,jdbcType=DECIMAL},
+      </if>
+      <if test="record.lat != null" >
+        lat = #{record.lat,jdbcType=DECIMAL},
+      </if>
       <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
-      <if test="record.introductionPortrait != null" >
-        introduction_portrait = #{record.introductionPortrait,jdbcType=VARCHAR},
+      <if test="record.introductionPortraitIds != null" >
+        introduction_portrait_ids = #{record.introductionPortraitIds,jdbcType=VARCHAR},
       </if>
       <if test="record.contactPeple != null" >
         contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
@@ -285,11 +308,13 @@
     set id = #{record.id,jdbcType=INTEGER},
       nick_Name = #{record.nickName,jdbcType=VARCHAR},
       portrait = #{record.portrait,jdbcType=VARCHAR},
-      scale = #{record.scale,jdbcType=INTEGER},
-      establishment_time = #{record.establishmentTime,jdbcType=VARCHAR},
+      scale = #{record.scale,jdbcType=VARCHAR},
+      establishment_time = #{record.establishmentTime,jdbcType=TIMESTAMP},
       position = #{record.position,jdbcType=VARCHAR},
+      lon = #{record.lon,jdbcType=DECIMAL},
+      lat = #{record.lat,jdbcType=DECIMAL},
       introduction = #{record.introduction,jdbcType=VARCHAR},
-      introduction_portrait = #{record.introductionPortrait,jdbcType=VARCHAR},
+      introduction_portrait_ids = #{record.introductionPortraitIds,jdbcType=VARCHAR},
       contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
       contact_info = #{record.contactInfo,jdbcType=VARCHAR},
       certificate = #{record.certificate,jdbcType=VARCHAR},
@@ -311,19 +336,25 @@
         portrait = #{portrait,jdbcType=VARCHAR},
       </if>
       <if test="scale != null" >
-        scale = #{scale,jdbcType=INTEGER},
+        scale = #{scale,jdbcType=VARCHAR},
       </if>
       <if test="establishmentTime != null" >
-        establishment_time = #{establishmentTime,jdbcType=VARCHAR},
+        establishment_time = #{establishmentTime,jdbcType=TIMESTAMP},
       </if>
       <if test="position != null" >
         position = #{position,jdbcType=VARCHAR},
       </if>
+      <if test="lon != null" >
+        lon = #{lon,jdbcType=DECIMAL},
+      </if>
+      <if test="lat != null" >
+        lat = #{lat,jdbcType=DECIMAL},
+      </if>
       <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="introductionPortrait != null" >
-        introduction_portrait = #{introductionPortrait,jdbcType=VARCHAR},
+      <if test="introductionPortraitIds != null" >
+        introduction_portrait_ids = #{introductionPortraitIds,jdbcType=VARCHAR},
       </if>
       <if test="contactPeple != null" >
         contact_peple = #{contactPeple,jdbcType=VARCHAR},
@@ -353,11 +384,13 @@
     update user_company
     set nick_Name = #{nickName,jdbcType=VARCHAR},
       portrait = #{portrait,jdbcType=VARCHAR},
-      scale = #{scale,jdbcType=INTEGER},
-      establishment_time = #{establishmentTime,jdbcType=VARCHAR},
+      scale = #{scale,jdbcType=VARCHAR},
+      establishment_time = #{establishmentTime,jdbcType=TIMESTAMP},
       position = #{position,jdbcType=VARCHAR},
+      lon = #{lon,jdbcType=DECIMAL},
+      lat = #{lat,jdbcType=DECIMAL},
       introduction = #{introduction,jdbcType=VARCHAR},
-      introduction_portrait = #{introductionPortrait,jdbcType=VARCHAR},
+      introduction_portrait_ids = #{introductionPortraitIds,jdbcType=VARCHAR},
       contact_peple = #{contactPeple,jdbcType=VARCHAR},
       contact_info = #{contactInfo,jdbcType=VARCHAR},
       certificate = #{certificate,jdbcType=VARCHAR},

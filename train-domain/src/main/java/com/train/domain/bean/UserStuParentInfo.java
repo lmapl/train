@@ -1,16 +1,13 @@
-package com.train.web.dao;
+package com.train.domain.bean;
 
 import java.util.List;
 
 /**
  * Created by ma peiliang
- * Create Date: 2019/8/2 16:43
+ * Create Date: 2019/8/2 16:50
  * Description: ${DESCRIPTION}
  */
-public class UserTeacherRequest extends BaseRequest{
-
-    private Integer id;
-
+public class UserStuParentInfo {
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
     private Integer gender	;  //性别	1=男； 2=女
@@ -28,7 +25,7 @@ public class UserTeacherRequest extends BaseRequest{
 
     private String scale;	//规模
     private Long establishmentTime;	//成立时间
-    private List<Image> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
+    private List<ImageInfo> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
     private String certificate	;//机构资质证明图片地址
@@ -148,11 +145,11 @@ public class UserTeacherRequest extends BaseRequest{
         this.birthdayDay = birthdayDay;
     }
 
-    public List<Image> getIntroductionPortraits() {
+    public List<ImageInfo> getIntroductionPortraits() {
         return introductionPortraits;
     }
 
-    public void setIntroductionPortraits(List<Image> introductionPortraits) {
+    public void setIntroductionPortraits(List<ImageInfo> introductionPortraits) {
         this.introductionPortraits = introductionPortraits;
     }
 
@@ -170,13 +167,5 @@ public class UserTeacherRequest extends BaseRequest{
 
     public void setScale(String scale) {
         this.scale = scale;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

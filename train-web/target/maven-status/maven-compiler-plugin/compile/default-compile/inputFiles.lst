@@ -3,6 +3,7 @@ C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\Dynam
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\common\CommonController.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\SubjectDto.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\BaseRequest.java
+C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\Image.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\HomePage.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\CompanyRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\bean\Error.java
@@ -12,12 +13,12 @@ C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\company\C
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\CompanyHomePage.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\RotationShowDto.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\common\CollectController.java
-C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\ImproveRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\common\UserController.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\CompanyTeacherDto.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\common\DynamicEventController.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\IdentityRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\RecommendDto.java
+C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\UserStuParentRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\AddCurriculumRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\bean\ExceptionAdvice.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\DynamicEventDao.java
@@ -39,4 +40,5 @@ C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\bean\Resu
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\CompanyDto.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\DelBaseRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\LabelRequest.java
+C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\UserCompanyRequest.java
 C:\Users\mapl\IdeaProjects\train\train-web\src\main\java\com\train\web\dao\UserTeacherRequest.java

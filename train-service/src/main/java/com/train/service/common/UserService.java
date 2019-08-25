@@ -1,9 +1,6 @@
 package com.train.service.common;
 
-import com.train.domain.bean.ImproveInfo;
-import com.train.domain.bean.LoginInfo;
-import com.train.domain.bean.RegisterInfo;
-import com.train.domain.bean.TeacherInfo;
+import com.train.domain.bean.*;
 import com.train.domain.entity.User;
 
 /**
@@ -77,15 +74,15 @@ public interface UserService {
      * @param improveInfo
      * @return
      */
-    Boolean userStuImproveInfo(ImproveInfo improveInfo);
+    Boolean userStuImproveInfo(String autograph,UserStuParentInfo improveInfo);
 
     /**
      * 补充教师用户信息
      * @param improveInfo
      * @return
      */
-    Boolean teacherImproveInfo(ImproveInfo improveInfo);
+    Boolean teacherImproveInfo(String autograph ,UserTeacherInfo improveInfo);
 
-    Boolean companyImproveInfo(ImproveInfo improveInfo);
+    Boolean companyImproveInfo(String authGraph,UserCompanyInfo userCompanyInfo);
 
 }

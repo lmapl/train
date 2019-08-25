@@ -1,19 +1,20 @@
 package com.train.domain.bean;
 
+import java.util.List;
+
 /**
  * Created by ma peiliang
  * Create Date: 2019/8/2 16:50
  * Description: ${DESCRIPTION}
  */
-public class ImproveInfo {
-    private String autograph;	//签名		需要用服务器端rsa公钥加密,
-
+public class UserCompanyInfo {
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
     private Integer gender	;  //性别	1=男； 2=女
     private String birthdayYear;	//生日
     private String birthdayMonth;	//生日
     private String birthdayDay;	//生日
+
 
     private Integer subject;	//教授科目
     private Integer teachingAge;//	教龄
@@ -22,14 +23,12 @@ public class ImproveInfo {
     private String freeVideo;	//试听视频地址
 
 
-
-    private Integer scale;	//规模
-    private Integer curriculum;	//成立时间
-    private String introductionPortrait;	//环境图片地址	多个图片以 ; 分割
+    private String scale;	//规模
+    private Long establishmentTime;	//成立时间
+    private List<ImageInfo> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
     private String certificate	;//机构资质证明图片地址
-    private String establishmentTime;	//成立时间
 
 
 
@@ -55,14 +54,6 @@ public class ImproveInfo {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getAutograph() {
-        return autograph;
-    }
-
-    public void setAutograph(String autograph) {
-        this.autograph = autograph;
     }
 
     public Integer getSubject() {
@@ -105,29 +96,6 @@ public class ImproveInfo {
         this.freeVideo = freeVideo;
     }
 
-    public Integer getScale() {
-        return scale;
-    }
-
-    public void setScale(Integer scale) {
-        this.scale = scale;
-    }
-
-    public Integer getCurriculum() {
-        return curriculum;
-    }
-
-    public void setCurriculum(Integer curriculum) {
-        this.curriculum = curriculum;
-    }
-
-    public String getIntroductionPortrait() {
-        return introductionPortrait;
-    }
-
-    public void setIntroductionPortrait(String introductionPortrait) {
-        this.introductionPortrait = introductionPortrait;
-    }
 
     public String getContactPeple() {
         return contactPeple;
@@ -177,11 +145,27 @@ public class ImproveInfo {
         this.birthdayDay = birthdayDay;
     }
 
-    public String getEstablishmentTime() {
+    public List<ImageInfo> getIntroductionPortraits() {
+        return introductionPortraits;
+    }
+
+    public void setIntroductionPortraits(List<ImageInfo> introductionPortraits) {
+        this.introductionPortraits = introductionPortraits;
+    }
+
+    public Long getEstablishmentTime() {
         return establishmentTime;
     }
 
-    public void setEstablishmentTime(String establishmentTime) {
+    public void setEstablishmentTime(Long establishmentTime) {
         this.establishmentTime = establishmentTime;
+    }
+
+    public String getScale() {
+        return scale;
+    }
+
+    public void setScale(String scale) {
+        this.scale = scale;
     }
 }

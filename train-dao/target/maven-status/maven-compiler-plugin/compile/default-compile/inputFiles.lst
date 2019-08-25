@@ -1,5 +1,6 @@
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\UserStuParentDao.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\CollectMapper.java
+C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\UserCompanyImageDaoImpl.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\UserStuParentDaoImpl.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\CollectDaoImpl.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\SubjectDao.java
@@ -10,6 +11,7 @@ C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\C
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\CompanyTeacherMapper.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\CommentDao.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\UserCompanyDao.java
+C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\UserCompanyImageMapper.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\SubjectMapper.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\UserDao.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\CompanyCurriculumDaoImpl.java
@@ -36,6 +38,7 @@ C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\Oper
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\UserDaoImpl.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\AddrAreaDao.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\DynamicEventDao.java
+C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\declare\UserCompanyImageDao.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\UserCompanyMapper.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\mapper\BaseMapper.java
 C:\Users\mapl\IdeaProjects\train\train-dao\src\main\java\com\train\dao\impl\OperateRotationShowDaoImpl.java
