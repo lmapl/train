@@ -1,7 +1,6 @@
 package com.train.web.company;
 
 import com.train.Exception.InvalidParamException;
-import com.train.dao.declare.CompanyTeacherDao;
 import com.train.domain.bean.*;
 import com.train.domain.enums.LocationEnum;
 import com.train.service.common.CompanyService;
@@ -189,16 +188,14 @@ public class CompanyController {
 
     @RequestMapping(value = "/getCompanyTeacher/v1", method = RequestMethod.POST)
     @ResponseBody
-    public Result<TeacherDto> getCompanyTeacher(@RequestBody UserTeacherRequest request) {
-        Result<TeacherDto> result = new Result<>();
+    public Result<CompanyTeacherDto> getCompanyTeacher(@RequestBody UserTeacherRequest request) {
+        Result<CompanyTeacherDto> result = new Result<>();
         if (StringUtils.isEmpty(request.getAutograph()) || request.getId() == null) {
             throw new InvalidParamException("参数为空");
         }
-        ImproveInfo improveInfo = new ImproveInfo();
-        BeanUtils.copyProperties(request, improveInfo);
-        TeacherInfo teacherInfo = teacherService.getTeacherInfo(request.getId());
-        TeacherDto teacherDto = new TeacherDto();
-        BeanUtils.copyProperties(teacherInfo, teacherDto);
+        CompanyTeacherInfo companyTeacherInfo = companyService.getCompanyTeacher(request.getId());
+        CompanyTeacherDto teacherDto = new CompanyTeacherDto();
+        BeanUtils.copyProperties(companyTeacherInfo, companyTeacherInfo);
         result.setData(teacherDto);
         return result;
     }

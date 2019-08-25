@@ -24,4 +24,6 @@ public interface CompanyService {
     CompanyInfo getCompanyDetailDto(Integer id);
 
     List<CompanyTeacherInfo> getCompanyTeacherList(Integer id,Integer start);
+
+    CompanyTeacherInfo getCompanyTeacher(Integer id);
 }

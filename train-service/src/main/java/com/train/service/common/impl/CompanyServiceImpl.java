@@ -198,4 +198,14 @@ public class CompanyServiceImpl implements CompanyService {
         }
         return teacherInfos;
     }
+
+    @Override
+    public CompanyTeacherInfo getCompanyTeacher(Integer id) {
+
+        CompanyTeacher companyTeacher =  companyTeacherDao.getById(id);
+
+        CompanyTeacherInfo info = new CompanyTeacherInfo();
+        BeanUtils.copyProperties(companyTeacher,info);
+        return info;
+    }
 }
