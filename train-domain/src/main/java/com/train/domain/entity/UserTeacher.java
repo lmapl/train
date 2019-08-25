@@ -1,5 +1,6 @@
 package com.train.domain.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class UserTeacher {
@@ -32,6 +33,16 @@ public class UserTeacher {
      * 位置
      */
     private String position;
+
+    /**
+     * 
+     */
+    private BigDecimal lon;
+
+    /**
+     * 
+     */
+    private BigDecimal lat;
 
     /**
      * 简介
@@ -160,6 +171,38 @@ public class UserTeacher {
     }
 
     /**
+     * 
+     * @return lon 
+     */
+    public BigDecimal getLon() {
+        return lon;
+    }
+
+    /**
+     * 
+     * @param lon 
+     */
+    public void setLon(BigDecimal lon) {
+        this.lon = lon;
+    }
+
+    /**
+     * 
+     * @return lat 
+     */
+    public BigDecimal getLat() {
+        return lat;
+    }
+
+    /**
+     * 
+     * @param lat 
+     */
+    public void setLat(BigDecimal lat) {
+        this.lat = lat;
+    }
+
+    /**
      * 简介
      * @return introduction 简介
      */
@@ -271,6 +314,8 @@ public class UserTeacher {
         sb.append(", subjectId=").append(subjectId);
         sb.append(", teachingAge=").append(teachingAge);
         sb.append(", position=").append(position);
+        sb.append(", lon=").append(lon);
+        sb.append(", lat=").append(lat);
         sb.append(", introduction=").append(introduction);
         sb.append(", freeVideo=").append(freeVideo);
         sb.append(", createTime=").append(createTime);

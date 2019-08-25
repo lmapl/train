@@ -41,7 +41,7 @@
 <!--
         <table tableName="user_company_image"></table>
 -->
-        <table tableName="user_company"></table>
+        <table tableName="user_teacher"></table>
       <!--  <table tableName="user_stu_parent"></table>
         <table tableName="user_teacher"></table>-->
         <!--<table tableName="user_company"></table>

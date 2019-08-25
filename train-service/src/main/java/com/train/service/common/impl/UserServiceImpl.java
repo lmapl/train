@@ -181,7 +181,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public Boolean userTypeConfirm(String autograph, Integer type) {
-        /*if(StringUtils.isEmpty(autograph) || type == null ){
+        if(StringUtils.isEmpty(autograph) || type == null ){
             return false;
         }
 
@@ -191,12 +191,12 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = userDao.getUserById(session.getUserId());
-        if(user.getUserType() != 0){
+        /*if(user.getUserType() != 0){
             return false;
-        }
-*/
-        Integer userId = 6;
-         type = 1;
+        }*/
+
+        Integer userId = session.getUserId();
+         //type = 1;
         if(!initUserTypeDetail(userId,type)){
             return false;
         }
@@ -329,6 +329,8 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        userTeacher.setLon(improveInfo.getLon());
+        userTeacher.setLat(improveInfo.getLat());
         userTeacher.setNickName(improveInfo.getNickName());
         userTeacher.setPortrait(improveInfo.getPortrait());
         userTeacher.setSubjectId(improveInfo.getSubject());
@@ -377,12 +379,16 @@ public class UserServiceImpl implements UserService {
         userCompany.setNickName(improveInfo.getNickName());
         userCompany.setPortrait(improveInfo.getPortrait());
         userCompany.setPosition(improveInfo.getPosition());
+        userCompany.setLat(improveInfo.getLat());
+        userCompany.setLon(improveInfo.getLon());
         userCompany.setIntroduction(improveInfo.getIntroduction());
         userCompany.setScale(improveInfo.getScale());
         userCompany.setContactPeple(improveInfo.getContactPeple());
         userCompany.setContactInfo(improveInfo.getContactInfon());
         userCompany.setCertificate(improveInfo.getCertificate());
-        userCompany.setEstablishmentTime(new Timestamp(improveInfo.getEstablishmentTime()));
+        if(improveInfo.getEstablishmentTime() != null){
+            userCompany.setEstablishmentTime(new Timestamp(improveInfo.getEstablishmentTime()));
+        }
         userCompany.setUpdateBy(Constant.SYSTEM_NAME);
         userCompany.setUpdateTime(new Date());
 

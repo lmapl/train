@@ -1,6 +1,6 @@
 package com.train.web.dao;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
  * Created by ma peiliang
@@ -22,18 +22,11 @@ public class UserTeacherRequest extends BaseRequest{
     private Integer subject;	//教授科目
     private Integer teachingAge;//	教龄
     private String position;	//位置	需要分割符，待定
+
+    private BigDecimal lon; //经纬度：经度
+    private BigDecimal lat; //经纬度：纬度
     private String introduction;//	简介
     private String freeVideo;	//试听视频地址
-
-
-    private String scale;	//规模
-    private Long establishmentTime;	//成立时间
-    private List<Image> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
-    private String contactPeple	;//机构联系人
-    private String contactInfon;//	机构联系方式
-    private String certificate	;//机构资质证明图片地址
-
-
 
     public String getNickName() {
         return nickName;
@@ -99,31 +92,6 @@ public class UserTeacherRequest extends BaseRequest{
         this.freeVideo = freeVideo;
     }
 
-
-    public String getContactPeple() {
-        return contactPeple;
-    }
-
-    public void setContactPeple(String contactPeple) {
-        this.contactPeple = contactPeple;
-    }
-
-    public String getContactInfon() {
-        return contactInfon;
-    }
-
-    public void setContactInfon(String contactInfon) {
-        this.contactInfon = contactInfon;
-    }
-
-    public String getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(String certificate) {
-        this.certificate = certificate;
-    }
-
     public String getBirthdayYear() {
         return birthdayYear;
     }
@@ -148,29 +116,7 @@ public class UserTeacherRequest extends BaseRequest{
         this.birthdayDay = birthdayDay;
     }
 
-    public List<Image> getIntroductionPortraits() {
-        return introductionPortraits;
-    }
 
-    public void setIntroductionPortraits(List<Image> introductionPortraits) {
-        this.introductionPortraits = introductionPortraits;
-    }
-
-    public Long getEstablishmentTime() {
-        return establishmentTime;
-    }
-
-    public void setEstablishmentTime(Long establishmentTime) {
-        this.establishmentTime = establishmentTime;
-    }
-
-    public String getScale() {
-        return scale;
-    }
-
-    public void setScale(String scale) {
-        this.scale = scale;
-    }
 
     public Integer getId() {
         return id;
@@ -178,5 +124,21 @@ public class UserTeacherRequest extends BaseRequest{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public BigDecimal getLon() {
+        return lon;
+    }
+
+    public void setLon(BigDecimal lon) {
+        this.lon = lon;
+    }
+
+    public BigDecimal getLat() {
+        return lat;
+    }
+
+    public void setLat(BigDecimal lat) {
+        this.lat = lat;
     }
 }

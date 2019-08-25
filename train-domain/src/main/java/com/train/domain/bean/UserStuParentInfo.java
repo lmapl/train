@@ -1,7 +1,5 @@
 package com.train.domain.bean;
 
-import java.util.List;
-
 /**
  * Created by ma peiliang
  * Create Date: 2019/8/2 16:50
@@ -14,22 +12,6 @@ public class UserStuParentInfo {
     private String birthdayYear;	//生日
     private String birthdayMonth;	//生日
     private String birthdayDay;	//生日
-
-
-    private Integer subject;	//教授科目
-    private Integer teachingAge;//	教龄
-    private String position;	//位置	需要分割符，待定
-    private String introduction;//	简介
-    private String freeVideo;	//试听视频地址
-
-
-    private String scale;	//规模
-    private Long establishmentTime;	//成立时间
-    private List<ImageInfo> introductionPortraits;	//环境图片地址	多个图片以 ; 分割
-    private String contactPeple	;//机构联系人
-    private String contactInfon;//	机构联系方式
-    private String certificate	;//机构资质证明图片地址
-
 
 
     public String getNickName() {
@@ -56,71 +38,6 @@ public class UserStuParentInfo {
         this.gender = gender;
     }
 
-    public Integer getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Integer subject) {
-        this.subject = subject;
-    }
-
-    public Integer getTeachingAge() {
-        return teachingAge;
-    }
-
-    public void setTeachingAge(Integer teachingAge) {
-        this.teachingAge = teachingAge;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public String getFreeVideo() {
-        return freeVideo;
-    }
-
-    public void setFreeVideo(String freeVideo) {
-        this.freeVideo = freeVideo;
-    }
-
-
-    public String getContactPeple() {
-        return contactPeple;
-    }
-
-    public void setContactPeple(String contactPeple) {
-        this.contactPeple = contactPeple;
-    }
-
-    public String getContactInfon() {
-        return contactInfon;
-    }
-
-    public void setContactInfon(String contactInfon) {
-        this.contactInfon = contactInfon;
-    }
-
-    public String getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(String certificate) {
-        this.certificate = certificate;
-    }
-
     public String getBirthdayYear() {
         return birthdayYear;
     }
@@ -145,27 +62,5 @@ public class UserStuParentInfo {
         this.birthdayDay = birthdayDay;
     }
 
-    public List<ImageInfo> getIntroductionPortraits() {
-        return introductionPortraits;
-    }
 
-    public void setIntroductionPortraits(List<ImageInfo> introductionPortraits) {
-        this.introductionPortraits = introductionPortraits;
-    }
-
-    public Long getEstablishmentTime() {
-        return establishmentTime;
-    }
-
-    public void setEstablishmentTime(Long establishmentTime) {
-        this.establishmentTime = establishmentTime;
-    }
-
-    public String getScale() {
-        return scale;
-    }
-
-    public void setScale(String scale) {
-        this.scale = scale;
-    }
 }

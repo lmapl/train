@@ -8,6 +8,8 @@
     <result column="subject_id" property="subjectId" jdbcType="INTEGER" />
     <result column="teaching_age" property="teachingAge" jdbcType="INTEGER" />
     <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="lon" property="lon" jdbcType="DECIMAL" />
+    <result column="lat" property="lat" jdbcType="DECIMAL" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
     <result column="free_video" property="freeVideo" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="DATE" />
@@ -74,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nick_name, portrait, subject_id, teaching_age, position, introduction, free_video, 
-    create_time, create_by, update_time, update_by
+    id, nick_name, portrait, subject_id, teaching_age, position, lon, lat, introduction, 
+    free_video, create_time, create_by, update_time, update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserTeacherExample" >
     select
@@ -110,14 +112,14 @@
   <insert id="insert" parameterType="com.train.domain.entity.UserTeacher" >
     insert into user_teacher (id, nick_name, portrait, 
       subject_id, teaching_age, position, 
-      introduction, free_video, create_time, 
-      create_by, update_time, update_by
-      )
+      lon, lat, introduction, 
+      free_video, create_time, create_by, 
+      update_time, update_by)
     values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
       #{subjectId,jdbcType=INTEGER}, #{teachingAge,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, 
-      #{introduction,jdbcType=VARCHAR}, #{freeVideo,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
-      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
-      )
+      #{lon,jdbcType=DECIMAL}, #{lat,jdbcType=DECIMAL}, #{introduction,jdbcType=VARCHAR}, 
+      #{freeVideo,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserTeacher" >
     insert into user_teacher
@@ -139,6 +141,12 @@
       </if>
       <if test="position != null" >
         position,
+      </if>
+      <if test="lon != null" >
+        lon,
+      </if>
+      <if test="lat != null" >
+        lat,
       </if>
       <if test="introduction != null" >
         introduction,
@@ -177,6 +185,12 @@
       </if>
       <if test="position != null" >
         #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        #{lon,jdbcType=DECIMAL},
+      </if>
+      <if test="lat != null" >
+        #{lat,jdbcType=DECIMAL},
       </if>
       <if test="introduction != null" >
         #{introduction,jdbcType=VARCHAR},
@@ -225,6 +239,12 @@
       <if test="record.position != null" >
         position = #{record.position,jdbcType=VARCHAR},
       </if>
+      <if test="record.lon != null" >
+        lon = #{record.lon,jdbcType=DECIMAL},
+      </if>
+      <if test="record.lat != null" >
+        lat = #{record.lat,jdbcType=DECIMAL},
+      </if>
       <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
@@ -256,6 +276,8 @@
       subject_id = #{record.subjectId,jdbcType=INTEGER},
       teaching_age = #{record.teachingAge,jdbcType=INTEGER},
       position = #{record.position,jdbcType=VARCHAR},
+      lon = #{record.lon,jdbcType=DECIMAL},
+      lat = #{record.lat,jdbcType=DECIMAL},
       introduction = #{record.introduction,jdbcType=VARCHAR},
       free_video = #{record.freeVideo,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=DATE},
@@ -283,6 +305,12 @@
       </if>
       <if test="position != null" >
         position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="lon != null" >
+        lon = #{lon,jdbcType=DECIMAL},
+      </if>
+      <if test="lat != null" >
+        lat = #{lat,jdbcType=DECIMAL},
       </if>
       <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
@@ -312,6 +340,8 @@
       subject_id = #{subjectId,jdbcType=INTEGER},
       teaching_age = #{teachingAge,jdbcType=INTEGER},
       position = #{position,jdbcType=VARCHAR},
+      lon = #{lon,jdbcType=DECIMAL},
+      lat = #{lat,jdbcType=DECIMAL},
       introduction = #{introduction,jdbcType=VARCHAR},
       free_video = #{freeVideo,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=DATE},

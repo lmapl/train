@@ -11,7 +11,6 @@
     <result column="lon" property="lon" jdbcType="DECIMAL" />
     <result column="lat" property="lat" jdbcType="DECIMAL" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="introduction_portrait_ids" property="introductionPortraitIds" jdbcType="VARCHAR" />
     <result column="contact_peple" property="contactPeple" jdbcType="VARCHAR" />
     <result column="contact_info" property="contactInfo" jdbcType="VARCHAR" />
     <result column="certificate" property="certificate" jdbcType="VARCHAR" />
@@ -80,8 +79,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, nick_Name, portrait, scale, establishment_time, position, lon, lat, introduction, 
-    introduction_portrait_ids, contact_peple, contact_info, certificate, create_time, 
-    create_by, update_time, update_by
+    contact_peple, contact_info, certificate, create_time, create_by, update_time, update_by
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.train.domain.entity.UserCompanyExample" >
     select
@@ -117,17 +115,15 @@
     insert into user_company (id, nick_Name, portrait, 
       scale, establishment_time, position, 
       lon, lat, introduction, 
-      introduction_portrait_ids, contact_peple, 
-      contact_info, certificate, create_time, 
-      create_by, update_time, update_by
-      )
+      contact_peple, contact_info, certificate, 
+      create_time, create_by, update_time, 
+      update_by)
     values (#{id,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
       #{scale,jdbcType=VARCHAR}, #{establishmentTime,jdbcType=TIMESTAMP}, #{position,jdbcType=VARCHAR}, 
       #{lon,jdbcType=DECIMAL}, #{lat,jdbcType=DECIMAL}, #{introduction,jdbcType=VARCHAR}, 
-      #{introductionPortraitIds,jdbcType=VARCHAR}, #{contactPeple,jdbcType=VARCHAR}, 
-      #{contactInfo,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
-      #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}
-      )
+      #{contactPeple,jdbcType=VARCHAR}, #{contactInfo,jdbcType=VARCHAR}, #{certificate,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.train.domain.entity.UserCompany" >
     insert into user_company
@@ -158,9 +154,6 @@
       </if>
       <if test="introduction != null" >
         introduction,
-      </if>
-      <if test="introductionPortraitIds != null" >
-        introduction_portrait_ids,
       </if>
       <if test="contactPeple != null" >
         contact_peple,
@@ -211,9 +204,6 @@
       </if>
       <if test="introduction != null" >
         #{introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="introductionPortraitIds != null" >
-        #{introductionPortraitIds,jdbcType=VARCHAR},
       </if>
       <if test="contactPeple != null" >
         #{contactPeple,jdbcType=VARCHAR},
@@ -274,9 +264,6 @@
       <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
-      <if test="record.introductionPortraitIds != null" >
-        introduction_portrait_ids = #{record.introductionPortraitIds,jdbcType=VARCHAR},
-      </if>
       <if test="record.contactPeple != null" >
         contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
       </if>
@@ -314,7 +301,6 @@
       lon = #{record.lon,jdbcType=DECIMAL},
       lat = #{record.lat,jdbcType=DECIMAL},
       introduction = #{record.introduction,jdbcType=VARCHAR},
-      introduction_portrait_ids = #{record.introductionPortraitIds,jdbcType=VARCHAR},
       contact_peple = #{record.contactPeple,jdbcType=VARCHAR},
       contact_info = #{record.contactInfo,jdbcType=VARCHAR},
       certificate = #{record.certificate,jdbcType=VARCHAR},
@@ -353,9 +339,6 @@
       <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
       </if>
-      <if test="introductionPortraitIds != null" >
-        introduction_portrait_ids = #{introductionPortraitIds,jdbcType=VARCHAR},
-      </if>
       <if test="contactPeple != null" >
         contact_peple = #{contactPeple,jdbcType=VARCHAR},
       </if>
@@ -390,7 +373,6 @@
       lon = #{lon,jdbcType=DECIMAL},
       lat = #{lat,jdbcType=DECIMAL},
       introduction = #{introduction,jdbcType=VARCHAR},
-      introduction_portrait_ids = #{introductionPortraitIds,jdbcType=VARCHAR},
       contact_peple = #{contactPeple,jdbcType=VARCHAR},
       contact_info = #{contactInfo,jdbcType=VARCHAR},
       certificate = #{certificate,jdbcType=VARCHAR},

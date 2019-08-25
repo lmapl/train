@@ -1,5 +1,6 @@
 package com.train.web.dao;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -11,15 +12,14 @@ public class UserCompanyRequest extends BaseRequest{
 
     private  String nickName;	//昵称
     private String portrait;	//头像图片地址
-    private Integer gender	;  //性别	1=男； 2=女
-    private String birthdayYear;	//生日
-    private String birthdayMonth;	//生日
-    private String birthdayDay;	//生日
 
 
     private Integer subject;	//教授科目
     private Integer teachingAge;//	教龄
     private String position;	//位置	需要分割符，待定
+
+    private BigDecimal lon; //经纬度：经度
+    private BigDecimal lat; //经纬度：纬度
     private String introduction;//	简介
     private String freeVideo;	//试听视频地址
 
@@ -30,8 +30,6 @@ public class UserCompanyRequest extends BaseRequest{
     private String contactPeple	;//机构联系人
     private String contactInfon;//	机构联系方式
     private String certificate	;//机构资质证明图片地址
-
-
 
     public String getNickName() {
         return nickName;
@@ -49,13 +47,7 @@ public class UserCompanyRequest extends BaseRequest{
         this.portrait = portrait;
     }
 
-    public Integer getGender() {
-        return gender;
-    }
 
-    public void setGender(Integer gender) {
-        this.gender = gender;
-    }
 
     public Integer getSubject() {
         return subject;
@@ -122,30 +114,6 @@ public class UserCompanyRequest extends BaseRequest{
         this.certificate = certificate;
     }
 
-    public String getBirthdayYear() {
-        return birthdayYear;
-    }
-
-    public void setBirthdayYear(String birthdayYear) {
-        this.birthdayYear = birthdayYear;
-    }
-
-    public String getBirthdayMonth() {
-        return birthdayMonth;
-    }
-
-    public void setBirthdayMonth(String birthdayMonth) {
-        this.birthdayMonth = birthdayMonth;
-    }
-
-    public String getBirthdayDay() {
-        return birthdayDay;
-    }
-
-    public void setBirthdayDay(String birthdayDay) {
-        this.birthdayDay = birthdayDay;
-    }
-
     public List<Image> getIntroductionPortraits() {
         return introductionPortraits;
     }
@@ -168,5 +136,21 @@ public class UserCompanyRequest extends BaseRequest{
 
     public void setScale(String scale) {
         this.scale = scale;
+    }
+
+    public BigDecimal getLon() {
+        return lon;
+    }
+
+    public void setLon(BigDecimal lon) {
+        this.lon = lon;
+    }
+
+    public BigDecimal getLat() {
+        return lat;
+    }
+
+    public void setLat(BigDecimal lat) {
+        this.lat = lat;
     }
 }

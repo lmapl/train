@@ -1,5 +1,6 @@
 package com.train.domain.bean;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -19,6 +20,9 @@ public class UserCompanyInfo {
     private Integer subject;	//教授科目
     private Integer teachingAge;//	教龄
     private String position;	//位置	需要分割符，待定
+
+    private BigDecimal lon; //经纬度：经度
+    private BigDecimal lat; //经纬度：纬度
     private String introduction;//	简介
     private String freeVideo;	//试听视频地址
 
@@ -167,5 +171,21 @@ public class UserCompanyInfo {
 
     public void setScale(String scale) {
         this.scale = scale;
+    }
+
+    public BigDecimal getLon() {
+        return lon;
+    }
+
+    public void setLon(BigDecimal lon) {
+        this.lon = lon;
+    }
+
+    public BigDecimal getLat() {
+        return lat;
+    }
+
+    public void setLat(BigDecimal lat) {
+        this.lat = lat;
     }
 }

@@ -50,11 +50,6 @@ public class UserCompany {
     private String introduction;
 
     /**
-     * 环境图片地址
-     */
-    private String introductionPortraitIds;
-
-    /**
      * 机构联系人
      */
     private String contactPeple;
@@ -234,22 +229,6 @@ public class UserCompany {
     }
 
     /**
-     * 环境图片地址
-     * @return introduction_portrait_ids 环境图片地址
-     */
-    public String getIntroductionPortraitIds() {
-        return introductionPortraitIds;
-    }
-
-    /**
-     * 环境图片地址
-     * @param introductionPortraitIds 环境图片地址
-     */
-    public void setIntroductionPortraitIds(String introductionPortraitIds) {
-        this.introductionPortraitIds = introductionPortraitIds == null ? null : introductionPortraitIds.trim();
-    }
-
-    /**
      * 机构联系人
      * @return contact_peple 机构联系人
      */
@@ -380,7 +359,6 @@ public class UserCompany {
         sb.append(", lon=").append(lon);
         sb.append(", lat=").append(lat);
         sb.append(", introduction=").append(introduction);
-        sb.append(", introductionPortraitIds=").append(introductionPortraitIds);
         sb.append(", contactPeple=").append(contactPeple);
         sb.append(", contactInfo=").append(contactInfo);
         sb.append(", certificate=").append(certificate);

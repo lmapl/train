@@ -2,6 +2,7 @@ package com.train.web.company;
 
 import com.train.Exception.InvalidParamException;
 import com.train.domain.bean.*;
+import com.train.domain.entity.Collect;
 import com.train.domain.enums.LocationEnum;
 import com.train.service.common.CompanyService;
 import com.train.service.common.OperateService;
@@ -45,11 +46,13 @@ public class CompanyController {
         UserCompanyInfo userCompanyInfo = new UserCompanyInfo();
         BeanUtils.copyProperties(request,userCompanyInfo);
         List<ImageInfo> imageInfos = new ArrayList<>();
-        ImageInfo imageInfo ;
-        for(Image image : request.getIntroductionPortraits()){
-            imageInfo = new ImageInfo();
-            BeanUtils.copyProperties(image,imageInfo);
-            imageInfos.add(imageInfo);
+        if(!CollectionUtils.isEmpty(request.getIntroductionPortraits())){
+            ImageInfo imageInfo ;
+            for(Image image : request.getIntroductionPortraits()){
+                imageInfo = new ImageInfo();
+                BeanUtils.copyProperties(image,imageInfo);
+                imageInfos.add(imageInfo);
+            }
         }
         userCompanyInfo.setIntroductionPortraits(imageInfos);
         result.setData(userService.companyImproveInfo(request.getAutograph(),userCompanyInfo));

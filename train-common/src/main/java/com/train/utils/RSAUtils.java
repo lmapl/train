@@ -181,6 +181,9 @@ public class RSAUtils {
         //1|X32ADE62B-CA69-F0A9-B68E-08D242BCE683|WYnBc4VI|1|1566642085094|123
         String unLoginToken = "1|32ADE62B-CA69-F0A9-B68E-08D242BCE683|HO1gZGAX|1|" +time +"|123";
 
+        String unLoginToken1 = "1|XEEANNnen==aaa=eee-xxxxa|ZEC2vyUm|1|" +time +"|123";
+
+
         //平台|uuid|服务器凭证|随机数|时间|随机数
         String mobileToken = "1|XEEANNnen==aaa=eee-xxxxa|SLGyzQ71|12|" +time+"|13";
 
@@ -192,9 +195,9 @@ public class RSAUtils {
         time = System.currentTimeMillis();
         String loginToken = "1|6|XEEANNnen==aaa=eee-xxxxa|12|18911439763|" +
                 time +
-                "|15658611484371|12";
+                "|15667244307921|12";
 
-        String str = unLoginToken;
+        String str = loginToken;
 
         //乙方使用公钥对数据进行加密
         String code2 = RSAUtils.encryptByPublicKey(str,publicKey);
